@@ -35,17 +35,17 @@
 			</a>
 		</div>
 		<div>
-			<a href="https://www.facebook.com/openversum/" target="_blank">
+			<a href="https://www.instagram.com/openversum/" target="_blank">
 				<img src="./social_logos/InstagramLogo.png" alt="instagram_logo" />
 			</a>
 		</div>
 		<div>
-			<a href="https://www.facebook.com/openversum/" target="_blank">
+			<a href="https://www.linkedin.com/company/openversum/" target="_blank">
 				<img src="./social_logos/LinkedinLogo.png" alt="Linkedin_logo" />
 			</a>
 		</div>
 		<div>
-			<a href="https://www.facebook.com/openversum/" target="_blank">
+			<a href="https://twitter.com/openversum" target="_blank">
 				<img src="./social_logos/TwitterLogo.png" alt="Twitter_logo" />
 			</a>
 		</div>
