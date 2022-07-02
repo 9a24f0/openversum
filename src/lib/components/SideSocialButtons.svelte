@@ -29,22 +29,22 @@
 	</svg>
 
 	<div class="absolute top-12 left-2 space-y-5">
-		<div>
+		<div class="hover:animate-bounce">
 			<a href="https://www.facebook.com/openversum/" target="_blank">
 				<img src="./social_logos/FacebookLogo.png" alt="facebook_logo" />
 			</a>
 		</div>
-		<div>
+		<div class="hover:animate-bounce">
 			<a href="https://www.instagram.com/openversum/" target="_blank">
 				<img src="./social_logos/InstagramLogo.png" alt="instagram_logo" />
 			</a>
 		</div>
-		<div>
+		<div class="hover:animate-bounce">
 			<a href="https://www.linkedin.com/company/openversum/" target="_blank">
 				<img src="./social_logos/LinkedinLogo.png" alt="Linkedin_logo" />
 			</a>
 		</div>
-		<div>
+		<div class="hover:animate-bounce">
 			<a href="https://twitter.com/openversum" target="_blank">
 				<img src="./social_logos/TwitterLogo.png" alt="Twitter_logo" />
 			</a>
