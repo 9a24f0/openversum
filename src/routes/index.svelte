@@ -1,7 +1,10 @@
 <script lang="ts">
 	import AnimatedBlob from '$lib/components/AnimatedBlob.svelte';
-
+	import SideSocialButtons from '$lib/components/SideSocialButtons.svelte';
+	import SimpleSlotModal from '$lib/components/SimpleSlotModal.svelte';
+	import WatchButton from '$lib/components/WatchButton.svelte';
 	let y: number;
+	let showVideoModal = false;
 </script>
 
 <svelte:head>
@@ -17,8 +20,60 @@
 	<html lang="en" />
 </svelte:head>
 <svelte:window bind:scrollY={y} />
+<div class="w-full h-full">
+	<div class="grid grid-cols-7 w-full h-full">
+		<div class="relative col-span-4 h-full">
+			<div class="inline-flex  h-full">
+				<div class="my-auto">
+					<SideSocialButtons />
+				</div>
+				<div class="grid grid-cols-1 pl-8 py-4 content-evenly">
+					<div>
+						<h1 class="font-bold text-5xl">
+							Bringing safe and clean water where it is most needed.
+						</h1>
+						<h3 class="font-semibold text-lg text-gray-500">
+							Microfranchising of locally manufactured water goods with leading-edge membrane
+							technology
+						</h3>
+					</div>
+					<div class="inline-flex">
+						<WatchButton on:click={() => (showVideoModal = !showVideoModal)} />
+						<span class="mr-8 font-semibold text-lg my-auto">Watch Video</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="relative col-span-3 h-full">
+			<div class="absolute top-[10%] right-0">
+				<AnimatedBlob />
+			</div>
+			<div class="absolute inline-flex top-[15%]  w-full justify-center">
+				<img
+					class="w-full max-w-[200px]"
+					src="./openversum_logo_white.png"
+					alt="openvserum white logo"
+				/>
+			</div>
+		</div>
+	</div>
+</div>
 
-<AnimatedBlob />
+{#if showVideoModal}
+	<SimpleSlotModal on:closeModal={() => (showVideoModal = false)}>
+		<iframe
+			class="rounded-md"
+			width="770"
+			height="415"
+			src="https://www.youtube.com/embed/EsGui64xO78?start=18"
+			title="YouTube video player"
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+			allowfullscreen
+		/>
+	</SimpleSlotModal>
+{/if}
+
 <!-- <div class="text-white flex-col">
 	<section
 		name="landing"

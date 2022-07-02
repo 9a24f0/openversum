@@ -3,11 +3,13 @@
 	import '../app.css';
 </script>
 
-<div class="bg-white min-h-screen h-full">
-	<Header />
-	<main>
+<div class="bg-white h-full">
+	<div class="h-[12%]">
+		<Header />
+	</div>
+	<main class="h-[88%]">
 		<slot />
 	</main>
 
-	<footer class="bg-slate-50 ">footer</footer>
+	<!-- <footer class="bg-slate-50 ">footer</footer> -->
 </div>

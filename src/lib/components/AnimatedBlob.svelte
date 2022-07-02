@@ -7,7 +7,7 @@
 			'#blob1',
 			{ path: '#blob2' },
 			{ path: '#blob1' },
-			{ repeat: 999, duration: 8000, yoyo: true }
+			{ repeat: 999, duration: 6000, yoyo: true }
 		);
 
 		tween.start();
@@ -17,8 +17,7 @@
 <svg
 	id="visual"
 	viewBox="0 0 900 600"
-	width="900"
-	height="600"
+	class="w-full h-full overflow-visible -z-10"
 	xmlns="http://www.w3.org/2000/svg"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
 	version="1.1"
@@ -44,11 +43,12 @@
 	<defs>
 		<linearGradient
 			id="paint0_linear_1"
-			x1="55.9578"
+			x1="155.9578"
 			y1="626.197"
-			x2="20.6108"
+			x2="520.6108"
 			y2="-45.7976"
 			gradientUnits="userSpaceOnUse"
+			gradientTransform="rotate(15)"
 		>
 			<stop stop-color="#C3F46A" />
 			<stop offset="0.46875" stop-color="#3298C8" />
@@ -62,6 +62,7 @@
 			x2="120.6108"
 			y2="-45.7976"
 			gradientUnits="userSpaceOnUse"
+			gradientTransform="rotate(5)"
 		>
 			<stop stop-color="#C3F46A" />
 			<stop offset="0.56875" stop-color="#3298C8" />
