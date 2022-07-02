@@ -1,5 +1,5 @@
 <svg
-	class="h-6 w-6"
+	class="hover:rotate-90 transition-all duration-150 h-6 w-6"
 	xmlns="http://www.w3.org/2000/svg"
 	fill="none"
 	viewBox="0 0 24 24"

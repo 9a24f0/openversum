@@ -7,11 +7,11 @@
 
 <nav class="hidden md:flex space-x-10">
 	<div class="relative">
-		<!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
+		<!-- Item active: "text-gray-900", Item inactive: "text-emerald-700" -->
 		<button
-			on:click={() => (showSolutionsMenu = !showSolutionsMenu)}
+			on:click|stopPropagation={() => (showSolutionsMenu = !showSolutionsMenu)}
 			type="button"
-			class="text-gray-500 group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+			class="text-emerald-700 group bg-white rounded-md inline-flex items-center text-lg font-medium hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
 			aria-expanded="false"
 		>
 			<span>Solutions</span>
@@ -29,18 +29,18 @@
               To: "opacity-0 translate-y-1"
           -->
 		{#if showSolutionsMenu}
-			<SolutionsFlyoutMenu />
+			<SolutionsFlyoutMenu on:closeMenu={() => (showSolutionsMenu = false)} />
 		{/if}
 	</div>
 
-	<a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900"> Pricing </a>
-	<a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900"> Docs </a>
+	<a href="#" class="text-lg font-medium text-emerald-700 hover:text-emerald-900"> Pricing </a>
+	<a href="#" class="text-lg font-medium text-emerald-700 hover:text-emerald-900"> Docs </a>
 
 	<div class="relative">
-		<!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
+		<!-- Item active: "text-gray-900", Item inactive: "text-emerald-700" -->
 		<button
 			type="button"
-			class="text-gray-500 group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+			class="text-emerald-700 group bg-white rounded-md inline-flex items-center text-lg font-medium hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
 			aria-expanded="false"
 		>
 			<span>More</span>

@@ -1,12 +1,19 @@
 <script>
+	import { createEventDispatcher } from 'svelte';
+	import { clickOutside } from '$lib/utilities/clickOutside';
 	import ChartBarSvg from './SVG/ChartBarSVG.svelte';
 	import CloseSvg from './SVG/CloseSVG.svelte';
 	import CursorClickSvg from './SVG/CursorClickSVG.svelte';
 	import RefreshSvg from './SVG/RefreshSVG.svelte';
 	import ViewGridSvg from './SVG/ViewGridSVG.svelte';
+
+	const dispatch = createEventDispatcher();
 </script>
 
-<div class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+<div
+	use:clickOutside={() => dispatch('closeMenu')}
+	class="absolute top-0 inset-x-0 p-2 z-10 transition transform origin-top-right md:hidden"
+>
 	<div
 		class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50"
 	>
@@ -17,6 +24,7 @@
 				</div>
 				<div class="-mr-2">
 					<button
+						on:click={() => dispatch('closeMenu')}
 						type="button"
 						class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
 					>

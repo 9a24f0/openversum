@@ -4,6 +4,7 @@
 	import SimpleSlotModal from '$lib/components/SimpleSlotModal.svelte';
 	import WatchButton from '$lib/components/WatchButton.svelte';
 	let y: number;
+	let gridWidth: number;
 	let showVideoModal = false;
 </script>
 
@@ -20,8 +21,9 @@
 	<html lang="en" />
 </svelte:head>
 <svelte:window bind:scrollY={y} />
+
 <div class="w-full h-full">
-	<div class="grid grid-cols-7 w-full h-full">
+	<div bind:clientWidth={gridWidth} class="grid grid-cols-4 md:grid-cols-7 w-full h-full">
 		<div class="relative col-span-4 h-full">
 			<div class="inline-flex  h-full">
 				<div class="my-auto">
@@ -44,18 +46,20 @@
 				</div>
 			</div>
 		</div>
-		<div class="relative col-span-3 h-full">
-			<div class="absolute top-[10%] right-0">
-				<AnimatedBlob />
+		{#if gridWidth > 767}
+			<div class="relative col-span-3 h-full">
+				<div class="absolute top-[10%] right-0 w-full">
+					<AnimatedBlob />
+				</div>
+				<div class="absolute inline-flex top-[15%]  w-full justify-center">
+					<img
+						class="w-full max-w-[200px]"
+						src="./openversum_logo_white.png"
+						alt="openvserum white logo"
+					/>
+				</div>
 			</div>
-			<div class="absolute inline-flex top-[15%]  w-full justify-center">
-				<img
-					class="w-full max-w-[200px]"
-					src="./openversum_logo_white.png"
-					alt="openvserum white logo"
-				/>
-			</div>
-		</div>
+		{/if}
 	</div>
 </div>
 
