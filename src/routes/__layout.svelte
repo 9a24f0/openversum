@@ -1,12 +1,13 @@
 <script>
+	import Header from '$lib/components/Header.svelte';
 	import '../app.css';
 </script>
 
-<div class="bg-black min-h-screen h-full">
-	<header>Header</header>
+<div class="bg-white min-h-screen h-full">
+	<Header />
 	<main>
 		<slot />
 	</main>
 
-	<footer>footer</footer>
+	<footer class="bg-slate-50 ">footer</footer>
 </div>
