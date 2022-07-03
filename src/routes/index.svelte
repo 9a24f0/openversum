@@ -31,7 +31,7 @@
 				</div>
 				<div class="grid grid-cols-1 pl-8 py-4 content-evenly">
 					<div>
-						<h1 class="font-bold text-5xl">
+						<h1 class="font-bold text-4xl md:text-5xl">
 							Bringing safe and clean water where it is most needed.
 						</h1>
 						<h3 class="font-semibold text-lg text-gray-500">

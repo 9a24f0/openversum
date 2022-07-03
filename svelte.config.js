@@ -12,7 +12,18 @@ const config = {
 	],
 
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+		vite: {
+			build: {
+				target: 'es2022'
+			},
+			/* ssr: {
+				noExternal: ['chart.js']
+			}, */
+			define: {
+				'process.env': process.env
+			}
+		}
 	}
 };
 
