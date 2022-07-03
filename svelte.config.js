@@ -12,7 +12,9 @@ const config = {
 	],
 
 	kit: {
-		adapter: adapter(),
+		adapter: adapter({
+			edge: false
+		}),
 		vite: {
 			build: {
 				target: 'es2022'
