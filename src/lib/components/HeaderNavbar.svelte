@@ -33,18 +33,9 @@
 		{/if}
 	</div>
 
-	<a href="#" class="text-lg font-medium text-emerald-700 hover:text-emerald-900"> Pricing </a>
-	<a href="#" class="text-lg font-medium text-emerald-700 hover:text-emerald-900"> Docs </a>
-
-	<div class="relative">
-		<!-- Item active: "text-gray-900", Item inactive: "text-emerald-700" -->
-		<button
-			type="button"
-			class="text-emerald-700 group bg-white rounded-md inline-flex items-center text-lg font-medium hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
-			aria-expanded="false"
-		>
-			<span>More</span>
-			<!-- <ChevronDownSvg></ChevronDownSvg> -->
-		</button>
-	</div>
+	<a href="/about" class="text-lg font-medium text-emerald-700 hover:text-emerald-900">
+		Meet the team
+	</a>
+	<a href="#" class="text-lg font-medium text-emerald-700 hover:text-emerald-900"> Work with us </a>
+	<a href="#" class="text-lg font-medium text-emerald-700 hover:text-emerald-900"> Contact </a>
 </nav>

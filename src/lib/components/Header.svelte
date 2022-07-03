@@ -18,7 +18,7 @@
 </script>
 
 <!-- This example requires Tailwind CSS v2.0+ -->
-<div class="relative bg-transparent">
+<div class="relative bg-transparent overflow-x-clip">
 	<!-- <footer class="bg-slate-50 ">footer</footer> -->
 	<div class="absolute origin-top-left -top-16 -right-14 opacity-80">
 		<BlobTopR />
