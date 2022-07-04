@@ -87,6 +87,10 @@
       To: "opacity-0 scale-95"
   -->
 	{#if showMobileMenu}
-		<HeaderMobileMenu on:closeMenu={() => (showMobileMenu = false)} />
+		<HeaderMobileMenu
+			on:closeMenu={() => (showMobileMenu = false)}
+			on:logOut={handleLogOut}
+			on:signIn={() => (showAuth = !showAuth)}
+		/>
 	{/if}
 </div>

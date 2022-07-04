@@ -1,6 +1,6 @@
 <!-- Heroicon name: outline/chart-bar -->
 <svg
-	class="flex-shrink-0 h-6 w-6 text-indigo-600"
+	class="flex-shrink-0 h-6 w-6"
 	xmlns="http://www.w3.org/2000/svg"
 	fill="none"
 	viewBox="0 0 24 24"

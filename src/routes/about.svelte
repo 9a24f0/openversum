@@ -46,12 +46,9 @@
 
 	<!-- Copy -->
 
-	<div class="grid grid-cols-2 gap-8 h-full">
+	<div class="h-full">
 		<div class="grid col-span-1 content-evenly">
-			<h1 class="font-bold text-4xl md:text-5xl">We combine</h1>
-			<div class="mx-auto">
-				<img src="./Filtre.png" alt="filter design" />
-			</div>
+			<h1 class="font-bold text-4xl md:text-5xl">Our Vision</h1>
 		</div>
 		<div class="grid col-span-1 content-center">
 			<div class="mt-12">

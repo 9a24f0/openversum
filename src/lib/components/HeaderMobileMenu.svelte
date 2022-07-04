@@ -7,6 +7,8 @@
 	import RefreshSvg from './SVG/RefreshSVG.svelte';
 	import ViewGridSvg from './SVG/ViewGridSVG.svelte';
 
+	import { user } from '$lib/stores/sessionStore';
+
 	const dispatch = createEventDispatcher();
 </script>
 
@@ -36,34 +38,42 @@
 			</div>
 			<div class="mt-6">
 				<nav class="grid gap-y-8">
-					<a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-						<!-- Heroicon name: outline/chart-bar -->
-						<ChartBarSvg />
-						<span class="ml-3 text-base font-medium text-gray-900"> Analytics </span>
-					</a>
-
-					<a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+					<a href="/newfilter" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
 						<!-- Heroicon name: outline/cursor-click -->
-						<CursorClickSvg />
-						<span class="ml-3 text-base font-medium text-gray-900"> Engagement </span>
+						<div class="text-emerald-700">
+							<CursorClickSvg />
+						</div>
+						<span class="ml-3 text-base font-medium text-gray-900"> New Filter </span>
 					</a>
 
-					<a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+					<a href="/finance" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+						<!-- Heroicon name: outline/chart-bar -->
+						<div class="text-emerald-700">
+							<ChartBarSvg />
+						</div>
+						<span class="ml-3 text-base font-medium text-gray-900"> Finance </span>
+					</a>
+
+					<a href="/inventory" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
 						<!-- Heroicon name: outline/view-grid -->
-						<ViewGridSvg />
-						<span class="ml-3 text-base font-medium text-gray-900"> Integrations </span>
+						<div class="text-emerald-700">
+							<ViewGridSvg />
+						</div>
+						<span class="ml-3 text-base font-medium text-gray-900"> Inventory </span>
 					</a>
 
-					<a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+					<a href="/shop" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
 						<!-- Heroicon name: outline/refresh -->
-						<RefreshSvg />
-						<span class="ml-3 text-base font-medium text-gray-900"> Automations </span>
+						<div class="text-emerald-700">
+							<RefreshSvg />
+						</div>
+						<span class="ml-3 text-base font-medium text-gray-900"> Shop </span>
 					</a>
 				</nav>
 			</div>
 		</div>
-		<div class="py-6 px-5 space-y-6">
-			<div class="grid grid-cols-2 gap-y-4 gap-x-8">
+		<div class="py-4 px-5 space-y-2">
+			<div class="pb-2 grid grid-cols-2 gap-y-4 gap-x-8">
 				<a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700"> Pricing </a>
 
 				<a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700"> Docs </a>
@@ -85,6 +95,30 @@
             <a href="#" class="text-indigo-600 hover:text-indigo-500"> Sign in </a>
           </p>
         </div> -->
+
+			<div class="pt-2 border-t flex md:flex items-center justify-center md:flex-1 lg:w-0">
+				{#if $user}
+					<button
+						on:click|stopPropagation={() => {
+							dispatch('signIn');
+							dispatch('closeMenu');
+						}}
+						class="w-full whitespace-nowrap text-lg font-medium text-emerald-800 hover:text-emerald-900 hover:bg-emerald-100 rounded-xl px-2 py-1 border-emerald-800 border "
+					>
+						Log out
+					</button>
+				{:else}
+					<button
+						on:click|stopPropagation={() => {
+							dispatch('signIn');
+							dispatch('closeMenu');
+						}}
+						class="w-full whitespace-nowrap text-lg font-medium text-emerald-800 hover:text-emerald-900 hover:bg-emerald-100 rounded-xl px-2 py-1 border-emerald-800 border "
+					>
+						Sign in
+					</button>
+				{/if}
+			</div>
 		</div>
 	</div>
 </div>

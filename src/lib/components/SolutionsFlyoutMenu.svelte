@@ -15,43 +15,50 @@
 >
 	<div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
 		<div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-			<a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
-				<ChartBarSVG />
+			<a href="/newfilter" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+				<div class="text-emerald-800">
+					<CursorClickSVG />
+				</div>
+
 				<div class="ml-4">
-					<p class="text-base font-medium text-gray-900">Analytics</p>
+					<p class="text-base font-medium text-gray-900">New Filter</p>
 					<p class="mt-1 text-sm text-gray-500">
-						Get a better understanding of where your traffic is coming from.
+						All you need to sell or replace our drinking water filters.
 					</p>
 				</div>
 			</a>
 
-			<a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
-				<CursorClickSVG />
+			<a href="/finance" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+				<div class="text-emerald-800">
+					<ChartBarSVG />
+				</div>
 				<div class="ml-4">
-					<p class="text-base font-medium text-gray-900">Engagement</p>
+					<p class="text-base font-medium text-gray-900">Finance</p>
 					<p class="mt-1 text-sm text-gray-500">
-						Speak directly to your customers in a more meaningful way.
+						A central place for all financial support and information.
 					</p>
 				</div>
 			</a>
 
-			<a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
-				<ViewGridSvg />
+			<a href="/inventory" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+				<div class="text-emerald-800">
+					<ViewGridSvg />
+				</div>
 				<div class="ml-4">
-					<p class="text-base font-medium text-gray-900">Integrations</p>
+					<p class="text-base font-medium text-gray-900">Inventory</p>
 					<p class="mt-1 text-sm text-gray-500">
-						Connect with third-party tools that you&#039;re already using.
+						Keep track of your stock of filters and materials
 					</p>
 				</div>
 			</a>
 
-			<a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
-				<RefreshSvg />
+			<a href="/shop" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+				<div class="text-emerald-800">
+					<RefreshSvg />
+				</div>
 				<div class="ml-4">
-					<p class="text-base font-medium text-gray-900">Automations</p>
-					<p class="mt-1 text-sm text-gray-500">
-						Build strategic funnels that will drive your customers to convert
-					</p>
+					<p class="text-base font-medium text-gray-900">Shop</p>
+					<p class="mt-1 text-sm text-gray-500">Place an order on more filters or materials</p>
 				</div>
 			</a>
 		</div>
