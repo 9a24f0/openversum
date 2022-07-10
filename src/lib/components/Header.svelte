@@ -20,9 +20,7 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <div class="relative bg-transparent overflow-x-clip">
 	<!-- <footer class="bg-slate-50 ">footer</footer> -->
-	<div class="absolute origin-top-left -top-16 -right-14 opacity-80">
-		<BlobTopR />
-	</div>
+
 	{#if showAuth}
 		<div
 			use:clickOutside={() => (showAuth = false)}
@@ -33,7 +31,7 @@
 		</div>
 	{/if}
 
-	<div class="max-w-screen-2xl mx-auto px-4 sm:px-6">
+	<div class="max-w-screen-2xl mx-auto px-4 ">
 		<div
 			class="flex justify-between items-center border-gray-100 py-6 md:justify-start md:space-x-10"
 		>

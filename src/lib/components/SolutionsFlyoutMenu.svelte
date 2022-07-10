@@ -14,8 +14,11 @@
 	class="absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2"
 >
 	<div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
-		<div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-			<a href="/newfilter" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+		<div
+			on:click={() => dispatch('closeMenu')}
+			class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8"
+		>
+			<a href="solutions/newfilter" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
 				<div class="text-emerald-800">
 					<CursorClickSVG />
 				</div>
@@ -28,7 +31,7 @@
 				</div>
 			</a>
 
-			<a href="/finance" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+			<a href="solutions/finance" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
 				<div class="text-emerald-800">
 					<ChartBarSVG />
 				</div>
@@ -40,7 +43,7 @@
 				</div>
 			</a>
 
-			<a href="/inventory" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+			<a href="solutions/inventory" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
 				<div class="text-emerald-800">
 					<ViewGridSvg />
 				</div>
@@ -52,7 +55,7 @@
 				</div>
 			</a>
 
-			<a href="/shop" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+			<a href="solutions/shop" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
 				<div class="text-emerald-800">
 					<RefreshSvg />
 				</div>

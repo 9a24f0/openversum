@@ -37,8 +37,11 @@
 				</div>
 			</div>
 			<div class="mt-6">
-				<nav class="grid gap-y-8">
-					<a href="/newfilter" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+				<nav on:click={() => dispatch('closeMenu')} class="grid gap-y-8">
+					<a
+						href="solutions/newfilter"
+						class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
+					>
 						<!-- Heroicon name: outline/cursor-click -->
 						<div class="text-emerald-700">
 							<CursorClickSvg />
@@ -46,7 +49,10 @@
 						<span class="ml-3 text-base font-medium text-gray-900"> New Filter </span>
 					</a>
 
-					<a href="/finance" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+					<a
+						href="solutions/finance"
+						class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
+					>
 						<!-- Heroicon name: outline/chart-bar -->
 						<div class="text-emerald-700">
 							<ChartBarSvg />
@@ -54,7 +60,10 @@
 						<span class="ml-3 text-base font-medium text-gray-900"> Finance </span>
 					</a>
 
-					<a href="/inventory" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+					<a
+						href="solutions/inventory"
+						class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
+					>
 						<!-- Heroicon name: outline/view-grid -->
 						<div class="text-emerald-700">
 							<ViewGridSvg />
@@ -62,7 +71,7 @@
 						<span class="ml-3 text-base font-medium text-gray-900"> Inventory </span>
 					</a>
 
-					<a href="/shop" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+					<a href="solutions/shop" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
 						<!-- Heroicon name: outline/refresh -->
 						<div class="text-emerald-700">
 							<RefreshSvg />

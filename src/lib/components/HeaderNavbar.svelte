@@ -1,6 +1,7 @@
 <script lang="ts">
 	import SolutionsFlyoutMenu from './SolutionsFlyoutMenu.svelte';
 	import ChevronDownSVG from './SVG/ChevronDownSVG.svelte';
+	import { user } from '$lib/stores/sessionStore';
 
 	let showSolutionsMenu = false;
 </script>
@@ -8,15 +9,17 @@
 <nav class="hidden md:flex space-x-10">
 	<div class="relative">
 		<!-- Item active: "text-gray-900", Item inactive: "text-emerald-700" -->
-		<button
-			on:click|stopPropagation={() => (showSolutionsMenu = !showSolutionsMenu)}
-			type="button"
-			class="text-emerald-700 group bg-white rounded-md inline-flex items-center text-lg font-medium hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
-			aria-expanded="false"
-		>
-			<span>Solutions</span>
-			<ChevronDownSVG />
-		</button>
+		{#if $user}
+			<button
+				on:click|stopPropagation={() => (showSolutionsMenu = !showSolutionsMenu)}
+				type="button"
+				class="text-emerald-700 group bg-white rounded-md inline-flex items-center text-lg font-medium hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
+				aria-expanded="false"
+			>
+				<span>Solutions</span>
+				<ChevronDownSVG />
+			</button>
+		{/if}
 
 		<!--
             'Solutions' flyout menu, show/hide based on flyout menu state.
