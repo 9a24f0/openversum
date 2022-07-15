@@ -68,12 +68,18 @@
 			<OpenversumAppSvg />
 		</div>
 
-		<div class="relative h-[185px] mt-8">
-			<h2 class="z-10 text-3xl font-semibold absolute top-1/3 left-28 text-white">
-				In a sustainable microfranchising distribution system
-			</h2>
-			<div class="absolute top-0	">
-				<Elipse1Svg />
+		<div class="w-full justify-center flex">
+			<div
+				class="my-auto relative h-[80px] md:h-[112px] lg:h-[185px] w-[500px] md:w-[600px] lg:w-[900px] mt-8"
+			>
+				<h2
+					class="z-10 text-lg md:text-xl lg:text-3xl font-semibold absolute top-1/4 left-[7%] text-white"
+				>
+					In a sustainable microfranchising distribution system
+				</h2>
+				<div class="absolute top-0 flex-shrink w-[500px] md:w-[600px] lg:w-[900px]">
+					<Elipse1Svg />
+				</div>
 			</div>
 		</div>
 	</div>
