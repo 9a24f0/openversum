@@ -24,7 +24,7 @@
 </script>
 
 <div class="h-full relative overflow-x-hidden">
-	<div class="sticky top-0 h-[12%] bg-white bg-opacity-50">
+	<div class="sticky top-0 h-[12%] bg-white bg-opacity-50 z-10">
 		<Header />
 		<div class="-z-10 absolute origin-top-left -top-16 -right-14 opacity-80">
 			<BlobTopR />
