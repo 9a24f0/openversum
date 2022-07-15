@@ -1,3 +1,8 @@
+<script>
+	import Elipse1Svg from '$lib/components/SVG/Elipse1SVG.svelte';
+	import OpenversumAppSvg from '$lib/components/SVG/OpenversumAppSVG.svelte';
+</script>
+
 <svelte:head>
 	<title
 		>Openversum - providing clean and safe drinking water where most needed - Meet the team</title
@@ -12,6 +17,7 @@
 	/>
 	<html lang="en" />
 </svelte:head>
+
 <div class="container mx-auto sm:px-6 lg:px-8 h-full">
 	<!-- Content goes here -->
 	<div class="grid grid-cols-2 gap-8 h-full">
@@ -47,28 +53,27 @@
 	<!-- Copy -->
 
 	<div class="h-full">
-		<div class="grid col-span-1 content-evenly">
-			<h1 class="font-bold text-4xl md:text-5xl">Our Vision</h1>
-		</div>
-		<div class="grid col-span-1 content-center">
-			<div class="mt-12">
-				<h2 class="text-2xl mb-2 font-semibold text-gray-700">All-in-one drinking water filter</h2>
-				<ul class="pl-8 list-disc">
-					<li class="text-xl">
-						High removal rates of pathogens (>99.999%), pesticides, heavy metals and micropollutant
-					</li>
-					<li class="text-xl">Lowers the risks of recontamination</li>
-					<li class="text-xl">Stable long term performances</li>
-				</ul>
-			</div>
-			<div class="mt-12">
-				<h2 class="text-2xl mb-2 font-semibold text-gray-700">Novel manufacturing process</h2>
+		<h2 class="text-2xl mb-2 font-semibold text-gray-700">
+			Online platform targetted at local entrepreneurs
+		</h2>
+		<div class="flex justify-evenly">
+			<ul class="pl-8 list-disc my-auto">
+				<li class="text-xl">Water knowhow</li>
+				<li class="text-xl">Filter manufacturing instructions</li>
+				<li class="text-xl">Business tools (accounting, monitoring...)</li>
+				<li class="text-xl">Direct access to ordering of supplies</li>
+				<li class="text-xl">Network of entrepreneurs</li>
+			</ul>
 
-				<ul class="pl-8 list-disc">
-					<li class="text-xl">Low production costs</li>
-					<li class="text-xl">Biodegradable cartidge</li>
-					<li class="text-xl">Solvent-free</li>
-				</ul>
+			<OpenversumAppSvg />
+		</div>
+
+		<div class="relative h-[185px] mt-8">
+			<h2 class="z-10 text-3xl font-semibold absolute top-1/3 left-28 text-white">
+				In a sustainable microfranchising distribution system
+			</h2>
+			<div class="absolute top-0	">
+				<Elipse1Svg />
 			</div>
 		</div>
 	</div>

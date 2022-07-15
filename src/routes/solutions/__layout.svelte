@@ -9,7 +9,8 @@
 	supabase.auth.onAuthStateChange((e) => {
 		if (!$user && browser) goto('/');
 	});
-	//$: if (!$user && browser) goto('/');
+
+	if (!$user && browser) goto('/');
 
 	let loaded = false;
 	onMount(async () => {

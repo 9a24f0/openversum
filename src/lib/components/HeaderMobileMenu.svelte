@@ -36,66 +36,77 @@
 					</button>
 				</div>
 			</div>
+
 			<div class="mt-6">
 				<nav on:click={() => dispatch('closeMenu')} class="grid gap-y-8">
-					<a
-						href="solutions/newfilter"
-						class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
-					>
-						<!-- Heroicon name: outline/cursor-click -->
-						<div class="text-emerald-700">
-							<CursorClickSvg />
-						</div>
-						<span class="ml-3 text-base font-medium text-gray-900"> New Filter </span>
-					</a>
+					{#if $user}
+						<a
+							href="solutions/newfilter"
+							class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
+						>
+							<!-- Heroicon name: outline/cursor-click -->
+							<div class="text-emerald-700">
+								<CursorClickSvg />
+							</div>
+							<span class="ml-3 text-base font-medium text-gray-900"> New Filter </span>
+						</a>
 
-					<a
-						href="solutions/finance"
-						class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
-					>
-						<!-- Heroicon name: outline/chart-bar -->
-						<div class="text-emerald-700">
-							<ChartBarSvg />
-						</div>
-						<span class="ml-3 text-base font-medium text-gray-900"> Finance </span>
-					</a>
+						<a
+							href="solutions/finance"
+							class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
+						>
+							<!-- Heroicon name: outline/chart-bar -->
+							<div class="text-emerald-700">
+								<ChartBarSvg />
+							</div>
+							<span class="ml-3 text-base font-medium text-gray-900"> Finance </span>
+						</a>
 
-					<a
-						href="solutions/inventory"
-						class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
-					>
-						<!-- Heroicon name: outline/view-grid -->
-						<div class="text-emerald-700">
-							<ViewGridSvg />
-						</div>
-						<span class="ml-3 text-base font-medium text-gray-900"> Inventory </span>
-					</a>
+						<a
+							href="solutions/inventory"
+							class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
+						>
+							<!-- Heroicon name: outline/view-grid -->
+							<div class="text-emerald-700">
+								<ViewGridSvg />
+							</div>
+							<span class="ml-3 text-base font-medium text-gray-900"> Inventory </span>
+						</a>
 
-					<a href="solutions/shop" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-						<!-- Heroicon name: outline/refresh -->
-						<div class="text-emerald-700">
-							<RefreshSvg />
-						</div>
-						<span class="ml-3 text-base font-medium text-gray-900"> Shop </span>
-					</a>
+						<a href="solutions/shop" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+							<!-- Heroicon name: outline/refresh -->
+							<div class="text-emerald-700">
+								<RefreshSvg />
+							</div>
+							<span class="ml-3 text-base font-medium text-gray-900"> Shop </span>
+						</a>
+					{/if}
 				</nav>
 			</div>
 		</div>
 		<div class="py-4 px-5 space-y-2">
 			<div class="pb-2 grid grid-cols-2 gap-y-4 gap-x-8">
-				<a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700"> Pricing </a>
-
-				<a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700"> Docs </a>
-
-				<a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700">
-					Help Center
+				<a href="/about" class="text-base font-medium text-emerald-700 hover:text-emerald-900">
+					What we do
 				</a>
 
-				<a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700"> Guides </a>
+				<a href="/who-we-are" class="text-base font-medium text-emerald-700 hover:text-emerald-900">
+					Who we are
+				</a>
 
-				<a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700"> Events </a>
+				<a href="/partners" class="text-base font-medium text-emerald-700 hover:text-emerald-900">
+					Become a partner
+				</a>
+				<a
+					href="/entrepreneurs"
+					class="text-base font-medium text-emerald-700 hover:text-emerald-900"
+				>
+					Become an entrepreneur
+				</a>
 
-				<a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700"> Security </a>
+				<a href="/contact" class="text-base font-medium text-emerald-700 hover:text-emerald-900">
+					Contact us
+				</a>
 			</div>
 			<!-- <div>
           <a href="#" class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"> Sign up </a>
@@ -109,7 +120,7 @@
 				{#if $user}
 					<button
 						on:click|stopPropagation={() => {
-							dispatch('signIn');
+							dispatch('logOut');
 							dispatch('closeMenu');
 						}}
 						class="w-full whitespace-nowrap text-lg font-medium text-emerald-800 hover:text-emerald-900 hover:bg-emerald-100 rounded-xl px-2 py-1 border-emerald-800 border "

@@ -24,13 +24,13 @@
 </script>
 
 <div class="h-full relative overflow-x-hidden">
-	<div class="h-[12%]">
+	<div class="sticky top-0 h-[12%] bg-white bg-opacity-50">
 		<Header />
+		<div class="-z-10 absolute origin-top-left -top-16 -right-14 opacity-80">
+			<BlobTopR />
+		</div>
 	</div>
 	<main class="h-[88%]">
 		<slot />
 	</main>
-	<div class="-z-10 absolute origin-top-left -top-16 -right-14 opacity-80">
-		<BlobTopR />
-	</div>
 </div>
