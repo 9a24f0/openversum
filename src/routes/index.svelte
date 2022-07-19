@@ -3,9 +3,23 @@
 	import SideSocialButtons from '$lib/components/SideSocialButtons.svelte';
 	import SimpleSlotModal from '$lib/components/SimpleSlotModal.svelte';
 	import WatchButton from '$lib/components/WatchButton.svelte';
+	import { onMount } from 'svelte';
+	export let imageList: any[];
 	let y: number;
 	let gridWidth: number;
 	let showVideoModal = false;
+
+	let Carousel: any; // for saving Carousel component class
+	let carousel: any; // for calling methods of the carousel instance
+
+	onMount(async () => {
+		const module = await import('svelte-carousel');
+		Carousel = module.default;
+	});
+
+	const handleNextClick = () => {
+		carousel.goToNext();
+	};
 </script>
 
 <svelte:head>
@@ -60,6 +74,32 @@
 				</div>
 			</div>
 		{/if}
+	</div>
+
+	<!-- Carousel -->
+	<svelte:component
+		this={Carousel}
+		bind:this={carousel}
+		particlesToShow={gridWidth > 767 ? 3 : gridWidth > 450 ? 2 : 1}
+		autoplay
+		autoplayDuration={2000}
+	>
+		{#each imageList as img}
+			<div class="h-56 md:h-64 lg:h-96">
+				<img class="h-56 md:h-64 lg:h-96 object-cover mx-auto" src={img} alt="ov-carousel" />
+			</div>
+		{/each}
+	</svelte:component>
+
+	<div class="w-full grid grid-cols-2 md:grid-cols-4 gap-2 px-8 items-center">
+		<img
+			class="max-h-[100px]"
+			src="partner_logos/swiss_conf.png"
+			alt="swiss confederation partner"
+		/>
+		<img class="max-h-[100px]" src="partner_logos/eth.png" alt="ETH partner" />
+		<img class="max-h-[100px]" src="partner_logos/kick_fund.png" alt="kick foundation partner" />
+		<img class="max-h-[100px]" src="partner_logos/hult_un.png" alt="Hult program partner" />
 	</div>
 </div>
 
