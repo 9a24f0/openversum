@@ -3,9 +3,12 @@
 	import ChevronDownSVG from './SVG/ChevronDownSVG.svelte';
 	import { user } from '$lib/stores/sessionStore';
 	import WorkWithUseFlyoutMenu from './WorkWithUseFlyoutMenu.svelte';
+	import SimpleSlotModal from './SimpleSlotModal.svelte';
+	import ContactForm from './ContactForm.svelte';
 
 	let showSolutionsMenu = false;
 	let showWorkWithUs = false;
+	let showContact = false;
 </script>
 
 <nav class="hidden md:flex space-x-10">
@@ -56,10 +59,15 @@
 			<WorkWithUseFlyoutMenu on:closeMenu={() => (showWorkWithUs = false)} />
 		{/if}
 	</div>
-	<a
-		href="/contact"
+	<button
+		on:click={() => (showContact = !showContact)}
 		class="whitespace-nowrap text-lg font-medium text-emerald-700 hover:text-emerald-900"
 	>
 		Contact us
-	</a>
+	</button>
 </nav>
+{#if showContact}
+	<SimpleSlotModal on:closeModal={() => (showContact = false)}>
+		<ContactForm on:submitedContact={() => (showContact = false)} />
+	</SimpleSlotModal>
+{/if}

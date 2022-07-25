@@ -105,6 +105,105 @@ export interface paths {
       };
     };
   };
+  "/contact": {
+    get: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.contact.id"];
+          created_at?: parameters["rowFilter.contact.created_at"];
+          name?: parameters["rowFilter.contact.name"];
+          email?: parameters["rowFilter.contact.email"];
+          message?: parameters["rowFilter.contact.message"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["contact"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** contact */
+          contact?: definitions["contact"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.contact.id"];
+          created_at?: parameters["rowFilter.contact.created_at"];
+          name?: parameters["rowFilter.contact.name"];
+          email?: parameters["rowFilter.contact.email"];
+          message?: parameters["rowFilter.contact.message"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.contact.id"];
+          created_at?: parameters["rowFilter.contact.created_at"];
+          name?: parameters["rowFilter.contact.name"];
+          email?: parameters["rowFilter.contact.email"];
+          message?: parameters["rowFilter.contact.message"];
+        };
+        body: {
+          /** contact */
+          contact?: definitions["contact"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
   "/customer": {
     get: {
       parameters: {
@@ -348,6 +447,25 @@ export interface definitions {
     /** Format: text */
     last_name?: string;
   };
+  contact: {
+    /**
+     * Format: bigint
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    id: number;
+    /**
+     * Format: timestamp with time zone
+     * @default now()
+     */
+    created_at?: string;
+    /** Format: text */
+    name: string;
+    /** Format: text */
+    email: string;
+    /** Format: text */
+    message: string;
+  };
   customer: {
     /**
      * Format: bigint
@@ -454,6 +572,18 @@ export interface parameters {
   "rowFilter.profiles.first_name": string;
   /** Format: text */
   "rowFilter.profiles.last_name": string;
+  /** @description contact */
+  "body.contact": definitions["contact"];
+  /** Format: bigint */
+  "rowFilter.contact.id": string;
+  /** Format: timestamp with time zone */
+  "rowFilter.contact.created_at": string;
+  /** Format: text */
+  "rowFilter.contact.name": string;
+  /** Format: text */
+  "rowFilter.contact.email": string;
+  /** Format: text */
+  "rowFilter.contact.message": string;
   /** @description customer */
   "body.customer": definitions["customer"];
   /** Format: bigint */
