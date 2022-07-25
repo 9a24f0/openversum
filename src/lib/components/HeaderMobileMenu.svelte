@@ -8,7 +8,9 @@
 	import ViewGridSvg from './SVG/ViewGridSVG.svelte';
 
 	import { user } from '$lib/stores/sessionStore';
-
+	import ContactForm from './ContactForm.svelte';
+	import SimpleSlotModal from './SimpleSlotModal.svelte';
+	let showContact = false;
 	const dispatch = createEventDispatcher();
 </script>
 
@@ -41,7 +43,7 @@
 				<nav on:click={() => dispatch('closeMenu')} class="grid gap-y-8">
 					{#if $user}
 						<a
-							href="solutions/newfilter"
+							href="/solutions/newfilter"
 							class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
 						>
 							<!-- Heroicon name: outline/cursor-click -->
@@ -52,7 +54,7 @@
 						</a>
 
 						<a
-							href="solutions/finance"
+							href="/solutions/finance"
 							class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
 						>
 							<!-- Heroicon name: outline/chart-bar -->
@@ -63,7 +65,7 @@
 						</a>
 
 						<a
-							href="solutions/inventory"
+							href="/solutions/inventory"
 							class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
 						>
 							<!-- Heroicon name: outline/view-grid -->
@@ -73,7 +75,10 @@
 							<span class="ml-3 text-base font-medium text-gray-900"> Inventory </span>
 						</a>
 
-						<a href="solutions/shop" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+						<a
+							href="/solutions/shop"
+							class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
+						>
 							<!-- Heroicon name: outline/refresh -->
 							<div class="text-emerald-700">
 								<RefreshSvg />
@@ -86,27 +91,43 @@
 		</div>
 		<div class="py-4 px-5 space-y-2">
 			<div class="pb-2 grid grid-cols-2 gap-y-4 gap-x-8">
-				<a href="/about" class="text-base font-medium text-emerald-700 hover:text-emerald-900">
+				<a
+					on:click={() => dispatch('closeMenu')}
+					href="/about"
+					class="text-base font-medium text-emerald-700 hover:text-emerald-900"
+				>
 					What we do
 				</a>
 
-				<a href="/who-we-are" class="text-base font-medium text-emerald-700 hover:text-emerald-900">
+				<a
+					on:click={() => dispatch('closeMenu')}
+					href="/who-we-are"
+					class="text-base font-medium text-emerald-700 hover:text-emerald-900"
+				>
 					Who we are
 				</a>
 
-				<a href="/partners" class="text-base font-medium text-emerald-700 hover:text-emerald-900">
+				<a
+					on:click={() => dispatch('closeMenu')}
+					href="/partners"
+					class="text-base font-medium text-emerald-700 hover:text-emerald-900"
+				>
 					Become a partner
 				</a>
 				<a
+					on:click={() => dispatch('closeMenu')}
 					href="/entrepreneurs"
 					class="text-base font-medium text-emerald-700 hover:text-emerald-900"
 				>
 					Become an entrepreneur
 				</a>
 
-				<a href="/contact" class="text-base font-medium text-emerald-700 hover:text-emerald-900">
+				<button
+					on:click={() => (showContact = !showContact)}
+					class="text-base text-left font-medium text-emerald-700 hover:text-emerald-900"
+				>
 					Contact us
-				</a>
+				</button>
 			</div>
 			<!-- <div>
           <a href="#" class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"> Sign up </a>
@@ -142,3 +163,11 @@
 		</div>
 	</div>
 </div>
+
+{#if showContact}
+	<div on:click|stopPropagation>
+		<SimpleSlotModal on:closeModal={() => (showContact = false)}>
+			<ContactForm on:submitedContact={() => (showContact = false)} />
+		</SimpleSlotModal>
+	</div>
+{/if}
