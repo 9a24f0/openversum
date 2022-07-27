@@ -3,8 +3,9 @@
 	import EmailField from '$lib/components/UI/EmailField.svelte';
 	import { supabase } from '$lib/supabase';
 	import type { definitions } from '$lib/types/supabase';
-	import PrimaryButton from './UI/PrimaryButton.svelte';
+	import PrimaryButton from '$lib/components/UI/PrimaryButton.svelte';
 	import { createEventDispatcher } from 'svelte';
+
 	const dispatch = createEventDispatcher();
 	type ContactIn = Omit<Omit<definitions['contact'], 'id'>, 'created_at'>;
 
@@ -28,10 +29,7 @@
 	};
 </script>
 
-<form on:submit|preventDefault class="max-w-lg gap-2 bg-white p-4 rounded-2xl text-left">
-	<div class="grid-cols-6 w-full mb-4 flex justify-center">
-		<h1 class="text-lg font-semibold ">Contact Openversum</h1>
-	</div>
+<form on:submit|preventDefault>
 	<div class="grid grid-cols-6 w-full gap-x-8 gap-y-2">
 		<InputField bind:value={name} label="Name" placeholder="Your name" />
 		<EmailField

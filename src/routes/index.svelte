@@ -108,7 +108,7 @@
 		<iframe
 			class="rounded-md"
 			width="770"
-			height="415"
+			height="420"
 			src="https://www.youtube.com/embed/EsGui64xO78?start=18"
 			title="YouTube video player"
 			frameborder="0"

@@ -4,7 +4,7 @@
 	import { user } from '$lib/stores/sessionStore';
 	import WorkWithUseFlyoutMenu from './WorkWithUseFlyoutMenu.svelte';
 	import SimpleSlotModal from './SimpleSlotModal.svelte';
-	import ContactForm from './ContactForm.svelte';
+	import ContactForm from '$lib/components/contact/ContactForm.svelte';
 
 	let showSolutionsMenu = false;
 	let showWorkWithUs = false;
