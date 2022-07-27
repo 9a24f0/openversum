@@ -8,7 +8,8 @@
 	import ViewGridSvg from './SVG/ViewGridSVG.svelte';
 
 	import { user } from '$lib/stores/sessionStore';
-	import ContactForm from './ContactForm.svelte';
+	import ContactForm from '$lib/components/contact/ContactForm.svelte';
+
 	import SimpleSlotModal from './SimpleSlotModal.svelte';
 	let showContact = false;
 	const dispatch = createEventDispatcher();
@@ -167,7 +168,7 @@
 {#if showContact}
 	<div on:click|stopPropagation>
 		<SimpleSlotModal on:closeModal={() => (showContact = false)}>
-			<ContactForm on:submitedContact={() => (showContact = false)} />
+			<ContactForm currentForm="general" on:submitedContact={() => (showContact = false)} />
 		</SimpleSlotModal>
 	</div>
 {/if}

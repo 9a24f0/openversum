@@ -114,6 +114,11 @@ export interface paths {
           name?: parameters["rowFilter.contact.name"];
           email?: parameters["rowFilter.contact.email"];
           message?: parameters["rowFilter.contact.message"];
+          type?: parameters["rowFilter.contact.type"];
+          cv?: parameters["rowFilter.contact.cv"];
+          organization?: parameters["rowFilter.contact.organization"];
+          phone_number?: parameters["rowFilter.contact.phone_number"];
+          country?: parameters["rowFilter.contact.country"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -169,6 +174,11 @@ export interface paths {
           name?: parameters["rowFilter.contact.name"];
           email?: parameters["rowFilter.contact.email"];
           message?: parameters["rowFilter.contact.message"];
+          type?: parameters["rowFilter.contact.type"];
+          cv?: parameters["rowFilter.contact.cv"];
+          organization?: parameters["rowFilter.contact.organization"];
+          phone_number?: parameters["rowFilter.contact.phone_number"];
+          country?: parameters["rowFilter.contact.country"];
         };
         header: {
           /** Preference */
@@ -188,6 +198,11 @@ export interface paths {
           name?: parameters["rowFilter.contact.name"];
           email?: parameters["rowFilter.contact.email"];
           message?: parameters["rowFilter.contact.message"];
+          type?: parameters["rowFilter.contact.type"];
+          cv?: parameters["rowFilter.contact.cv"];
+          organization?: parameters["rowFilter.contact.organization"];
+          phone_number?: parameters["rowFilter.contact.phone_number"];
+          country?: parameters["rowFilter.contact.country"];
         };
         body: {
           /** contact */
@@ -465,6 +480,19 @@ export interface definitions {
     email: string;
     /** Format: text */
     message: string;
+    /**
+     * Format: text
+     * @default general
+     */
+    type?: string;
+    /** Format: text */
+    cv?: string;
+    /** Format: text */
+    organization?: string;
+    /** Format: text */
+    phone_number?: string;
+    /** Format: text */
+    country?: string;
   };
   customer: {
     /**
@@ -584,6 +612,16 @@ export interface parameters {
   "rowFilter.contact.email": string;
   /** Format: text */
   "rowFilter.contact.message": string;
+  /** Format: text */
+  "rowFilter.contact.type": string;
+  /** Format: text */
+  "rowFilter.contact.cv": string;
+  /** Format: text */
+  "rowFilter.contact.organization": string;
+  /** Format: text */
+  "rowFilter.contact.phone_number": string;
+  /** Format: text */
+  "rowFilter.contact.country": string;
   /** @description customer */
   "body.customer": definitions["customer"];
   /** Format: bigint */
