@@ -5,20 +5,45 @@
 	import type { definitions } from '$lib/types/supabase';
 	import PrimaryButton from '$lib/components/UI/PrimaryButton.svelte';
 	import { createEventDispatcher } from 'svelte';
+	import { nanoid } from 'nanoid';
 
+	const id = nanoid(8);
 	const dispatch = createEventDispatcher();
 	type ContactIn = Omit<Omit<definitions['contact'], 'id'>, 'created_at'>;
 
+	let inputCV: FileList;
+	//form fields
 	let name = '';
 	let email = '';
 	let message = '';
-
+	let cv: string | undefined = undefined;
+	let type = 'entrepreneur';
+	let organization: string | undefined = undefined;
+	let phone_number: string | undefined = undefined;
+	let country: string | undefined = undefined;
+	//endof form
 	let isEmailValid: boolean;
-	$: disabled = !isEmailValid || email === '' || name === '' || message === '';
+
+	$: disabled =
+		!isEmailValid ||
+		email === '' ||
+		name === '' ||
+		message === '' ||
+		organization === '' ||
+		country === '';
+
 	const submitContact = async () => {
+		if (inputCV) {
+			console.log(inputCV);
+			await supabase.storage.from('entrepreneurs').upload(`cv/cv_${id}`, inputCV[0]);
+			cv = `https://blbosiccwkpntqobciwj.supabase.co/storage/v1/object/sign/entrepreneurs/cv/cv_${id}`;
+		} else {
+			console.log('No CV');
+		}
+
 		const { data, error } = await supabase
 			.from<ContactIn>('contact')
-			.insert({ name, email, message });
+			.insert({ name, email, message, type, cv, organization, phone_number, country });
 		if (error) {
 			alert('Oups an error happened please try again');
 			throw error;
@@ -38,7 +63,22 @@
 			label="Email"
 			placeholder="youremail@example.com"
 		/>
+		<InputField bind:value={organization} label="Organization" placeholder="Organization" />
+		<InputField bind:value={country} label="Country" placeholder="Country" />
 	</div>
+
+	<div class="mt-2">
+		<label for="last-name" class="block text-sm font-medium text-gray-700">Upload your CV</label>
+		<input
+			bind:files={inputCV}
+			class="block p-2 w-full text-sm bg-gray-50 rounded-lg border border-gray-300 focus:outline-none"
+			id="file_input"
+			type="file"
+			accept="application/pdf, application/vnd.ms-word"
+		/>
+		<p class="mt-0.5 text-xs text-gray-500">PDF or Word</p>
+	</div>
+
 	<div class="my-2">
 		<label for="message" class="block text-sm font-medium text-gray-700">Write us a message</label>
 		<div class="mt-1">

@@ -1,9 +1,9 @@
 <script lang="ts">
-	import ContactGeneral from '$lib/components/contact/ContactGeneral.svelte';
 	import ContactPartner from '$lib/components/contact/ContactPartner.svelte';
 	import ContactNavBar from '$lib/components/contact/ContactNavBar.svelte';
 	import ContactEntrepreneur from '$lib/components/contact/ContactEntrepreneur.svelte';
 	import { createEventDispatcher } from 'svelte';
+	import ContactGeneral from '$lib/components/contact/ContactGeneral.svelte';
 	const dispatch = createEventDispatcher();
 	let currentForm: string;
 </script>
@@ -18,8 +18,8 @@
 	{#if currentForm === 'general'}
 		<ContactGeneral on:submitedContact={() => dispatch('submitedContact')} />
 	{:else if currentForm === 'entrepreneur'}
-		<ContactEntrepreneur />
+		<ContactEntrepreneur on:submitedContact={() => dispatch('submitedContact')} />
 	{:else if currentForm === 'partner'}
-		<ContactPartner />
+		<ContactPartner on:submitedContact={() => dispatch('submitedContact')} />
 	{/if}
 </div>

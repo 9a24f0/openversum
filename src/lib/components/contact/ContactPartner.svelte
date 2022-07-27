@@ -12,13 +12,25 @@
 	let name = '';
 	let email = '';
 	let message = '';
+	let type = 'partner';
+	let organization = '';
+	let phone_number = '';
+	let country = '';
 
 	let isEmailValid: boolean;
-	$: disabled = !isEmailValid || email === '' || name === '' || message === '';
+
+	$: disabled =
+		!isEmailValid ||
+		email === '' ||
+		name === '' ||
+		message === '' ||
+		organization === '' ||
+		country === '';
+
 	const submitContact = async () => {
 		const { data, error } = await supabase
 			.from<ContactIn>('contact')
-			.insert({ name, email, message });
+			.insert({ name, email, message, type, organization, phone_number, country });
 		if (error) {
 			alert('Oups an error happened please try again');
 			throw error;
@@ -38,6 +50,8 @@
 			label="Email"
 			placeholder="youremail@example.com"
 		/>
+		<InputField bind:value={organization} label="Organization" placeholder="Organization" />
+		<InputField bind:value={country} label="Country" placeholder="Country" />
 	</div>
 	<div class="my-2">
 		<label for="message" class="block text-sm font-medium text-gray-700">Write us a message</label>
