@@ -1,10 +1,14 @@
 <script lang="ts">
+	import ContactForm from '$lib/components/contact/ContactForm.svelte';
 	import SimpleSlotModal from '$lib/components/SimpleSlotModal.svelte';
 	import BlobProfile from '$lib/components/SVG/BlobProfile.svelte';
 	import Elipse2Svg from '$lib/components/SVG/Elipse2SVG.svelte';
+	import PrimaryButton from '$lib/components/UI/PrimaryButton.svelte';
 	import WatchButton from '$lib/components/WatchButton.svelte';
 	let blobW: any;
 	let showVideoModal = false;
+
+	let showContact = false;
 </script>
 
 <div class="container mx-auto px-2 sm:px-6 lg:px-16">
@@ -55,6 +59,8 @@
 				Our franchisees have access to the openversum platform, which offers tools to support running
 				a business and step-by-step instructions on filter manufacturing.
 			</p>
+
+			<PrimaryButton on:click={() => (showContact = true)}>Contact us</PrimaryButton>
 		</div>
 
 		<div class="space-y-8 mt-8 sm:mt-0">
@@ -99,4 +105,12 @@
 			allowfullscreen
 		/>
 	</SimpleSlotModal>
+{/if}
+
+{#if showContact}
+	<div on:click|stopPropagation>
+		<SimpleSlotModal on:closeModal={() => (showContact = false)}>
+			<ContactForm currentForm="entrepreneur" on:submitedContact={() => (showContact = false)} />
+		</SimpleSlotModal>
+	</div>
 {/if}

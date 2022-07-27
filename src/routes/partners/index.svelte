@@ -1,9 +1,13 @@
 <script lang="ts">
+	import ContactForm from '$lib/components/contact/ContactForm.svelte';
 	import SimpleSlotModal from '$lib/components/SimpleSlotModal.svelte';
 	import Elipse3Svg from '$lib/components/SVG/Elipse3SVG.svelte';
+	import PrimaryButton from '$lib/components/UI/PrimaryButton.svelte';
 	import WatchButton from '$lib/components/WatchButton.svelte';
 	let blobW: any;
 	let showVideoModal = false;
+
+	let showContact = false;
 </script>
 
 <div class="container mx-auto px-2 sm:px-6 lg:px-16">
@@ -31,6 +35,8 @@
 					that is particularly adapated to rural and remote areas; let’s reach the ones who most
 					need it together!
 				</p>
+
+				<PrimaryButton on:click={() => (showContact = true)}>Contact us</PrimaryButton>
 			</div>
 			<div class="inline-flex w-1/3 my-auto">
 				<WatchButton on:click={() => (showVideoModal = !showVideoModal)} />
@@ -53,4 +59,12 @@
 			allowfullscreen
 		/>
 	</SimpleSlotModal>
+{/if}
+
+{#if showContact}
+	<div on:click|stopPropagation>
+		<SimpleSlotModal on:closeModal={() => (showContact = false)}>
+			<ContactForm currentForm="partner" on:submitedContact={() => (showContact = false)} />
+		</SimpleSlotModal>
+	</div>
 {/if}

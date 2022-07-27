@@ -68,6 +68,6 @@
 </nav>
 {#if showContact}
 	<SimpleSlotModal on:closeModal={() => (showContact = false)}>
-		<ContactForm on:submitedContact={() => (showContact = false)} />
+		<ContactForm currentForm="general" on:submitedContact={() => (showContact = false)} />
 	</SimpleSlotModal>
 {/if}

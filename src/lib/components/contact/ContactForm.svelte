@@ -5,7 +5,7 @@
 	import NavbarContact from './NavbarContact.svelte';
 	import ContactDefault from './ContactDefault.svelte';
 	const dispatch = createEventDispatcher();
-	let currentForm: string;
+	export let currentForm: string;
 </script>
 
 <div class="max-w-lg gap-2 bg-white p-4 rounded-2xl text-left">
