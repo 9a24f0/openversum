@@ -1,9 +1,9 @@
 <script lang="ts">
 	import ContactPartner from '$lib/components/contact/ContactPartner.svelte';
-	import ContactNavBar from '$lib/components/contact/ContactNavBar.svelte';
 	import ContactEntrepreneur from '$lib/components/contact/ContactEntrepreneur.svelte';
 	import { createEventDispatcher } from 'svelte';
-	import ContactGeneral from '$lib/components/contact/ContactGeneral.svelte';
+	import NavbarContact from './NavbarContact.svelte';
+	import ContactDefault from './ContactDefault.svelte';
 	const dispatch = createEventDispatcher();
 	let currentForm: string;
 </script>
@@ -13,10 +13,10 @@
 		<h1 class="text-xl font-semibold ">Contact Openversum</h1>
 	</div>
 	<div class="mb-4 block">
-		<ContactNavBar bind:currentForm />
+		<NavbarContact bind:currentForm />
 	</div>
 	{#if currentForm === 'general'}
-		<ContactGeneral on:submitedContact={() => dispatch('submitedContact')} />
+		<ContactDefault on:submitedContact={() => dispatch('submitedContact')} />
 	{:else if currentForm === 'entrepreneur'}
 		<ContactEntrepreneur on:submitedContact={() => dispatch('submitedContact')} />
 	{:else if currentForm === 'partner'}
