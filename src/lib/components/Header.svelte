@@ -37,7 +37,11 @@
 			<div class="flex justify-start lg:w-0 lg:flex-1">
 				<a href="/">
 					<span class="sr-only">Openversum</span>
-					<img class="h-10 w-auto sm:h-14" src="./openversum_logo.png" alt="openversumlogo" />
+					<img
+						class="h-10 w-auto sm:h-14 flex-1 aspect-auto"
+						src="./openversum_logo.png"
+						alt="openversumlogo"
+					/>
 				</a>
 			</div>
 			<div class="z-10 -mr-2 -my-2 md:hidden">

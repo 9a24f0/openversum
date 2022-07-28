@@ -97,9 +97,9 @@
 		</div>
 		<div class="sm:flex ">
 			<img
-				class="my-auto max-h-52"
-				src="https://blbosiccwkpntqobciwj.supabase.co/storage/v1/object/public/openversum-images/general/treatmenttech.png"
-				alt="possible water treatments"
+				class="my-auto max-h-80 mx-auto rounded-lg"
+				src="https://blbosiccwkpntqobciwj.supabase.co/storage/v1/object/public/openversum-images/general/whatwedo_example.png"
+				alt="what we do, example"
 			/>
 		</div>
 
@@ -111,9 +111,9 @@
 
 		<div class="sm:flex">
 			<img
-				class="my-auto max-h-52 mx-auto rounded-lg"
-				src="https://blbosiccwkpntqobciwj.supabase.co/storage/v1/object/public/openversum-images/general/whatwedo_example.png"
-				alt="what we do, example"
+				class="my-auto max-h-52"
+				src="https://blbosiccwkpntqobciwj.supabase.co/storage/v1/object/public/openversum-images/general/treatmenttech.png"
+				alt="possible water treatments"
 			/>
 		</div>
 		<div class="flex">

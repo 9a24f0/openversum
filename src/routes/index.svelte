@@ -2,10 +2,18 @@
 	import AnimatedBlob from '$lib/components/AnimatedBlob.svelte';
 	import SideSocialButtons from '$lib/components/SideSocialButtons.svelte';
 	import SimpleSlotModal from '$lib/components/SimpleSlotModal.svelte';
+	import BottomWaves from '$lib/components/SVG/BottomWaves.svelte';
+	import BottomWaves2 from '$lib/components/SVG/BottomWaves2.svelte';
+	import Elipse1Svg from '$lib/components/SVG/Elipse1SVG.svelte';
+	import OpenversumAppSvg from '$lib/components/SVG/OpenversumAppSVG.svelte';
+	import TopWaves from '$lib/components/SVG/TopWaves.svelte';
+	import TopWaves2 from '$lib/components/SVG/TopWaves2.svelte';
 	import WatchButton from '$lib/components/WatchButton.svelte';
 	import { onMount } from 'svelte';
 	export let imageList: any[];
 	let y: number;
+	let innerHeight: number;
+	$: console.log(innerHeight);
 	let gridWidth: number;
 	let showVideoModal = false;
 
@@ -34,10 +42,15 @@
 	/>
 	<html lang="en" />
 </svelte:head>
-<svelte:window bind:scrollY={y} />
 
-<div class="w-full h-full">
-	<div bind:clientWidth={gridWidth} class="grid grid-cols-4 md:grid-cols-7 w-full h-full">
+<svelte:window bind:scrollY={y} bind:innerHeight />
+
+<div class="w-full">
+	<div
+		bind:clientWidth={gridWidth}
+		style:height="{Math.max(innerHeight - 280, 300)}px"
+		class="grid grid-cols-4 md:grid-cols-7 w-full "
+	>
 		<div class="relative col-span-4 h-full">
 			<div class="inline-flex  h-full">
 				<div class="my-auto">
@@ -45,7 +58,7 @@
 				</div>
 				<div class="grid grid-cols-1 pl-8 py-4 content-evenly">
 					<div>
-						<h1 class="font-bold text-4xl md:text-5xl">
+						<h1 class="font-bold text-4xl md:text-5xl mb-4">
 							Bringing safe and clean water where it is most needed.
 						</h1>
 						<h3 class="font-semibold text-lg text-gray-500">
@@ -76,30 +89,285 @@
 		{/if}
 	</div>
 
-	<!-- Carousel -->
-	<svelte:component
-		this={Carousel}
-		bind:this={carousel}
-		particlesToShow={gridWidth > 767 ? 3 : gridWidth > 450 ? 2 : 1}
-		autoplay
-		autoplayDuration={2000}
-	>
-		{#each imageList as img}
-			<div class="h-56 md:h-64 lg:h-96">
-				<img class="h-56 md:h-64 lg:h-96 object-cover mx-auto" src={img} alt="ov-carousel" />
-			</div>
-		{/each}
-	</svelte:component>
+	<!-- style:transform="translateY({y * -1.2}px)" -->
+	<div class="w-full h-48 opacity-70">
+		<BottomWaves />
+	</div>
+	<div class="w-full bg-emerald-200 bg-opacity-70">
+		<!-- Carousel -->
+		<svelte:component
+			this={Carousel}
+			bind:this={carousel}
+			particlesToShow={gridWidth > 767 ? 3 : gridWidth > 450 ? 2 : 1}
+			autoplay
+			autoplayDuration={2000}
+		>
+			{#each imageList as img}
+				<div class="h-56 md:h-64 lg:h-96">
+					<img class="h-56 md:h-64 lg:h-96 object-cover mx-auto" src={img} alt="ov-carousel" />
+				</div>
+			{/each}
+		</svelte:component>
+	</div>
 
-	<div class="w-full grid grid-cols-2 md:grid-cols-4 gap-2 px-8 items-center">
-		<img
-			class="max-h-[100px]"
-			src="partner_logos/swiss_conf.png"
-			alt="swiss confederation partner"
-		/>
-		<img class="max-h-[100px]" src="partner_logos/eth.png" alt="ETH partner" />
-		<img class="max-h-[100px]" src="partner_logos/kick_fund.png" alt="kick foundation partner" />
-		<img class="max-h-[100px]" src="partner_logos/hult_un.png" alt="Hult program partner" />
+	<div class="w-full h-48 opacity-70">
+		<TopWaves />
+	</div>
+
+	<div class="container mx-auto px-2 sm:px-6 lg:px-16">
+		<!-- Content goes here -->
+		<!-- 
+		<div class="w-full justify-center flex">
+				<div
+				class="my-auto relative h-[80px] md:h-[112px] lg:h-[185px] w-[500px] md:w-[600px] lg:w-[900px] mt-8"
+			>
+				<h2
+					class="z-10 text-lg md:text-xl lg:text-5xl font-semibold absolute top-1/4 left-[7%] text-white text-center"
+				>
+					What we do
+				</h2>
+				<div class="absolute -top-2 flex-shrink w-[500px] md:w-[600px] lg:w-[900px]">
+					<Elipse1Svg />
+				</div>
+			</div> 
+		</div>
+	-->
+		<section class="grid grid-cols-1 sm:grid-cols-2 gap-8 h-full">
+			<div class="grid col-span-1 content-evenly">
+				<h1 class="font-bold text-4xl md:text-5xl">What we do</h1>
+				<div class="mx-auto">
+					<img class="max-h-48" src="./Filtre.png" alt="filter design" />
+				</div>
+			</div>
+			<div class="grid col-span-1 content-center">
+				<div class="sm:mt-12">
+					<h2 class="text-2xl mb-2 font-semibold text-gray-700">
+						All-in-one drinking water filter
+					</h2>
+					<ul class="pl-8 list-disc">
+						<li class="text-xl">
+							High removal rates of pathogens (>99.999%), pesticides, heavy metals and
+							micropollutant
+						</li>
+						<li class="text-xl">Lowers the risks of recontamination</li>
+						<li class="text-xl">Stable long term performances</li>
+					</ul>
+				</div>
+				<div class="mt-4 sm:mt-12">
+					<h2 class="text-2xl mb-2 font-semibold text-gray-700">Novel manufacturing process</h2>
+
+					<ul class="pl-8 list-disc">
+						<li class="text-xl">Low production costs</li>
+						<li class="text-xl">Biodegradable cartidge</li>
+						<li class="text-xl">Solvent-free</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- Copy -->
+
+		<section class="" id="microfranchising">
+			<h2 class="text-2xl font-semibold text-gray-700 mt-1">Microfranchising ecosystem</h2>
+			<div class="flex-col sm:grid sm:grid-cols-2 flex justify-evenly ">
+				<ul class="pl-8 list-disc my-auto">
+					<li class="text-xl">Online platform targetted at local entrepreneurs</li>
+					<li class="text-xl">Water knowhow</li>
+					<li class="text-xl">Filter manufacturing instructions</li>
+					<li class="text-xl">Business tools (accounting, monitoring...)</li>
+					<li class="text-xl">Direct access to ordering of supplies</li>
+					<li class="text-xl">Network of entrepreneurs</li>
+				</ul>
+
+				<OpenversumAppSvg />
+			</div>
+		</section>
+
+		<section class="h-full w-full flex flex-col sm:grid sm:grid-cols-2 mt-8 gap-8">
+			<div class="flex-col">
+				<h1 class="font-bold text-4xl md:text-5xl">The global drinking water problem</h1>
+
+				<p class="text-lg text-justify pr-4 pl-2 mt-16">
+					More than 2 billion people use drinking water sources that are contaminated with faeces.
+					The issue is that consumption of contaminated water as well as poor sanitation and hygiene
+					can lead to diarrhoeal diseases. As a result, 297'000 children under five every year die
+					every year. And this despite the many water treatment solutions that exist!
+				</p>
+			</div>
+			<div class="sm:flex ">
+				<img
+					class="my-auto max-h-80 mx-auto rounded-lg"
+					src="https://blbosiccwkpntqobciwj.supabase.co/storage/v1/object/public/openversum-images/general/whatwedo_example.png"
+					alt="what we do, example"
+				/>
+			</div>
+
+			<div class="col-span-2 flex">
+				<h1 class="text-teal-600 text-4xl font-bold mx-auto">
+					Then why does the problem still exist?
+				</h1>
+			</div>
+
+			<div class="sm:flex">
+				<img
+					class="my-auto max-h-52"
+					src="https://blbosiccwkpntqobciwj.supabase.co/storage/v1/object/public/openversum-images/general/treatmenttech.png"
+					alt="possible water treatments"
+				/>
+			</div>
+			<div class="flex">
+				<p class="text-lg text-justify pr-2 pl-4 my-auto">
+					Treatment technologies often fail because of their price, practicality, or simply because
+					users do not trust or like them. The second biggest challenge is to bring the technology
+					to market. Are the resources and infrastructures available? Do effective policies exist in
+					order to implement the technology sustainably? Are people aware that there is a problem,
+					and what are the solutions?
+				</p>
+			</div>
+
+			<div class="col-span-2 flex">
+				<h1 class="text-teal-600 text-4xl font-bold mx-auto">
+					Openversum overcomes these barriers by...
+				</h1>
+			</div>
+
+			<div class="col-span-2 flex flex-wrap gap-2">
+				<img
+					class="my-auto max-h-52 mx-auto rounded-lg"
+					src="https://blbosiccwkpntqobciwj.supabase.co/storage/v1/object/public/openversum-images/general/blob_manufacture.png"
+					alt="locally manufacture filters"
+				/>
+				<p class="my-auto max-w-[200px] text-lg">
+					Training local entrepreneurs to locally manufacture and distribute household level
+					drinking water filters
+				</p>
+				<img
+					class="my-auto max-h-52 mx-auto rounded-lg"
+					src="https://blbosiccwkpntqobciwj.supabase.co/storage/v1/object/public/openversum-images/general/blob_distribute.png"
+					alt="locally distribute filters"
+				/>
+				<p class="my-auto max-w-[200px] text-lg">
+					Consequently creating employment for thousands of entrepreneurs and reaching the people in
+					most need!​
+				</p>
+			</div>
+			<!-- <div class="col-span-2 w-full justify-center flex">
+			<div
+				class="my-auto relative h-[80px] md:h-[112px] lg:h-[185px] w-[500px] md:w-[600px] lg:w-[900px] mt-8"
+			>
+				<h2
+					class="z-10 text-lg md:text-xl lg:text-3xl font-semibold absolute top-1/4 left-[17%] text-white text-center"
+				>
+					Household level drinking water filters
+				</h2>
+				<div class="absolute -top-2 flex-shrink w-[500px] md:w-[600px] lg:w-[900px]">
+					<Elipse1Svg />
+				</div>
+			</div>
+		</div> -->
+		</section>
+	</div>
+
+	<div class="w-full h-48 opacity-70">
+		<BottomWaves2 />
+	</div>
+
+	<div class="bg-emerald-200 bg-opacity-70 w-full">
+		<div class="container mx-auto px-2 sm:px-6 lg:px-16">
+			<h1 class="font-bold text-4xl md:text-5xl  sm:mb-8">Our Vision</h1>
+
+			<p class="text-lg px-8 pt-8 pb-4">
+				We want to improve the lives of people living in poverty, and who struggle due to
+				inequality. We believe that by making water goods and services available the often
+				disadvantaged rural areas, we empower local communities and have a positive impact on public
+				health. This is achieved through providing education and resources to local experts. As a
+				result, we enable them to create a social business while improving the lives of their
+				communities.
+				<br />
+				<br />
+				We are successful if we are sustainable in 3 dimensions:
+			</p>
+			<div class="flex mb-8">
+				<img
+					src="https://blbosiccwkpntqobciwj.supabase.co/storage/v1/object/public/openversum-images/general/social_financial_environmental.png"
+					alt="social financial environmental"
+				/>
+			</div>
+
+			<h1 class="font-bold text-4xl md:text-5xl  mb-4 mt-4 sm:mb-8">Meet the core team</h1>
+
+			<div class="grid grid-cols-7 gap-2 px-20">
+				<img class="h-20 w-20 mx-auto" src="./ourteam/olivier.png" alt="Olivier Groeningen" />
+				<p class="col-span-6 my-auto">
+					<span class="font-semibold">Olivier Gröninger</span>, CEO Ph.D. in Chemical Engineering
+					ETHZ - Expert in nanotechnology and social businesses
+				</p>
+				<p class="col-span-6 my-auto text-right">
+					<span class="font-semibold">Laura Stocco</span>, CTO MSc. Environmental Engineering EPFL,
+					EAWAG Expert in water & sanitation in LAMIC
+				</p>
+
+				<img class="h-20 w-20 mx-auto" src="./ourteam/laura.png" alt="Laura Stocco" />
+				<img class="h-20 w-20 mx-auto" src="./ourteam/lorenzo.png" alt="Lorenzo donadio" />
+				<p class="col-span-6 my-auto">
+					<span class="font-semibold">Lorenzo Donadio</span>, CIO MSc. Environmental Engineering
+					EPFL Expert in data science and web development
+				</p>
+
+				<p class="col-span-6 my-auto text-right">
+					<span class="font-semibold">Julián Salazar</span>, COO MA Public Management and Policy
+					UNIL Expert in impact evaluation and policy
+				</p>
+				<img class="h-20 w-20 mx-auto" src="./ourteam/julian.png" alt="Julian Salazar" />
+			</div>
+		</div>
+	</div>
+	<div class="w-full h-48 opacity-70">
+		<TopWaves2 />
+	</div>
+
+	<div class="container mx-auto px-2 sm:px-6 lg:px-16">
+		<h1 class="font-bold text-4xl md:text-5xl  mb-4 mt-4 sm:mb-8">Our partners</h1>
+
+		<div class="flex justify-evenly">
+			<img class="max-h-24" src="/partner_logos/cruz_roja_sucre.png" alt="cruz roja sucre" />
+			<img class="max-h-24 p-2" src="partner_logos/ETH-logo.jpg" alt="ETH partner" />
+
+			<img class="max-h-24" src="/partner_logos/rios.png" alt="fundacion rios" />
+		</div>
+
+		<h1 class="font-bold text-4xl md:text-5xl  mb-4 mt-4 sm:mb-8">Programs & Awards</h1>
+		<div class="w-full grid grid-cols-2 md:grid-cols-4 gap-2 px-8 items-center">
+			<div class="">
+				<img
+					class="max-h-[100px] mx-auto"
+					src="partner_logos/swiss_conf.png"
+					alt="swiss confederation partner"
+				/>
+				<p class="text-center pt-2">Together we’re better award & DEZA humanitarian innovation</p>
+			</div>
+
+			<div class="">
+				<img class="max-h-[100px] mx-auto" src="partner_logos/sdg_eth.png" alt="ETH partner" />
+				<p class="text-center pt-2">SDG pitch: most impact award</p>
+			</div>
+			<div class="">
+				<img
+					class="max-h-[100px] mx-auto"
+					src="partner_logos/kick_fund.png"
+					alt="kick foundation partner"
+				/>
+				<p class="text-center pt-2">Talentkick accelerator</p>
+			</div>
+			<div class="">
+				<img
+					class="max-h-[100px] mx-auto"
+					src="partner_logos/hult_un.png"
+					alt="Hult program partner"
+				/>
+				<p class="text-center pt-2">Global Accelerator in Boston</p>
+			</div>
+		</div>
 	</div>
 </div>
 
