@@ -77,15 +77,17 @@
 		<div class="mt-4 sm:mt-0">
 			<div class="relative flex mx-auto w-[85%] sm:w-full">
 				<BlobProfile />
-				<div class="absolute text-white origin-top-left top-[20%] sm:top-1/4 right-1/4 text-center">
-					<span>Become part of ...</span>
+				<div
+					class="absolute text-white origin-top-left top-[30%] sm:top-1/3 right-[15%] text-center lg:text-2xl"
+				>
+					<span class="w-48">Become part of the Openversum family with </span>
 
-					<h2 class="whitespace-nowrap text-3xl sm:text-lg md:text-3xl font-semibold">
+					<h2 class="whitespace-nowrap text-3xl sm:text-2xl lg:text-4xl font-semibold">
 						20+ entrepreneurs
 					</h2>
-					<h2 class="whitespace-nowrap text-3xl sm:text-lg md:text-3xl font-semibold">
+					<!-- <h2 class="whitespace-nowrap text-3xl sm:text-lg md:text-3xl font-semibold">
 						100+ filters sold
-					</h2>
+					</h2> -->
 				</div>
 			</div>
 		</div>

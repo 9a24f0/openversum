@@ -1,9 +1,9 @@
-<script>
+<script lang="ts">
+	import '../app.css';
 	import Header from '$lib/components/Header.svelte';
 	import { supabase } from '$lib/supabase';
 	import { user } from '$lib/stores/sessionStore';
 	import { onMount } from 'svelte/internal';
-	import '../app.css';
 	import BlobTopR from '$lib/components/SVG/BlobTopR.svelte';
 
 	onMount(async () => {
@@ -23,14 +23,16 @@
 	});
 </script>
 
-<div class="h-full relative overflow-x-hidden font-nunito">
-	<div class="sticky top-0 h-[12%] bg-white bg-opacity-50 z-10">
+<div class="relative overflow-x-hidden font-nunito">
+	<div class="fixed w-full top-0 h-[12%] bg-white bg-opacity-50 z-10">
 		<Header />
 		<div class="-z-10 absolute origin-top-left -top-16 -right-14 opacity-80">
 			<BlobTopR />
 		</div>
 	</div>
-	<main class="h-[88%]">
+	<main class="mt-24">
 		<slot />
 	</main>
+
+	<footer>Footer</footer>
 </div>
