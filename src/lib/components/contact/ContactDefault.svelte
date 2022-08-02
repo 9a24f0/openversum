@@ -5,6 +5,7 @@
 	import type { definitions } from '$lib/types/supabase';
 	import PrimaryButton from '$lib/components/UI/PrimaryButton.svelte';
 	import { createEventDispatcher } from 'svelte';
+	import { t } from '$lib/translations';
 
 	const dispatch = createEventDispatcher();
 	type ContactIn = Omit<Omit<definitions['contact'], 'id'>, 'created_at'>;
@@ -31,7 +32,11 @@
 
 <form on:submit|preventDefault>
 	<div class="grid grid-cols-6 w-full gap-x-8 gap-y-2">
-		<InputField bind:value={name} label="Name" placeholder="Your name" />
+		<InputField
+			bind:value={name}
+			label={$t('contact.name')}
+			placeholder={$t('contact.namePlaceholder')}
+		/>
 		<EmailField
 			bind:value={email}
 			bind:isValid={isEmailValid}
@@ -40,11 +45,13 @@
 		/>
 	</div>
 	<div class="my-2">
-		<label for="message" class="block text-sm font-medium text-gray-700">Write us a message</label>
+		<label for="message" class="block text-sm font-medium text-gray-700"
+			>{$t('contact.writeUs')}</label
+		>
 		<div class="mt-1">
 			<textarea
 				bind:value={message}
-				placeholder="contact us ..."
+				placeholder={$t('contact.contactPlaceholder')}
 				rows="4"
 				name="message"
 				id="message"
@@ -53,5 +60,5 @@
 		</div>
 	</div>
 
-	<PrimaryButton {disabled} on:click={submitContact}>Contact Us</PrimaryButton>
+	<PrimaryButton {disabled} on:click={submitContact}>{$t('common.contact')}</PrimaryButton>
 </form>

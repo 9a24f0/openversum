@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { t } from '$lib/translations';
 	export let currentForm: string = 'general';
 </script>
 
@@ -11,7 +12,7 @@
 			class:default-tab={currentForm != 'general'}
 			class="w-1/3 py-4 px-1 text-center border-b-2 font-medium text-sm"
 		>
-			General
+			{$t('contact.navG')}
 		</button>
 
 		<button
@@ -20,7 +21,7 @@
 			class:default-tab={currentForm != 'entrepreneur'}
 			class="w-1/3 py-4 px-1 text-center border-b-2 font-medium text-sm"
 		>
-			Entrepreneur
+			{$t('contact.navE')}
 		</button>
 
 		<button
@@ -29,7 +30,7 @@
 			class:default-tab={currentForm != 'partner'}
 			class=" w-1/3 py-4 px-1 text-center border-b-2 font-medium text-sm"
 		>
-			Partner
+			{$t('contact.navP')}
 		</button>
 	</nav>
 </div>

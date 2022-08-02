@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { clickOutside } from '$lib/utilities/clickOutside';
 	import { createEventDispatcher } from 'svelte';
+	import { t } from '$lib/translations';
 
 	const dispatch = createEventDispatcher();
 </script>
@@ -16,18 +17,18 @@
 		>
 			<a href="/entrepreneurs" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
 				<div class="ml-4">
-					<p class="text-base font-medium text-gray-900">Entrepreneurs</p>
+					<p class="text-base font-medium text-gray-900">{$t('common.mobileEntrep')}</p>
 					<p class="mt-1 text-sm text-gray-500">
-						Do you have an entrepreneurial mindset? <br /> Do you like to sell or create?
+						{@html $t('common.entrepDescription')}
 					</p>
 				</div>
 			</a>
 
 			<a href="/partners" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
 				<div class="ml-4">
-					<p class="text-base font-medium text-gray-900">Partners</p>
+					<p class="text-base font-medium text-gray-900">{$t('common.mobilePartner')}</p>
 					<p class="mt-1 text-sm text-gray-500">
-						Are you an NGO or a government institution? <br /> We can help you bring water to people
+						{@html $t('common.partnerDescription')}
 					</p>
 				</div>
 			</a>

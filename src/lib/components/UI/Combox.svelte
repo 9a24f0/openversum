@@ -43,7 +43,7 @@
 			{placeholder}
 			id="combobox"
 			type="text"
-			class="w-full text-md rounded-md border border-gray-300 bg-white py-2 px-4 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 "
+			class="w-full text-md rounded-md border border-gray-300 bg-white py-2 px-4 shadow-sm focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 "
 			role="combobox"
 			aria-controls="options"
 			aria-expanded="false"
@@ -75,11 +75,11 @@
 						<li
 							bind:this={selectedLi}
 							on:click={() => handleLiClick(item)}
-							class="relative group font-semibold first-letter:hover:text-black-600 hover:bg-indigo-600 hover:text-white cursor-default select-none py-2 pl-3 pr-9 text-gray-900"
+							class="relative group font-semibold first-letter:hover:text-black-600 hover:bg-cyan-600 hover:text-white cursor-default select-none py-2 pl-3 pr-9 text-gray-900"
 						>
 							<span class="block truncate">{item}</span>
 							<span
-								class="absolute inset-y-0 right-0 flex items-center pr-4 text-indigo-600 group-hover:text-white"
+								class="absolute inset-y-0 right-0 flex items-center pr-4 text-cyan-600 group-hover:text-white"
 							>
 								<SolidCheckSvg />
 							</span>
@@ -87,7 +87,7 @@
 					{:else}
 						<li
 							on:click={() => handleLiClick(item)}
-							class="relative first-letter:hover:text-black-600 hover:bg-indigo-600 hover:text-white cursor-default select-none py-2 pl-3 pr-9 text-gray-900"
+							class="relative first-letter:hover:text-black-600 hover:bg-cyan-600 hover:text-white cursor-default select-none py-2 pl-3 pr-9 text-gray-900"
 						>
 							<span class="block truncate">{item}</span>
 						</li>

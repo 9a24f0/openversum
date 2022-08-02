@@ -11,6 +11,9 @@
 	import ContactForm from '$lib/components/contact/ContactForm.svelte';
 
 	import SimpleSlotModal from './SimpleSlotModal.svelte';
+	import LangSelect from './UI/LangSelect.svelte';
+	import { t } from '$lib/translations';
+
 	let showContact = false;
 	const dispatch = createEventDispatcher();
 </script>
@@ -22,7 +25,7 @@
 	<div
 		class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50"
 	>
-		<div class="pt-5 pb-6 px-5">
+		<div class="py-2 px-5">
 			<div class="flex items-center justify-between">
 				<div>
 					<img class="h-8 w-auto" src="./openversum_logo.png" alt="openversum" />
@@ -40,9 +43,9 @@
 				</div>
 			</div>
 
-			<div class="mt-6">
-				<nav on:click={() => dispatch('closeMenu')} class="grid gap-y-8">
-					{#if $user}
+			{#if $user}
+				<div class="mt-6">
+					<nav on:click={() => dispatch('closeMenu')} class="grid gap-y-8">
 						<a
 							href="/solutions/newfilter"
 							class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
@@ -86,26 +89,26 @@
 							</div>
 							<span class="ml-3 text-base font-medium text-gray-900"> Shop </span>
 						</a>
-					{/if}
-				</nav>
-			</div>
+					</nav>
+				</div>
+			{/if}
 		</div>
 		<div class="py-4 px-5 space-y-2">
 			<div class="pb-2 grid grid-cols-2 gap-y-4 gap-x-8">
 				<a
 					on:click={() => dispatch('closeMenu')}
-					href="/about"
+					href="/#what_we_do"
 					class="text-base font-medium text-emerald-700 hover:text-emerald-900"
 				>
-					What we do
+					{$t('common.whatWeDo')}
 				</a>
 
 				<a
 					on:click={() => dispatch('closeMenu')}
-					href="/who-we-are"
+					href="/#who_we_are"
 					class="text-base font-medium text-emerald-700 hover:text-emerald-900"
 				>
-					Who we are
+					{$t('common.whoWeAre')}
 				</a>
 
 				<a
@@ -113,22 +116,26 @@
 					href="/partners"
 					class="text-base font-medium text-emerald-700 hover:text-emerald-900"
 				>
-					Become a partner
+					{$t('common.mobilePartner')}
 				</a>
 				<a
 					on:click={() => dispatch('closeMenu')}
 					href="/entrepreneurs"
 					class="text-base font-medium text-emerald-700 hover:text-emerald-900"
 				>
-					Become an entrepreneur
+					{$t('common.mobileEntrep')}
 				</a>
 
 				<button
 					on:click={() => (showContact = !showContact)}
 					class="text-base text-left font-medium text-emerald-700 hover:text-emerald-900"
 				>
-					Contact us
+					{$t('common.contact')}
 				</button>
+
+				<div class="flex my-auto">
+					<LangSelect />
+				</div>
 			</div>
 			<!-- <div>
           <a href="#" class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"> Sign up </a>
@@ -138,7 +145,7 @@
           </p>
         </div> -->
 
-			<div class="pt-2 border-t flex md:flex items-center justify-center md:flex-1 lg:w-0">
+			<!-- <div class="pt-2 border-t flex md:flex items-center justify-center md:flex-1 lg:w-0">
 				{#if $user}
 					<button
 						on:click|stopPropagation={() => {
@@ -160,7 +167,7 @@
 						Sign in
 					</button>
 				{/if}
-			</div>
+			</div> -->
 		</div>
 	</div>
 </div>
