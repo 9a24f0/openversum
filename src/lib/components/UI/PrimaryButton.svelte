@@ -21,7 +21,7 @@
 				: buttonSize === 'xl'
 				? 'px-6 py-3 text-base font-medium'
 				: ''
-		}inline-flex items-center border border-transparent rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
+		}inline-flex items-center border border-transparent rounded-md shadow-sm text-white bg-cyan-600 hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500`}
 		><slot /></button
 	>
 </div>

@@ -57,8 +57,9 @@
 				</button>
 			</div>
 			<HeaderNavbar />
+
 			<div class="z-10 hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-				{#if $user}
+				<!-- 	{#if $user}
 					<button
 						on:click|stopPropagation={handleLogOut}
 						class="whitespace-nowrap text-lg font-medium text-white hover:text-emerald-900 "
@@ -72,7 +73,7 @@
 					>
 						Sign in
 					</button>
-				{/if}
+				{/if} -->
 			</div>
 		</div>
 	</div>

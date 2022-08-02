@@ -13,7 +13,7 @@
 		{step}
 		name="price"
 		id="price"
-		class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md"
+		class="focus:ring-cyan-500 focus:border-cyan-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md"
 		placeholder="0"
 	/>
 </div>

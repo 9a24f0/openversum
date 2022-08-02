@@ -35,6 +35,6 @@
 		@apply border-red-300 text-red-900 placeholder-red-300 focus:outline-none focus:ring-red-500 focus:border-red-500;
 	}
 	.valid-field {
-		@apply focus:ring-indigo-500 focus:border-indigo-500 border-gray-300;
+		@apply focus:ring-cyan-500 focus:border-cyan-500 border-gray-300;
 	}
 </style>

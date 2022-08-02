@@ -1,6 +1,5 @@
 export async function get() {
 	// `params.id` comes from [id].js
-
 	const imageList = [
 		'https://blbosiccwkpntqobciwj.supabase.co/storage/v1/object/public/openversum-images/carrousel/ovc_01.jpg',
 		'https://blbosiccwkpntqobciwj.supabase.co/storage/v1/object/public/openversum-images/carrousel/ovc_02.jpg',

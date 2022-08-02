@@ -5,6 +5,7 @@
 	import WorkWithUseFlyoutMenu from './WorkWithUseFlyoutMenu.svelte';
 	import SimpleSlotModal from './SimpleSlotModal.svelte';
 	import ContactForm from '$lib/components/contact/ContactForm.svelte';
+	import { t } from '$lib/translations';
 
 	let showSolutionsMenu = false;
 	let showWorkWithUs = false;
@@ -32,16 +33,16 @@
 	</div>
 
 	<a
-		href="/about"
+		href="/#what_we_do"
 		class="whitespace-nowrap text-lg font-medium text-emerald-700 hover:text-emerald-900"
 	>
-		What we do
+		{$t('common.whatWeDo')}
 	</a>
 	<a
-		href="/who-we-are"
+		href="/#who_we_are"
 		class="whitespace-nowrap text-lg font-medium text-emerald-700 hover:text-emerald-900"
 	>
-		Who we are
+		{$t('common.whoWeAre')}
 	</a>
 	<div class="relative">
 		<!-- Item active: "text-gray-900", Item inactive: "text-emerald-700" -->
@@ -51,7 +52,7 @@
 			class="whitespace-nowrap text-emerald-700 group inline-flex items-center text-lg font-medium hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
 			aria-expanded="false"
 		>
-			<span>Work with us</span>
+			<span>{$t('common.workWithUs')}</span>
 			<ChevronDownSVG />
 		</button>
 
@@ -63,7 +64,7 @@
 		on:click={() => (showContact = !showContact)}
 		class="whitespace-nowrap text-lg font-medium text-emerald-700 hover:text-emerald-900"
 	>
-		Contact us
+		{$t('common.contact')}
 	</button>
 </nav>
 {#if showContact}

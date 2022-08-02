@@ -4,6 +4,7 @@
 	import Elipse3Svg from '$lib/components/SVG/Elipse3SVG.svelte';
 	import PrimaryButton from '$lib/components/UI/PrimaryButton.svelte';
 	import WatchButton from '$lib/components/WatchButton.svelte';
+	import { t } from '$lib/translations';
 	let blobW: any;
 	let showVideoModal = false;
 
@@ -20,27 +21,26 @@
 					style="width:{blobW}px;"
 					class="absolute text-white origin-top-left top-[30%] mx-auto text-center whitespace-nowrap text-4xl md:text-5xl font-semibold "
 				>
-					Partner space
+					{$t('partners.title')}
 				</h2>
 			</div>
 		</div>
 
 		<div class="col-span-2 mb-8 gap-8 sm:inline-flex">
 			<div class="sm:w-2/3">
-				<h1 class="font-bold text-4xl md:text-5xl mb-8">Working together</h1>
+				<h1 class="font-bold text-4xl md:text-5xl mb-8">{$t('partners.subtitle')}</h1>
 
 				<p class="text-justify text-lg">
-					The many services we provide can be tailored to your needs, might you be an NGO or a
-					governmental institution. We offer a cheaper and more sustainable drinking water solution
-					that is particularly adapated to rural and remote areas; let’s reach the ones who most
-					need it together!
+					{$t('partners.paragraph')}
 				</p>
 
-				<PrimaryButton on:click={() => (showContact = true)}>Contact us</PrimaryButton>
+				<PrimaryButton on:click={() => (showContact = true)}>{$t('common.contact')}</PrimaryButton>
 			</div>
 			<div class="inline-flex w-1/3 my-auto">
 				<WatchButton on:click={() => (showVideoModal = !showVideoModal)} />
-				<span class="whitespace-nowrap mr-8 font-semibold text-lg my-auto">Watch Video</span>
+				<span class="whitespace-nowrap mr-8 ml-2 font-semibold text-lg my-auto"
+					>{$t('common.watchVideo')}</span
+				>
 			</div>
 		</div>
 	</div>
