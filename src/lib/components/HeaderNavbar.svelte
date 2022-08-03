@@ -13,34 +13,23 @@
 </script>
 
 <nav class="hidden md:flex space-x-10">
-	<div class="relative">
-		<!-- Item active: "text-gray-900", Item inactive: "text-emerald-700" -->
-		{#if $user}
-			<button
-				on:click|stopPropagation={() => (showSolutionsMenu = !showSolutionsMenu)}
-				type="button"
-				class="whitespace-nowrap text-emerald-700 group bg-white rounded-md inline-flex items-center text-lg font-medium hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
-				aria-expanded="false"
-			>
-				<span>Solutions</span>
-				<ChevronDownSVG />
-			</button>
-		{/if}
-
-		{#if showSolutionsMenu}
-			<SolutionsFlyoutMenu on:closeMenu={() => (showSolutionsMenu = false)} />
-		{/if}
-	</div>
+	<a
+		href="https://app.openversum.com"
+		target="_blank"
+		class="whitespace-nowrap text-md lg:text-lg font-medium text-emerald-700 hover:text-emerald-900"
+	>
+		Log in
+	</a>
 
 	<a
 		href="/#what_we_do"
-		class="whitespace-nowrap text-lg font-medium text-emerald-700 hover:text-emerald-900"
+		class="whitespace-nowrap text-md lg:text-lg font-medium text-emerald-700 hover:text-emerald-900"
 	>
 		{$t('common.whatWeDo')}
 	</a>
 	<a
 		href="/#who_we_are"
-		class="whitespace-nowrap text-lg font-medium text-emerald-700 hover:text-emerald-900"
+		class="whitespace-nowrap text-md lg:text-lg font-medium text-emerald-700 hover:text-emerald-900"
 	>
 		{$t('common.whoWeAre')}
 	</a>
@@ -49,7 +38,7 @@
 		<button
 			on:click|stopPropagation={() => (showWorkWithUs = !showWorkWithUs)}
 			type="button"
-			class="whitespace-nowrap text-emerald-700 group inline-flex items-center text-lg font-medium hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
+			class="whitespace-nowrap text-emerald-700 group inline-flex items-center text-md lg:text-lg font-medium hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
 			aria-expanded="false"
 		>
 			<span>{$t('common.workWithUs')}</span>
@@ -62,7 +51,7 @@
 	</div>
 	<button
 		on:click={() => (showContact = !showContact)}
-		class="whitespace-nowrap text-lg font-medium text-emerald-700 hover:text-emerald-900"
+		class="whitespace-nowrap text-md lg:text-lg font-medium text-emerald-700 hover:text-emerald-900"
 	>
 		{$t('common.contact')}
 	</button>

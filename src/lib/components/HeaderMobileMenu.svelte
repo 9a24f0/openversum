@@ -133,6 +133,15 @@
 					{$t('common.contact')}
 				</button>
 
+				<a
+					on:click={() => dispatch('closeMenu')}
+					href="https://app.openversum.com"
+					target="_blank"
+					class="text-base font-medium text-emerald-700 hover:text-emerald-900"
+				>
+					Log in
+				</a>
+
 				<div class="flex my-auto">
 					<LangSelect />
 				</div>
