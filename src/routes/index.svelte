@@ -93,7 +93,7 @@
 	</div>
 
 	<!-- style:transform="translateY({y * -1.2}px)" -->
-	<div class="w-full h-48 opacity-70">
+	<div class="mt-10 sm:mt-2 w-full h-48 opacity-70">
 		<BottomWaves />
 	</div>
 	<div class="w-full bg-emerald-200 bg-opacity-70">
