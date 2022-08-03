@@ -193,7 +193,7 @@
 			<div class="flex-col">
 				<h1 class="font-bold text-4xl md:text-5xl">{$t('home.globalWaterTitle')}</h1>
 
-				<p class="text-lg text-justify pr-4 pl-2 mt-16">
+				<p class="text-lg sm:text-xl text-justify pr-4 pl-2 mt-16">
 					{$t('home.globalWaterP')}
 				</p>
 			</div>
@@ -219,7 +219,7 @@
 				/>
 			</div>
 			<div class="flex">
-				<p class="text-lg text-justify pr-2 pl-4 my-auto">
+				<p class="text-lg sm:text-xl text-justify pr-2 pl-4 my-auto">
 					{$t('home.whyProblemP')}
 				</p>
 			</div>
@@ -237,7 +237,7 @@
 						src="https://blbosiccwkpntqobciwj.supabase.co/storage/v1/object/public/openversum-images/general/blob_manufacture.png"
 						alt="locally manufacture filters"
 					/>
-					<p class="my-auto max-w-[200px] text-lg">
+					<p class="my-auto max-w-[200px] text-lg sm:text-xl">
 						{$t('home.overcomesP1')}
 					</p>
 				</div>
@@ -247,7 +247,7 @@
 						src="https://blbosiccwkpntqobciwj.supabase.co/storage/v1/object/public/openversum-images/general/blob_distribute.png"
 						alt="locally distribute filters"
 					/>
-					<p class="my-auto max-w-[200px] text-lg">
+					<p class="my-auto max-w-[200px] text-lg sm:text-xl">
 						{$t('home.overcomesP2')}
 					</p>
 				</div>
@@ -277,7 +277,7 @@
 		<div class="container mx-auto px-2 sm:px-6 lg:px-16">
 			<h1 class="font-bold text-4xl md:text-5xl  sm:mb-8">{$t('home.visionTitle')}</h1>
 
-			<p class="text-lg px-8 pt-8 pb-4 text-justify">
+			<p class="text-lg sm:text-xl px-4 sm:px-8 md:px-16 pt-8 pb-4 text-justify sm:columns-2">
 				{@html $t('home.visionP')}
 			</p>
 			<div class="flex mb-8">
@@ -289,22 +289,22 @@
 
 			<h1 class="font-bold text-4xl md:text-5xl  mb-4 mt-4 sm:mb-8">{$t('home.teamTitle')}</h1>
 
-			<div class="grid grid-cols-7 gap-2 px-20">
+			<div class="grid grid-cols-5 gap-2 sm:px-8 md:px-20">
 				<img class="h-20 w-20 mx-auto" src="./ourteam/olivier.png" alt="Olivier Groeningen" />
-				<p class="col-span-6 my-auto">
+				<p class="col-span-4 my-auto">
 					<span class="font-semibold">Olivier Gröninger</span>, {$t('home.oliP')}
 				</p>
-				<p class="col-span-6 my-auto text-right">
+				<p class="col-span-4 my-auto text-right">
 					<span class="font-semibold">Laura Stocco</span>, {$t('home.lauraP')}
 				</p>
 
 				<img class="h-20 w-20 mx-auto" src="./ourteam/laura.png" alt="Laura Stocco" />
 				<img class="h-20 w-20 mx-auto" src="./ourteam/lorenzo.png" alt="Lorenzo donadio" />
-				<p class="col-span-6 my-auto">
+				<p class="col-span-4 my-auto">
 					<span class="font-semibold">Lorenzo Donadio</span>, {$t('home.zozoP')}
 				</p>
 
-				<p class="col-span-6 my-auto text-right">
+				<p class="col-span-4 my-auto text-right">
 					<span class="font-semibold">Julián Salazar</span>, {$t('home.julianP')}
 				</p>
 				<img class="h-20 w-20 mx-auto" src="./ourteam/julian.png" alt="Julian Salazar" />
