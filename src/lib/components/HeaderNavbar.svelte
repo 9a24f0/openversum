@@ -14,7 +14,7 @@
 
 <nav class="hidden md:flex space-x-10">
 	<a
-		href="app.openversum.com"
+		href="https://app.openversum.com"
 		target="_blank"
 		class="whitespace-nowrap text-md lg:text-lg font-medium text-emerald-700 hover:text-emerald-900"
 	>

@@ -135,7 +135,7 @@
 
 				<a
 					on:click={() => dispatch('closeMenu')}
-					href="app.openversum.com"
+					href="https://app.openversum.com"
 					target="_blank"
 					class="text-base font-medium text-emerald-700 hover:text-emerald-900"
 				>
