@@ -20,7 +20,7 @@
 <div class="relative bg-transparent overflow-x-clip">
 	<!-- <footer class="bg-slate-50 ">footer</footer> -->
 
-	{#if showAuth}
+	<!-- 	{#if showAuth}
 		<div
 			use:clickOutside={() => (showAuth = false)}
 			transition:fade={{ duration: 200 }}
@@ -28,7 +28,7 @@
 		>
 			<Auth />
 		</div>
-	{/if}
+	{/if} -->
 
 	<div class="max-w-screen-2xl mx-auto px-4 ">
 		<div

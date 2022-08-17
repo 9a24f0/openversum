@@ -13,13 +13,13 @@
 </script>
 
 <nav class="hidden md:flex space-x-10">
-	<a
+	<!-- <a
 		href="https://app.openversum.com"
 		target="_blank"
 		class="whitespace-nowrap text-md lg:text-lg font-medium text-emerald-700 hover:text-emerald-900"
 	>
 		Log in
-	</a>
+	</a> -->
 
 	<a
 		href="/#what_we_do"
