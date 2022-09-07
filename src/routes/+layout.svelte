@@ -14,7 +14,6 @@
 	import { browser } from '$app/environment';
 	let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
 
-	console.log({ analyticsId });
 	const possibleLocales = Object.keys(lang);
 	let loaded = false;
 	onMount(async () => {
