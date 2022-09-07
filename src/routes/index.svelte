@@ -233,21 +233,21 @@
 			<div class="col-span-2 flex flex-wrap gap-2">
 				<div class="inline-flex mx-auto space-x-4">
 					<img
-						class="my-auto max-h-52 mx-auto rounded-lg"
+						class="my-auto max-h-32 sm:max-h-52 mx-auto rounded-lg"
 						src="https://blbosiccwkpntqobciwj.supabase.co/storage/v1/object/public/openversum-images/general/blob_manufacture.png"
 						alt="locally manufacture filters"
 					/>
-					<p class="my-auto max-w-[200px] text-lg sm:text-xl">
+					<p class="my-auto max-w-[200px] text-justify text-lg sm:text-xl">
 						{$t('home.overcomesP1')}
 					</p>
 				</div>
 				<div class="inline-flex mx-auto space-x-4">
 					<img
-						class="my-auto max-h-52 mx-auto rounded-lg"
+						class="my-auto max-h-32 sm:max-h-52 mx-auto rounded-lg"
 						src="https://blbosiccwkpntqobciwj.supabase.co/storage/v1/object/public/openversum-images/general/blob_distribute.png"
 						alt="locally distribute filters"
 					/>
-					<p class="my-auto max-w-[200px] text-lg sm:text-xl">
+					<p class="my-auto max-w-[200px] text-justify text-lg sm:text-xl">
 						{$t('home.overcomesP2')}
 					</p>
 				</div>
