@@ -11,7 +11,7 @@
 	import LangSelect from '$lib/components/UI/LangSelect.svelte';
 	import lang from '$lib/translations/lang.json';
 	import { webVitals } from '$lib/vitals';
-
+	import { browser } from '$app/environment';
 	let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
 
 	console.log({ analyticsId });
@@ -39,7 +39,7 @@
 		} */
 	});
 
-	$: if (analyticsId) {
+	$: if (browser && analyticsId) {
 		webVitals({
 			path: $page.url.pathname,
 			params: $page.params,
