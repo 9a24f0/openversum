@@ -10,6 +10,9 @@
 	import { page } from '$app/stores';
 	import LangSelect from '$lib/components/UI/LangSelect.svelte';
 	import lang from '$lib/translations/lang.json';
+	import { webVitals } from '$lib/vitals';
+	import { browser } from '$app/env';
+
 	const possibleLocales = Object.keys(lang);
 	let loaded = false;
 	onMount(async () => {
@@ -33,6 +36,16 @@
 			await loadAssessors();
 		} */
 	});
+
+	let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
+
+	$: if (browser && analyticsId) {
+		webVitals({
+			path: $page.url.pathname,
+			params: $page.params,
+			analyticsId
+		});
+	}
 </script>
 
 <div class="relative overflow-x-hidden font-nunito overflow-y-hidden">
