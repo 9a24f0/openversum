@@ -22,20 +22,17 @@ export const config = {
 		{
 			locale: 'en',
 			key: 'entrepreneurs',
-			routes: ['/entrepreneurs'],
 
 			loader: async () => (await import('./en/entrepreneurs.json')).default
 		},
 		{
 			locale: 'en',
 			key: 'partners',
-			routes: ['/partners'],
 			loader: async () => (await import('./en/partners.json')).default
 		},
 		{
 			locale: 'en',
 			key: 'home',
-			routes: ['/'],
 			loader: async () => (await import('./en/home.json')).default
 		},
 		// SPANISH!!!!
@@ -52,20 +49,17 @@ export const config = {
 		{
 			locale: 'es',
 			key: 'entrepreneurs',
-			routes: ['/entrepreneurs'],
 
 			loader: async () => (await import('./es/entrepreneurs.json')).default
 		},
 		{
 			locale: 'es',
 			key: 'partners',
-			routes: ['/partners'],
 			loader: async () => (await import('./es/partners.json')).default
 		},
 		{
 			locale: 'es',
 			key: 'home',
-			routes: ['/'],
 			loader: async () => (await import('./es/home.json')).default
 		}
 	]

@@ -5,6 +5,8 @@
 	import Elipse2Svg from '$lib/components/SVG/Elipse2SVG.svelte';
 	import PrimaryButton from '$lib/components/UI/PrimaryButton.svelte';
 	import WatchButton from '$lib/components/WatchButton.svelte';
+	import { t } from '$lib/translations';
+
 	let blobW: any;
 	let showVideoModal = false;
 
@@ -20,24 +22,24 @@
 					style="width:{blobW}px;"
 					class="absolute text-white origin-top-left top-[30%] mx-auto text-center whitespace-nowrap text-4xl md:text-5xl font-semibold "
 				>
-					Entrepreneur space
+					{$t('entrepreneurs.title')}
 				</h2>
 			</div>
 		</div>
 
 		<div class="col-span-2 mb-8 gap-8 sm:inline-flex">
 			<div class="sm:w-2/3">
-				<h1 class="font-bold text-4xl md:text-5xl mb-8">Working together</h1>
+				<h1 class="font-bold text-4xl md:text-5xl mb-8">{$t('entrepreneurs.workTogetherTitle')}</h1>
 
 				<p class="text-justify text-lg">
-					Do you have an entrepreneurial mindset? Do you like to sell or create?<br />
-					We offer you the possibility to make a living while contributing to improving the health of
-					your community and loved ones by bringing safe water where it is most needed.
+					{$t('entrepreneurs.workTogetherP')}
 				</p>
 			</div>
 			<div class="inline-flex w-1/3 my-auto">
 				<WatchButton on:click={() => (showVideoModal = !showVideoModal)} />
-				<span class="whitespace-nowrap mr-8 font-semibold text-lg my-auto">Watch Video</span>
+				<span class="whitespace-nowrap mr-8 font-semibold text-lg my-auto"
+					>{$t('common.watchVideo')}</span
+				>
 			</div>
 		</div>
 
@@ -50,28 +52,20 @@
 		</div>
 
 		<div class="space-y-8 mt-8 sm:mt-0">
-			<h1 class="font-bold text-4xl md:text-5xl">Becoming a franchisee</h1>
+			<h1 class="font-bold text-4xl md:text-5xl">{$t('entrepreneurs.franchiseeTitle')}</h1>
 
 			<p class="text-justify text-lg">
-				An openversum entrepreneur is able to build and run his own business of manufacturing,
-				distribution and maintenance of drinking water filters.
-				<br />
-				Our franchisees have access to the openversum platform, which offers tools to support running
-				a business and step-by-step instructions on filter manufacturing.
+				{$t('entrepreneurs.franchiseeP')}
 			</p>
 
-			<PrimaryButton on:click={() => (showContact = true)}>Contact us</PrimaryButton>
+			<PrimaryButton on:click={() => (showContact = true)}>{$t('common.contact')}</PrimaryButton>
 		</div>
 
 		<div class="space-y-8 mt-8 sm:mt-0">
-			<h1 class="font-bold text-4xl md:text-5xl">Your profile</h1>
+			<h1 class="font-bold text-4xl md:text-5xl">{$t('entrepreneurs.profileTitle')}</h1>
 
 			<p class="text-justify text-lg">
-				You do not need any previous experience with water filters; our platform teaches you how to
-				manufacture them, get the tools, record your sales, puts you in contact with other
-				entrepreneurs, and more!
-				<br />
-				All you need is a smartphone and the possibility to access internet at times.
+				{$t('entrepreneurs.profileP')}
 			</p>
 		</div>
 		<div class="mt-4 sm:mt-0">
@@ -80,10 +74,10 @@
 				<div
 					class="absolute text-white origin-top-left top-[30%] sm:top-1/3 right-[15%] text-center lg:text-2xl"
 				>
-					<span class="w-48">Become part of the Openversum family with </span>
+					<span class="w-48">{$t('entrepreneurs.blob1')}</span>
 
-					<h2 class="whitespace-nowrap text-3xl sm:text-2xl lg:text-4xl font-semibold">
-						20+ entrepreneurs
+					<h2 class="whitespace-nowrap text-3xl sm:text-2xl lg:text-3xl font-semibold">
+						20+ {$t('common.entrepreneurs')}
 					</h2>
 					<!-- <h2 class="whitespace-nowrap text-3xl sm:text-lg md:text-3xl font-semibold">
 						100+ filters sold
