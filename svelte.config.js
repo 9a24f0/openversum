@@ -14,20 +14,7 @@ const config = {
 	kit: {
 		adapter: vercel({
 			edge: false
-		}),
-		vite: {
-			build: {
-				target: 'es2022'
-			},
-			/* ssr: {
-				noExternal: ['chart.js']
-			}, */
-			define: {
-				'process.env': process.env
-			},
-			optimizeDeps: { include: ['lodash.get', 'lodash.isequal', 'lodash.clonedeep'] }
-		}
-	}
+		})}
 };
 
 export default config;

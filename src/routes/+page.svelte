@@ -11,7 +11,8 @@
 	import WatchButton from '$lib/components/WatchButton.svelte';
 	import { t } from '$lib/translations';
 	import { onMount } from 'svelte';
-	export let imageList: any[];
+	export let data: any;
+	const imageList = data.imageList;
 	let innerHeight: number;
 	let scrollYIndex: number;
 	let gridWidth: number;

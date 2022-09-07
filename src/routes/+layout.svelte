@@ -11,7 +11,8 @@
 	import LangSelect from '$lib/components/UI/LangSelect.svelte';
 	import lang from '$lib/translations/lang.json';
 	import { webVitals } from '$lib/vitals';
-	import { browser } from '$app/env';
+	import { browser } from '$app/environment';
+	let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
 
 	const possibleLocales = Object.keys(lang);
 	let loaded = false;
@@ -36,8 +37,6 @@
 			await loadAssessors();
 		} */
 	});
-
-	let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
 
 	$: if (browser && analyticsId) {
 		webVitals({
