@@ -13,6 +13,10 @@
 	import { webVitals } from '$lib/vitals';
 	import { browser } from '$app/env';
 
+	let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
+
+	console.log({ analyticsId });
+	console.log({ browser });
 	const possibleLocales = Object.keys(lang);
 	let loaded = false;
 	onMount(async () => {
@@ -37,9 +41,9 @@
 		} */
 	});
 
-	let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
-
 	$: if (browser && analyticsId) {
+		console.log('sending analytics');
+
 		webVitals({
 			path: $page.url.pathname,
 			params: $page.params,
