@@ -1,4 +1,4 @@
-export async function get() {
+export async function load() {
 	// `params.id` comes from [id].js
 	const imageList = [
 		'https://blbosiccwkpntqobciwj.supabase.co/storage/v1/object/public/openversum-images/carrousel/ovc_01.jpg',
@@ -14,12 +14,6 @@ export async function get() {
 		'https://blbosiccwkpntqobciwj.supabase.co/storage/v1/object/public/openversum-images/carrousel/ovc_11.jpg'
 	];
 	return {
-		status: 200,
-		headers: {},
-		body: { imageList: imageList }
-	};
-
-	return {
-		status: 404
+		imageList
 	};
 }
