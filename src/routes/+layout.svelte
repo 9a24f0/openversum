@@ -47,6 +47,19 @@
 	}
 </script>
 
+<svelte:head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-240539759-1">
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-240539759-1');
+	</script>
+</svelte:head>
+
 <div class="relative overflow-x-hidden font-nunito overflow-y-hidden">
 	{#if loaded}
 		<div class="fixed w-full top-0 h-[12%] bg-white bg-opacity-50 z-10">
