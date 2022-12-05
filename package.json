@@ -2,7 +2,7 @@
 	"name": "openversum",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "vite dev --port 3000",
+		"dev": "vite dev --port 3000 --host",
 		"build": "vite build",
 		"package": "vite package",
 		"preview": "vite preview",
@@ -13,33 +13,34 @@
 		"format": "prettier --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
-		"@playwright/test": "^1.22.2",
-		"@sveltejs/adapter-auto": "1.0.0-next.64",
-		"@sveltejs/adapter-vercel": "1.0.0-next.70",
-		"@sveltejs/kit": "^1.0.0-next.405",
+		"@playwright/test": "^1.28.1",
+		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/adapter-vercel": "next",
+		"@sveltejs/kit": "next",
 		"@types/d3-interpolate": "^3.0.1",
-		"autoprefixer": "^10.4.4",
-		"postcss": "^8.4.12",
+		"autoprefixer": "^10.4.13",
+		"postcss": "^8.4.19",
 		"postcss-load-config": "^3.1.4",
-		"prettier": "^2.6.2",
-		"prettier-plugin-svelte": "^2.7.0",
-		"svelte": "^3.44.0",
-		"svelte-check": "^2.7.1",
-		"svelte-preprocess": "^4.10.5",
-		"tailwindcss": "^3.0.23",
-		"tslib": "^2.3.1",
-		"typescript": "^4.7.2"
+		"prettier": "^2.8.0",
+		"prettier-plugin-svelte": "^2.8.1",
+		"svelte": "^3.53.1",
+		"svelte-check": "^2.10.1",
+		"svelte-preprocess": "^4.10.7",
+		"tailwindcss": "^3.2.4",
+		"tslib": "^2.4.1",
+		"typescript": "^4.9.3",
+		"vite": "3.2.0"
 	},
 	"type": "module",
 	"dependencies": {
-		"@supabase/supabase-js": "^1.35.4",
-		"@tailwindcss/forms": "^0.5.2",
-		"@sveltejs/adapter-auto": "1.0.0-next.64",
-		"@sveltejs/adapter-vercel": "1.0.0-next.70",
+		"@supabase/supabase-js": "^1.35.7",
+		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/adapter-vercel": "next",
+		"@tailwindcss/forms": "^0.5.3",
 		"d3-interpolate": "^3.0.1",
 		"nanoid": "^4.0.0",
-		"svelte-carousel": "^1.0.19",
+		"svelte-carousel": "^1.0.20",
 		"sveltekit-i18n": "^2.2.2",
-		"web-vitals": "^3.0.1"
+		"web-vitals": "^3.1.0"
 	}
 }
