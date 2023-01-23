@@ -7,10 +7,11 @@
 	import { fade } from 'svelte/transition';
 	import { user } from '$lib/stores/sessionStore';
 	import { supabase } from '$lib/supabase';
+	import { isHoverHeader } from '$lib/stores/generalState';
+	import LangSelect from './UI/LangSelect.svelte';
 
 	let showMobileMenu = false;
 	let showAuth = false;
-
 	const handleLogOut = async () => {
 		await supabase.auth.signOut();
 	};
@@ -30,25 +31,29 @@
 		</div>
 	{/if} -->
 
-	<div class="max-w-screen-2xl mx-auto px-4 ">
-		<div
-			class="flex justify-between items-center border-gray-100 py-6 md:justify-start md:space-x-10"
-		>
-			<div class="flex justify-start lg:w-0 lg:flex-1">
+	<div class="max-w-screen-xl mx-auto px-4 ">
+		<div class="flex justify-around flex-grow items-center border-gray-100 py-4">
+			<div class="w-48">
 				<a href="/">
 					<span class="sr-only">Openversum</span>
 					<img
-						class="h-10 w-auto sm:h-14 flex-1 aspect-auto"
-						src="./openversum_logo.png"
+						class="h-10 w-auto sm:h-12 flex-1 aspect-auto"
+						src={$isHoverHeader ? './logo_openversum_white.svg' : './logo_openversum_blue.svg'}
 						alt="openversumlogo"
 					/>
 				</a>
+			</div>
+			<HeaderNavbar />
+
+			<!-- <div class="hidden md:inline-flex z-0 absolute origin-top-left top-6 right-4"> -->
+			<div class="hidden md:inline-flex">
+				<LangSelect />
 			</div>
 			<div class="z-10 -mr-2 -my-2 md:hidden">
 				<button
 					on:click|stopPropagation={() => (showMobileMenu = !showMobileMenu)}
 					type="button"
-					class="rounded-md p-2 inline-flex items-center justify-center text-gray-400 bg-white hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+					class="rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
 					aria-expanded="false"
 				>
 					<span class="sr-only">Open menu</span>
@@ -56,10 +61,10 @@
 					<MenuSvg />
 				</button>
 			</div>
-			<HeaderNavbar />
 
+			<!-- 
 			<div class="z-10 hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-				<!-- 	{#if $user}
+						{#if $user}
 					<button
 						on:click|stopPropagation={handleLogOut}
 						class="whitespace-nowrap text-lg font-medium text-white hover:text-emerald-900 "
@@ -73,8 +78,9 @@
 					>
 						Sign in
 					</button>
-				{/if} -->
+				{/if} 
 			</div>
+		-->
 		</div>
 	</div>
 

@@ -6,30 +6,34 @@
 	import SimpleSlotModal from './SimpleSlotModal.svelte';
 	import ContactForm from '$lib/components/contact/ContactForm.svelte';
 	import { t } from '$lib/translations';
-
+	import { isHoverHeader } from '$lib/stores/generalState';
 	let showSolutionsMenu = false;
 	let showWorkWithUs = false;
 	let showContact = false;
 </script>
 
-<nav class="hidden md:flex space-x-10">
+<nav class="hidden md:flex md:justify-around space-x-8">
 	<!-- <a
 		href="https://app.openversum.com"
 		target="_blank"
-		class="whitespace-nowrap text-md lg:text-lg font-medium text-emerald-700 hover:text-emerald-900"
+		class=" text-md lg:text-lg font-medium text-emerald-700 hover:text-emerald-900"
 	>
 		Log in
 	</a> -->
 
 	<a
 		href="/#what_we_do"
-		class="whitespace-nowrap text-md lg:text-lg font-medium text-emerald-700 hover:text-emerald-900"
+		class="text-md lg:text-lg font-medium {$isHoverHeader
+			? 'text-white hover:text-blue-100'
+			: 'text-blue'} focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-xl px-1 max-w-[100px] lg:max-w-xs "
 	>
 		{$t('common.whatWeDo')}
 	</a>
 	<a
 		href="/#who_we_are"
-		class="whitespace-nowrap text-md lg:text-lg font-medium text-emerald-700 hover:text-emerald-900"
+		class=" text-md lg:text-lg font-medium {$isHoverHeader
+			? 'text-white hover:text-blue-100'
+			: 'text-blue'} focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-xl px-1 max-w-[100px] lg:max-w-xs "
 	>
 		{$t('common.whoWeAre')}
 	</a>
@@ -38,7 +42,9 @@
 		<button
 			on:click|stopPropagation={() => (showWorkWithUs = !showWorkWithUs)}
 			type="button"
-			class="whitespace-nowrap text-emerald-700 group inline-flex items-center text-md lg:text-lg font-medium hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
+			class=" {$isHoverHeader
+				? 'text-white hover:text-blue-100'
+				: 'text-blue'} group inline-flex items-center text-md lg:text-lg font-medium  focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-xl px-1 max-w-[100px] lg:max-w-xs "
 			aria-expanded="false"
 		>
 			<span>{$t('common.workWithUs')}</span>
@@ -51,7 +57,9 @@
 	</div>
 	<button
 		on:click={() => (showContact = !showContact)}
-		class="whitespace-nowrap text-md lg:text-lg font-medium text-emerald-700 hover:text-emerald-900"
+		class=" text-md lg:text-lg font-medium {$isHoverHeader
+			? 'text-white hover:text-blue-100'
+			: 'text-blue'} focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-xl px-1 max-w-[100px] lg:max-w-xs "
 	>
 		{$t('common.contact')}
 	</button>

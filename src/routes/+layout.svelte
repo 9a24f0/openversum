@@ -12,12 +12,12 @@
 	import lang from '$lib/translations/lang.json';
 	import { webVitals } from '$lib/vitals';
 	import { browser } from '$app/environment';
+	import { isHoverHeader } from '$lib/stores/generalState';
 	let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
 
 	const possibleLocales = Object.keys(lang);
 	let loaded = false;
 	onMount(async () => {
-		user.set(supabase.auth.user());
 		// if user exists do something
 		/* if ($user) {
 			
@@ -29,13 +29,6 @@
 		const initLocale = locale.get() || defaultLocale; // set default if no locale already set
 		await loadTranslations(initLocale, pathname); // keep this just before the `return`
 		loaded = true;
-	});
-	supabase.auth.onAuthStateChange(async (_, session) => {
-		user.set(session?.user ?? null);
-		// if user exists do something
-		/* if (session?.user) {
-			await loadAssessors();
-		} */
 	});
 
 	$: if (browser && analyticsId) {
@@ -60,18 +53,18 @@
 	</script>
 </svelte:head>
 
-<div class="relative overflow-x-hidden font-nunito overflow-y-hidden">
+<div class="relative overflow-x-hidden font-mukta overflow-y-scroll min-h-screen h-full">
 	{#if loaded}
-		<div class="fixed w-full top-0 h-[12%] bg-white bg-opacity-50 z-10">
+		<div
+			on:mouseenter={() => ($isHoverHeader = true)}
+			on:mouseleave={() => ($isHoverHeader = false)}
+			class:bg-blue={$isHoverHeader}
+			class:text-white={$isHoverHeader}
+			class="bg-white fixed w-full top-0 z-10"
+		>
 			<Header />
-			<div class="-z-10 absolute origin-top-left -top-16 -right-14 opacity-80">
-				<BlobTopR />
-			</div>
-			<div class="hidden md:inline-flex z-0 absolute origin-top-left top-8 right-4">
-				<LangSelect />
-			</div>
 		</div>
-		<main class="mt-24">
+		<main class="mt-18 md:mt-20">
 			<slot />
 		</main>
 	{/if}

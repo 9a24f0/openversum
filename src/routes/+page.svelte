@@ -1,5 +1,6 @@
 <script lang="ts">
 	import AnimatedBlob from '$lib/components/AnimatedBlob.svelte';
+	import AnimatedWave from '$lib/components/AnimatedWave.svelte';
 	import SideSocialButtons from '$lib/components/SideSocialButtons.svelte';
 	import SimpleSlotModal from '$lib/components/SimpleSlotModal.svelte';
 	import BottomWaves from '$lib/components/SVG/BottomWaves.svelte';
@@ -14,10 +15,10 @@
 	export let data: any;
 	const imageList = data.imageList;
 	let innerHeight: number;
+	let innerWidth: number;
 	let scrollYIndex: number;
 	let gridWidth: number;
 	let showVideoModal = false;
-
 	let Carousel: any; // for saving Carousel component class
 	let carousel: any; // for calling methods of the carousel instance
 
@@ -48,9 +49,28 @@
 	<html lang="en" />
 </svelte:head>
 
-<svelte:window bind:scrollY={scrollYIndex} bind:innerHeight />
+<svelte:window bind:scrollY={scrollYIndex} bind:innerHeight bind:innerWidth />
 
 <div class="w-full">
+	<div class="relative">
+		<div class="absolute w-80 md:w-96 top-[14vh] left-[5vh] md:top-[16vh] md:left-[15vh]">
+			<h1 class="font-poppins text-white font-bold text-3xl sm:text-4xl md:text-5xl">
+				{$t('home.title')}
+			</h1>
+			<p class="text-white text-md sm:text-lg md:text-xl">
+				{$t('home.subtitle')}
+			</p>
+		</div>
+		<img
+			class="max-h-[90vh] min-h-[500px] mx-auto w-full object-cover"
+			src="pexels-water.jpg"
+			alt="kick foundation partner"
+		/>
+		<div style="width: {innerWidth}px;" class="absolute h-32 md:h-44 bottom-0">
+			<AnimatedWave w={innerWidth} />
+		</div>
+	</div>
+
 	<div
 		bind:clientWidth={gridWidth}
 		style:height="{Math.max(innerHeight - 280, 300)}px"
