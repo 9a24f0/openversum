@@ -55,13 +55,12 @@
 			<WorkWithUseFlyoutMenu on:closeMenu={() => (showWorkWithUs = false)} />
 		{/if}
 	</div>
-	<!-- on:click={() => (showContact = !showContact)} -->
 	<button
 		class=" text-md lg:text-lg font-medium {$isHoverHeader
 			? 'text-white hover:text-blue-100'
 			: 'text-blue'} focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-xl px-1 max-w-[100px] lg:max-w-xs "
 	>
-		<a href="/contactus">{$t('common.contact')}</a>
+		<a href="/contact">{$t('common.contact')}</a>
 	</button>
 </nav>
 {#if showContact}

@@ -7,6 +7,9 @@ const config = {
 				poppins: ['Poppins'],
 				mukta: ['Mukta+Mahee']
 			},
+			fontSize: {
+				45: '45px'
+			},
 
 			colors: {
 				green: {
@@ -47,6 +50,9 @@ const config = {
 					700: '#0F2626',
 					800: '#091818',
 					900: '#030909'
+				},
+				white: {
+					DEFAULT: '#fff'
 				}
 			}
 		}
