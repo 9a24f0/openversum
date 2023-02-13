@@ -50,7 +50,6 @@
 </svelte:head>
 
 <svelte:window bind:scrollY={scrollYIndex} bind:innerHeight bind:innerWidth />
-
 <div class="w-full">
 	<div class="relative">
 		<div class="absolute w-80 md:w-96 top-[14vh] left-[5vh] md:top-[16vh] md:left-[15vh]">
