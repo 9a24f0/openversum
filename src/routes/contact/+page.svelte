@@ -9,11 +9,11 @@
 
 <div class="contact_container bg-blue-500 w-full flex justify-center items-center">
 	{#if currentForm === 'Contact'}
-		<ContactMain bind:currentForm1={currentForm} />
+		<ContactMain bind:currentFormChild={currentForm} />
 	{:else}
 		<div class=" w-1/2 pl-32 ">
 			<div class="w-176 ">
-				<ContactMain bind:currentForm1={currentForm} />
+				<ContactMain bind:currentFormChild={currentForm} />
 			</div>
 		</div>
 		<div class=" w-1/2 pr-52 ">
@@ -27,7 +27,7 @@
 		</div>
 	{/if}
 	<!-- {#if currentForm === 'Contact'}
-		<ContactMain bind:currentForm1={currentForm} />
+		<ContactMain bind:currentFormChild={currentForm} />
 	{:else if currentForm === 'General'}
 		<ContactDefault />
 	{:else if currentForm === 'Emprendedor'}

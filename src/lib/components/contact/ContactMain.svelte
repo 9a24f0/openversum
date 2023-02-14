@@ -1,7 +1,7 @@
 <script>
-	export let currentForm1 = '';
+	export let currentFormChild = '';
 	function changeStateContact(state) {
-		currentForm1 = state;
+		currentFormChild = state;
 	}
 </script>
 
