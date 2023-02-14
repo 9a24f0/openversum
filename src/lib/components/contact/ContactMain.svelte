@@ -1,30 +1,30 @@
-<!-- svelte-ignore a11y-click-events-have-key-events -->
-<script>
+<script lang="ts">
+	import { t } from '$lib/translations';
 	export let currentFormChild;
-	function changeStateContact(state) {
+	function changeStateContact(state: String) {
 		currentFormChild = state;
 	}
 </script>
 
-<ul class="font-medium not-italic semi-bold flex flex-col gap-6 text-45 font-poppins text-white">
-	<li
+<nav class="font-medium not-italic semi-bold flex flex-col gap-6 text-[45px] font-poppins text-white">
+	<button
 		class="self-center cursor-pointer"
-		on:click={() => changeStateContact('General')}>
-		General
-	</li>
-	<li
+		on:click={() => changeStateContact('general')}>
+		{$t('contact.navG')}
+	</button>
+	<button
 		class="self-center cursor-pointer"
-		on:click={() => changeStateContact('Emprendedor')}
+		on:click={() => changeStateContact('entrepreneur')}
 	>
-		Emprendedor
-	</li>
-	<li
+		{$t('contact.navE')}
+	</button>
+	<button
 		class="self-center cursor-pointer"
-		on:click={() => changeStateContact('Socio')}
+		on:click={() => changeStateContact('partner')}
 	>
-		Socio
-	</li>
-</ul>
+		{$t('contact.navP')}
+	</button>
+</nav>
 
 <style>
 </style>

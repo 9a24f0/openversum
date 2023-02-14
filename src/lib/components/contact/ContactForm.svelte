@@ -2,7 +2,7 @@
 	import ContactPartner from '$lib/components/contact/ContactPartner.svelte';
 	import ContactEntrepreneur from '$lib/components/contact/ContactEntrepreneur.svelte';
 	import { createEventDispatcher } from 'svelte';
-	import NavbarContact from './NavbarContact.svelte';
+	import NavbarContact from './ContractNavigation.svelte';
 	import ContactDefault from './ContactDefault.svelte';
 	import { t } from '$lib/translations';
 
