@@ -1,5 +1,6 @@
 const config = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
+	mode: 'pjt',
 
 	theme: {
 		extend: {
@@ -51,9 +52,6 @@ const config = {
 					800: '#091818',
 					900: '#030909'
 				},
-				white: {
-					DEFAULT: '#fff'
-				}
 			}
 		}
 	},
