@@ -1,5 +1,6 @@
 const config = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
+	mode: 'pjt',
 
 	theme: {
 		extend: {
@@ -7,7 +8,6 @@ const config = {
 				poppins: ['Poppins'],
 				mukta: ['Mukta+Mahee']
 			},
-
 			colors: {
 				green: {
 					DEFAULT: '#9DC96B',
