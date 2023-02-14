@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { t } from '$lib/translations';
-	export let currentForm: string = 'general';
+	export let currentFormChild;
+	function changeStateContact(state) {
+		currentFormChild = state;
+	}
 </script>
 
 <!-- <div class="border-b border-gray-200">
@@ -36,9 +39,9 @@
 </div> -->
 
 <ul>
-	<li>General</li>
-	<li>Entrepreneur</li>
-	<li>Partner</li>
+	<li class="cursor-pointer" on:click={() => changeStateContact('General')}>General</li>
+	<li class="cursor-pointer" on:click={() => changeStateContact('Entrepreneur')}>Entrepreneur</li>
+	<li class="cursor-pointer" on:click={() => changeStateContact('Partner')}>Partner</li>
 </ul>
 
 <style lang="postcss">

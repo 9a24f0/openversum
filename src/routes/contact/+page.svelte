@@ -8,25 +8,37 @@
 	let currentForm = 'Contact';
 </script>
 
-<div class="contact_container ">
+<div>
 	{#if currentForm === 'Contact'}
 		<div class="h-[calc(100vh-13rem)] bg-blue-500 w-full flex justify-center items-center">
 			<ContactMain bind:currentFormChild={currentForm} />
 		</div>
-	{:else if currentForm === 'General'} 
-		<div class="flex">
-			<ContactNavigation/>
-			<ContactDefault/>
+	{:else if currentForm === 'General'}
+		<div class="flex items-center h-[calc(100vh-13rem)] justify-evenly py-24 ">
+			<div class="pl-32 flex-1">
+				<ContactNavigation bind:currentFormChild={currentForm} />
+			</div>
+			<div class="pr-28 w-3/5 ">
+				<ContactDefault />
+			</div>
 		</div>
-	{:else if currentForm === 'Entrepreneur'} 
-		<div>
-			<ContactNavigation/>
-			<ContactEntrepreneur/>
+	{:else if currentForm === 'Entrepreneur'}
+		<div class="flex items-center h-[calc(100vh-13rem)] justify-evenly  py-24">
+			<div class="pl-32 flex-1">
+				<ContactNavigation bind:currentFormChild={currentForm} />
+			</div>
+			<div class="pr-28 w-3/5 ">
+				<ContactEntrepreneur />
+			</div>
 		</div>
-	{:else if currentForm === 'Partner'} 
-		<div>
-			<ContactEntrepreneur/>
-			<ContactPartner/>
+	{:else if currentForm === 'Partner'}
+		<div class="flex items-center h-[calc(100vh-13rem)] justify-evenly py-24">
+			<div class="pl-32 flex-1">
+				<ContactNavigation bind:currentFormChild={currentForm} />
+			</div>
+			<div class="pr-28 w-3/5 ">
+				<ContactPartner />
+			</div>
 		</div>
 	{/if}
 	<!-- {:else}
@@ -55,6 +67,3 @@
 		<ContactPartner />
 	{/if} -->
 </div>
-
-<style>
-</style>
