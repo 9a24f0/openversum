@@ -127,10 +127,9 @@
 				</a>
 
 				<button
-					on:click={() => (showContact = !showContact)}
 					class="text-base text-left font-medium text-emerald-700 hover:text-emerald-900"
 				>
-					{$t('common.contact')}
+					<a href="/contact">{$t('common.contact')}</a>
 				</button>
 
 				<!-- <a
