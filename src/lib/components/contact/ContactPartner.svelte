@@ -6,7 +6,6 @@
 	import PrimaryButton from '$lib/components/UI/PrimaryButton.svelte';
 	import { createEventDispatcher } from 'svelte';
 	import { t } from '$lib/translations';
-	export let cssBtn: string;
 	const dispatch = createEventDispatcher();
 	type ContactIn = Omit<Omit<definitions['contact'], 'id'>, 'created_at'>;
 
@@ -82,5 +81,5 @@
 		</div>
 	</div>
 
-	<PrimaryButton {cssBtn} {disabled} on:click={submitContact}>{$t('common.contact')}</PrimaryButton>
+	<PrimaryButton {disabled} on:click={submitContact}>{$t('common.contact')}</PrimaryButton>
 </form>

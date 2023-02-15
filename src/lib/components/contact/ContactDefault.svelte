@@ -9,7 +9,6 @@
 
 	const dispatch = createEventDispatcher();
 	type ContactIn = Omit<Omit<definitions['contact'], 'id'>, 'created_at'>;
-	export let cssBtn: string;
 
 	let name = '';
 	let email = '';
@@ -61,5 +60,5 @@
 		</div>
 	</div>
 
-	<PrimaryButton {cssBtn} {disabled} on:click={submitContact}>{$t('common.contact')}</PrimaryButton>
+	<PrimaryButton {disabled} on:click={submitContact}>{$t('common.contact')}</PrimaryButton>
 </form>

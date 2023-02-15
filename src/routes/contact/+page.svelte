@@ -6,10 +6,9 @@
 	import ContactNavigation from '$lib/components/contact/ContractNavigation.svelte';
 
 	let currentForm = 'Contact';
-	let cssBtn = 'contact';
 </script>
 
-<div class="">
+<div>
 	{#if currentForm === 'Contact'}
 		<div class="h-[calc(100vh-13rem)] bg-blue-500 w-full flex justify-center items-center">
 			<ContactMain bind:currentFormChild={currentForm} />
@@ -20,7 +19,7 @@
 				<ContactNavigation bind:currentFormChild={currentForm} />
 			</div>
 			<div class="pr-28 w-3/5 pl-16 ">
-				<ContactDefault {cssBtn} />
+				<ContactDefault />
 			</div>
 		</div>
 	{:else if currentForm === 'Entrepreneur'}
@@ -29,7 +28,7 @@
 				<ContactNavigation bind:currentFormChild={currentForm} />
 			</div>
 			<div class="pr-28 w-3/5 pl-16  ">
-				<ContactEntrepreneur {cssBtn} />
+				<ContactEntrepreneur />
 			</div>
 		</div>
 	{:else if currentForm === 'Partner'}
@@ -38,7 +37,7 @@
 				<ContactNavigation bind:currentFormChild={currentForm} />
 			</div>
 			<div class="pr-28 w-3/5 pl-16  ">
-				<ContactPartner {cssBtn} />
+				<ContactPartner />
 			</div>
 		</div>
 	{/if}
