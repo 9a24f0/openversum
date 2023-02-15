@@ -7,7 +7,7 @@
 	import { createEventDispatcher } from 'svelte';
 	import { nanoid } from 'nanoid';
 	import { t } from '$lib/translations';
-
+	export let cssBtn: string;
 	const id = nanoid(8);
 	const dispatch = createEventDispatcher();
 	type ContactIn = Omit<Omit<definitions['contact'], 'id'>, 'created_at'>;
@@ -110,5 +110,5 @@
 		</div>
 	</div>
 
-	<PrimaryButton {disabled} on:click={submitContact}>{$t('common.contact')}</PrimaryButton>
+	<PrimaryButton {cssBtn} {disabled} on:click={submitContact}>{$t('common.contact')}</PrimaryButton>
 </form>

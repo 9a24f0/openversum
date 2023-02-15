@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { t } from '$lib/translations';
-	export let currentFormChild;
-	function changeStateContact(state) {
+	export let currentFormChild: string;
+	let arr = ['General', 'Entrepreneur', 'Partner'];
+	$: arr = arr.filter((item) => item !== currentFormChild);
+	function changeStateContact(state: string) {
 		currentFormChild = state;
 	}
 </script>
@@ -38,10 +40,18 @@
 	</nav>
 </div> -->
 
-<ul>
-	<li class="cursor-pointer" on:click={() => changeStateContact('General')}>General</li>
-	<li class="cursor-pointer" on:click={() => changeStateContact('Entrepreneur')}>Entrepreneur</li>
-	<li class="cursor-pointer" on:click={() => changeStateContact('Partner')}>Partner</li>
+<ul class="not-italic font-medium text-sm">
+	<li
+		class="cursor-pointer text-5xl text-blue"
+		on:click={() => changeStateContact(currentFormChild)}
+	>
+		{currentFormChild}
+	</li>
+	{#each arr as item}
+		<li class="cursor-pointer my-1.5" on:click={() => changeStateContact(item)}>
+			{item}
+		</li>
+	{/each}
 </ul>
 
 <style lang="postcss">

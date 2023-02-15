@@ -1,6 +1,7 @@
 <script lang="ts">
 	export let buttonSize: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
 	export let disabled = false;
+	export let cssBtn: string;
 </script>
 
 <div class="my-auto">
@@ -21,7 +22,12 @@
 				: buttonSize === 'xl'
 				? 'px-6 py-3 text-base font-medium'
 				: ''
-		}inline-flex items-center border border-transparent rounded-md shadow-sm text-white bg-cyan-600 hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500`}
-		><slot /></button
+		} inline-flex items-center border border-transparent rounded-md shadow-sm text-white bg-cyan-600 hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500
+		${
+			cssBtn == 'contact'
+				? 'cursor-pointer rounded-3xl bg-green-500 text-sm font-semibold  px-9 py-3.5 w-40 flex justify-center box-border'
+				: ' '
+		}
+		`}><slot /></button
 	>
 </div>
