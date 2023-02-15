@@ -4,6 +4,7 @@
 	import ContactEntrepreneur from '$lib/components/contact/ContactEntrepreneur.svelte';
 	import ContactPartner from '$lib/components/contact/ContactPartner.svelte';
 	import ContactNavigation from '$lib/components/contact/ContractNavigation.svelte';
+	import { t } from '$lib/translations';
 
 	let currentForm = 'Contact';
 </script>
@@ -13,7 +14,7 @@
 		<div class="h-[calc(100vh-13rem)] bg-blue-500 w-full flex justify-center items-center">
 			<ContactMain bind:currentFormChild={currentForm} />
 		</div>
-	{:else if currentForm === 'General'}
+	{:else if currentForm === $t('contact.navG')}
 		<div class="flex items-center h-[calc(100vh-13rem)] justify-evenly py-24 ">
 			<div class="pl-32 flex-1">
 				<ContactNavigation bind:currentFormChild={currentForm} />
@@ -22,7 +23,7 @@
 				<ContactDefault />
 			</div>
 		</div>
-	{:else if currentForm === 'Entrepreneur'}
+	{:else if currentForm === $t('contact.navE')}
 		<div class="flex items-center h-[calc(100vh-13rem)] justify-evenly  py-24">
 			<div class="pl-32 flex-1">
 				<ContactNavigation bind:currentFormChild={currentForm} />
@@ -31,7 +32,7 @@
 				<ContactEntrepreneur />
 			</div>
 		</div>
-	{:else if currentForm === 'Partner'}
+	{:else if currentForm === $t('contact.navP')}
 		<div class="flex items-center h-[calc(100vh-13rem)] justify-evenly py-24">
 			<div class="pl-32 flex-1">
 				<ContactNavigation bind:currentFormChild={currentForm} />

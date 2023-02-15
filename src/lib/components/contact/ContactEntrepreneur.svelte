@@ -79,13 +79,20 @@
 		/>
 	</div>
 
-	<div class="mt-2">
-		<label for="last-name" class="block text-sm font-medium text-gray-700"
-			>{$t('contact.cvUp')}</label
+	<div class="mt-2 ">
+		<label for="last-name" class="block text-sm font-semibold text-darkblue mb-2"
+			>{$t('contact.cvUp')} *</label
 		>
+		<button
+			class=" box-border flex  w-full text-sm bg-gray-50 rounded-lg border border-gray-300 focus:outline-none bg-white"
+		>
+			<span class="bg-darkblue text-white text-base font-normal font-mono p-2.5 px-4 rounded-lg "
+				>{$t('contact.cvUp')}</span
+			>
+		</button>
 		<input
 			bind:files={inputCV}
-			class="block p-2 w-full text-sm bg-gray-50 rounded-lg border border-gray-300 focus:outline-none"
+			class="hidden block p-2 w-full text-sm bg-gray-50 rounded-lg border border-gray-300 focus:outline-none"
 			id="file_input"
 			type="file"
 			accept="application/pdf, application/vnd.ms-word"
@@ -97,14 +104,14 @@
 		<label for="message" class="block text-sm font-medium text-gray-700"
 			>{$t('contact.writeUs')}</label
 		>
-		<div class="mt-1">
+		<div class="mt-1 rounded-md">
 			<textarea
 				bind:value={message}
 				placeholder={$t('contact.contactPlaceholder')}
 				rows="4"
 				name="message"
 				id="message"
-				class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full border-gray-300 rounded-md"
+				class="mt-1 focus:ring-cyan-500 focus:border-cyan-500 block w-full shadow-sm border-darkblue rounded-md"
 			/>
 		</div>
 	</div>
