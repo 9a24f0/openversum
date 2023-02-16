@@ -84,7 +84,7 @@
 			>{$t('contact.cvUp')} *</label
 		>
 		<button
-			class=" box-border flex items-center w-full text-sm bg-gray-50 rounded-lg border border-gray-300 focus:outline-none bg-white"
+			class=" relative box-border flex items-center w-full text-sm bg-gray-50 rounded-lg border border-gray-300 focus:outline-none bg-white"
 		>
 			<span
 				class="block bg-darkblue text-white text-base font-normal font-mono p-2.5 px-4 rounded-lg "
@@ -93,14 +93,14 @@
 			<p class="ml-3 text-darkblue font-normal text-base ">
 				{$t('contact.placeholderCvUp')}
 			</p>
+			<input
+				bind:files={inputCV}
+				class=" cursor-pointer opacity-0 absolute z-10 block p-2 w-full text-sm bg-gray-50 rounded-lg border border-gray-300 focus:outline-none"
+				id="file_input"
+				type="file"
+				accept="application/pdf, application/vnd.ms-word"
+			/>
 		</button>
-		<input
-			bind:files={inputCV}
-			class="hidden block p-2 w-full text-sm bg-gray-50 rounded-lg border border-gray-300 focus:outline-none"
-			id="file_input"
-			type="file"
-			accept="application/pdf, application/vnd.ms-word"
-		/>
 		<p class="mt-0.5 text-xs text-gray-500">PDF or Word</p>
 	</div>
 

@@ -4,7 +4,7 @@
 	export let placeholder = '0.00';
 </script>
 
-<label for="price" class="block text-sm font-medium text-gray-700">{label}ffffffffffff</label>
+<label for="price" class="block text-sm font-medium text-gray-700">{label}</label>
 <div class="mt-1 relative rounded-md shadow-sm">
 	<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
 		<span class="text-gray-500 sm:text-sm"> $ </span>

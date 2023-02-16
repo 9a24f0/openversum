@@ -4,7 +4,7 @@
 	export let step = 1;
 </script>
 
-<label for="price" class="block text-sm font-medium text-gray-700">{label}sssssssssss</label>
+<label for="price" class="block text-sm font-medium text-gray-700">{label}</label>
 <div class="mt-1 relative rounded-md shadow-sm">
 	<input
 		bind:value
