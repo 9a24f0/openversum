@@ -3,7 +3,7 @@
 	import ContactDefault from '$lib/components/contact/ContactDefault.svelte';
 	import ContactEntrepreneur from '$lib/components/contact/ContactEntrepreneur.svelte';
 	import ContactPartner from '$lib/components/contact/ContactPartner.svelte';
-	import ContactNavigation from '$lib/components/contact/ContractNavigation.svelte';
+	import ContactNavigation from '$lib/components/contact/ContactNavigation.svelte';
 	import { t } from '$lib/translations';
 
 	import { contactScreen } from '$lib/stores/generalState';
@@ -11,7 +11,7 @@
 
 {#if $contactScreen === ''}
 	<div class="h-[calc(100vh-12.5rem)] md:h-[calc(100vh-9rem)] bg-blue-500 w-full flex justify-center items-center">
-		<ContactMain bind:currentFormChild={$contactScreen} />
+		<ContactMain/>
 	</div>
 {:else }
 	<div class="flex">
