@@ -55,7 +55,7 @@
 </script>
 
 <form on:submit|preventDefault>
-	<div class="grid grid-cols-6 w-full gap-x-8 gap-y-2">
+	<div class="grid grid-cols-6 w-full gap-x-3 gap-y-5">
 		<InputField
 			bind:value={name}
 			label={$t('contact.name')}
@@ -79,7 +79,7 @@
 		/>
 	</div>
 
-	<div class="mt-2 ">
+	<div class="mt-5">
 		<label for="last-name" class="block text-sm font-semibold text-darkblue mb-2"
 			>{$t('contact.cvUp')} *</label
 		>
@@ -104,7 +104,7 @@
 		<p class="mt-0.5 text-xs text-gray-500">PDF or Word</p>
 	</div>
 
-	<div class="my-2">
+	<div class="mt-5">
 		<label for="message" class="block text-sm font-medium text-gray-700"
 			>{$t('contact.writeUs')}</label
 		>

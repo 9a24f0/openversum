@@ -17,7 +17,7 @@
 	</div>
 {:else}
 	<div class="h-[calc(100vh-12.5rem)] md:h-[calc(100vh-9rem)] flex items-center">
-		<div class="pl-32 flex-1">
+		<div class="pl-32 flex-1 pb-28 ">
 			<ContactNavigation />
 		</div>
 		<div class="pr-28 w-3/5 pl-16">

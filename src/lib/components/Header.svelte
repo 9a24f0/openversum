@@ -31,8 +31,11 @@
 		</div>
 	{/if} -->
 
-	<div class="max-w-screen-xl mx-auto px-4 ">
-		<div class="flex justify-around flex-grow items-center border-gray-100 py-4">
+	<div class=" mx-auto w-full  ">
+		<div
+			class="flex justify-between pl-32 pr-32
+				flex-grow items-center border-gray-100 py-4"
+		>
 			<div class="w-48">
 				<a href="/">
 					<span class="sr-only">Openversum</span>
