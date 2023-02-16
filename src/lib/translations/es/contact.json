@@ -1,13 +1,14 @@
 {
-    "title": "Contactar con Openversum",
-    "navG": "General",
-    "navE": "Emprendedor",
-    "navP": "Socio",
-    "name": "Nombre",
-    "namePlaceholder": "Tu nombre",
-    "contactPlaceholder": "contactanos ...",
-    "organization": "Organización",
-    "country": "País",
-    "writeUs": "Escríbenos un mensaje",
-    "cvUp": "Cargue su hoja de vida"
+	"title": "Contactar con Openversum",
+	"navG": "General",
+	"navE": "Emprendedor",
+	"navP": "Socio",
+	"name": "Nombre",
+	"namePlaceholder": "Tu nombre",
+	"contactPlaceholder": "contactanos ...",
+	"organization": "Organización",
+	"country": "País",
+	"writeUs": "Escríbenos un mensaje",
+	"cvUp": "Cargue su hoja de vida",
+	"placeholderCvUp": "Ningún archivo seleccionado"
 }

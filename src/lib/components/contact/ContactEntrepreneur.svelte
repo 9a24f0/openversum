@@ -84,11 +84,15 @@
 			>{$t('contact.cvUp')} *</label
 		>
 		<button
-			class=" box-border flex  w-full text-sm bg-gray-50 rounded-lg border border-gray-300 focus:outline-none bg-white"
+			class=" box-border flex items-center w-full text-sm bg-gray-50 rounded-lg border border-gray-300 focus:outline-none bg-white"
 		>
-			<span class="bg-darkblue text-white text-base font-normal font-mono p-2.5 px-4 rounded-lg "
+			<span
+				class="block bg-darkblue text-white text-base font-normal font-mono p-2.5 px-4 rounded-lg "
 				>{$t('contact.cvUp')}</span
 			>
+			<p class="ml-3 text-darkblue font-normal text-base ">
+				{$t('contact.placeholderCvUp')}
+			</p>
 		</button>
 		<input
 			bind:files={inputCV}
