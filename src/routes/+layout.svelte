@@ -1,11 +1,11 @@
 <script lang="ts">
 	import '../app.css';
 	import Header from '$lib/components/Header.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 	import { supabase } from '$lib/supabase';
 	import { user } from '$lib/stores/sessionStore';
 	import { onMount } from 'svelte/internal';
 	import BlobTopR from '$lib/components/SVG/BlobTopR.svelte';
-	import BottomWaves2 from '$lib/components/SVG/BottomWaves2.svelte';
 	import { locale, loadTranslations } from '$lib/translations';
 	import { page } from '$app/stores';
 	import LangSelect from '$lib/components/UI/LangSelect.svelte';
@@ -38,6 +38,8 @@
 			analyticsId
 		});
 	}
+
+	$: pathName = $page.url.pathname.slice(1);
 </script>
 
 <svelte:head>
@@ -64,18 +66,10 @@
 		>
 			<Header />
 		</div>
-		<main class="mt-18 md:mt-20">
+		<main class="mt-[4.5rem] md:mt-20">
 			<slot />
 		</main>
 	{/if}
 
-	<footer class="w-full">
-		<div class="w-full opacity-70 h-20">
-			<BottomWaves2 />
-		</div>
-		<div class="w-full bg-emerald-200 bg-opacity-70 flex justify-evenly h-12">
-			<img class="h-10" src="/openversum_logo_white.png" alt="footer logo" />
-			<p class="text-sm text-white my-auto">© 2022 Openversum, all rights reserved</p>
-		</div>
-	</footer>
+	<Footer/>	
 </div>
