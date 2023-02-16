@@ -1,9 +1,8 @@
 <script lang="ts">
 	import { t } from '$lib/translations';
+	import { contactScreen } from '$lib/stores/generalState';
+
 	export let currentFormChild;
-	function changeStateContact(state: String) {
-		currentFormChild = state;
-	}
 </script>
 
 <nav
