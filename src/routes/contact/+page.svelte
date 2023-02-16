@@ -5,29 +5,27 @@
 	import ContactPartner from '$lib/components/contact/ContactPartner.svelte';
 	import ContactNavigation from '$lib/components/contact/ContractNavigation.svelte';
 
-	let currentForm = 'Contact';
+	import { contactScreen } from '$lib/stores/generalState';
 </script>
 
-<div class="contact_container ">
-	{#if currentForm === 'Contact'}
-		<div class="h-[calc(100vh-13rem)] bg-blue-500 w-full flex justify-center items-center">
-			<ContactMain bind:currentFormChild={currentForm} />
-		</div>
-	{:else }
-		<div class="flex">
-			<ContactNavigation/>
-			{#if currentForm === 'general'}
-				<ContactDefault/>
-			{/if}
-			{#if currentForm === 'entrepreneur'}
-				<ContactEntrepreneur/>
-			{/if}
-			{#if currentForm === 'partner'}
-				<ContactPartner/>
-			{/if}
-		</div>
-	{/if}
-</div>
+{#if $contactScreen === ''}
+	<div class="h-[calc(100vh-12.5rem)] md:h-[calc(100vh-9rem)] bg-blue-500 w-full flex justify-center items-center">
+		<ContactMain bind:currentFormChild={$contactScreen} />
+	</div>
+{:else }
+	<div class="flex">
+		<ContactNavigation/>
+		{#if $contactScreen === 'general'}
+			<ContactDefault/>
+		{/if}
+		{#if $contactScreen === 'entrepreneur'}
+			<ContactEntrepreneur/>
+		{/if}
+		{#if $contactScreen === 'partner'}
+			<ContactPartner/>
+		{/if}
+	</div>
+{/if}
 
 <style>
 </style>

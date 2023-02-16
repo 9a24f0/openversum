@@ -6,7 +6,7 @@ const config = {
 		extend: {
 			fontFamily: {
 				poppins: ['Poppins'],
-				mukta: ['Mukta+Mahee']
+				mukta: ['Mukta Mahee']
 			},
 			colors: {
 				green: {

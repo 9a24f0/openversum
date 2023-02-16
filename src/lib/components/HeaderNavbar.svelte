@@ -6,7 +6,7 @@
 	import SimpleSlotModal from './SimpleSlotModal.svelte';
 	import ContactForm from '$lib/components/contact/ContactForm.svelte';
 	import { t } from '$lib/translations';
-	import { isHoverHeader } from '$lib/stores/generalState';
+	import { isHoverHeader, contactScreen } from '$lib/stores/generalState';
 	let showSolutionsMenu = false;
 	let showWorkWithUs = false;
 	let showContact = false;
@@ -56,6 +56,7 @@
 		{/if}
 	</div>
 	<button
+		on:click={() => contactScreen.set('')}
 		class=" text-md lg:text-lg font-medium {$isHoverHeader
 			? 'text-white hover:text-blue-100'
 			: 'text-blue'} focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-xl px-1 max-w-[100px] lg:max-w-xs "
