@@ -4,11 +4,11 @@
 </script>
 
 <div class="my-auto">
+	<!-- class:opacity-60={disabled} -->
 	<button
 		{disabled}
 		on:click
 		type="button"
-		class:opacity-60={disabled}
 		class={`${
 			buttonSize === 'xs'
 				? 'px-2.5 py-1.5 text-xs font-medium'
@@ -21,7 +21,7 @@
 				: buttonSize === 'xl'
 				? 'px-6 py-3 text-base font-medium'
 				: ''
-		}inline-flex items-center border border-transparent rounded-md shadow-sm text-white bg-cyan-600 hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500`}
+		}w-40 px-9 py-3 bg-green-500 rounded-3xl font-semibold text-white cursor-pointer hover:opacity-80 mt-5`}
 		><slot /></button
 	>
 </div>

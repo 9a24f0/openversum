@@ -1,13 +1,15 @@
 {
-    "title": "Contact Openversum",
-    "navG": "General",
-    "navE": "Entrepreneur",
-    "navP": "Partner",
-    "name": "Name",
-    "namePlaceholder": "Your name",
-    "contactPlaceholder": "contact us ...",
-    "organization": "Organization",
-    "country": "Country",
-    "writeUs": "Write us a message",
-    "cvUp": "Upload your CV"
+	"title": "Contact Openversum",
+	"navG": "General",
+	"navE": "Entrepreneur",
+	"navP": "Partner",
+	"name": "Name",
+	"namePlaceholder": "Your name",
+	"contactPlaceholder": "contact us ...",
+	"organization": "Organization",
+	"country": "Country",
+	"writeUs": "Write us a message",
+	"cvUp": "Upload your CV (PDF/DOCX)",
+	"btnCvUp": "Select file",
+	"placeholderCvUp": "No file selected"
 }
