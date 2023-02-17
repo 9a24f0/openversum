@@ -6,6 +6,7 @@
 	import PrimaryButton from '$lib/components/UI/PrimaryButton.svelte';
 	import { createEventDispatcher } from 'svelte';
 	import { t } from '$lib/translations';
+	import TextAreaField from '../UI/TextAreaField.svelte';
 	const dispatch = createEventDispatcher();
 	type ContactIn = Omit<Omit<definitions['contact'], 'id'>, 'created_at'>;
 
@@ -23,11 +24,10 @@
 		!isEmailValid ||
 		email === '' ||
 		name === '' ||
-		message === '' ||
-		organization === '' ||
-		country === '';
+		message === ''
 
 	const submitContact = async () => {
+		console.log(name, email, message, organization, country)
 		const { data, error } = await supabase
 			.from<ContactIn>('contact')
 			.insert({ name, email, message, type, organization, phone_number, country });
@@ -44,6 +44,7 @@
 <form on:submit|preventDefault>
 	<div class="grid grid-cols-6 w-full gap-x-3 gap-y-5">
 		<InputField
+			isRequired={true}
 			bind:value={name}
 			label={$t('contact.name')}
 			placeholder={$t('contact.namePlaceholder')}
@@ -55,31 +56,19 @@
 			placeholder="youremail@example.com"
 		/>
 		<InputField
+			isRequired={false}
 			bind:value={organization}
 			label={$t('contact.organization')}
 			placeholder={$t('contact.organization')}
 		/>
 		<InputField
+			isRequired={false}
 			bind:value={country}
 			label={$t('contact.country')}
 			placeholder={$t('contact.country')}
 		/>
 	</div>
-	<div class="mt-5">
-		<label for="message" class="block text-sm font-medium text-gray-700"
-			>{$t('contact.writeUs')}</label
-		>
-		<div class="mt-1">
-			<textarea
-				bind:value={message}
-				placeholder={$t('contact.contactPlaceholder')}
-				rows="4"
-				name="message"
-				id="message"
-				class="mt-1 focus:ring-cyan-500 focus:border-cyan-500 block w-full shadow-sm border-darkblue "
-			/>
-		</div>
-	</div>
+	<TextAreaField bind:message={message}/>
 
 	<PrimaryButton {disabled} on:click={submitContact}>{$t('common.contact')}</PrimaryButton>
 </form>

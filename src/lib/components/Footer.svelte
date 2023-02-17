@@ -19,10 +19,10 @@
 
 <footer class="w-full text-sm font-medium font-mukta">
 	<div
-		class=" w-full py-4 
-			pl-32 flex flex-col md:flex-row
-		 	items-center justify-between flex-grow h-32 md:h-16
-		  	pr-28
+		class="w-full py-4 
+			flex flex-col md:flex-row
+		 	items-center justify-evenly
+			h-32 md:h-16
 				{isBackgroundCyan
 			? 'bg-blue-500 text-white'
 			: isBackgroundDarkBlue
@@ -30,11 +30,11 @@
 			: 'bg-white text-darkblue'}
 			"
 	>
-		<div class="text-sm text-mukta my-auto underline underline-offset-auto space-x-4 w-48">
+		<div class="text-sm text-mukta my-auto underline underline-offset-auto flex justify-between w-48">
 			<a href="#">Política de Privacidad</a>
 			<a href="#">T&C</a>
 		</div>
-		<p class="my-auto">© 2022 Openversum, all rights reserved</p>
+		<p class="w-60 text-center">© 2022 Openversum, all rights reserved</p>
 		<div class="w-48 justify-evenly flex my-auto">
 			{#if isIconLight}
 					<a href="#"><FacebookLight/></a>

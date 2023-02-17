@@ -2,10 +2,16 @@
 	export let label = '';
 	export let placeholder = '';
 	export let value: any;
+	export let isRequired: Boolean;
 </script>
 
 <div class="col-span-6 sm:col-span-3">
-	<label for="last-name" class="block text-sm font-semibold text-darkblue ">{label} *</label>
+	<label for="last-name" class="block text-sm font-semibold text-darkblue ">
+		{label}
+		{#if isRequired}
+		*
+		{/if}
+	</label>
 	<input
 		bind:value
 		{placeholder}

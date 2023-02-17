@@ -9,6 +9,7 @@
 	"organization": "Organización",
 	"country": "País",
 	"writeUs": "Escríbenos un mensaje",
-	"cvUp": "Cargue su hoja de vida",
+	"cvUp": "Cargue su hoja de vida  (PDF/DOCX)",
+	"btnCvUp": "Seleccionar archivo",
 	"placeholderCvUp": "Ningún archivo seleccionado"
 }

@@ -11,16 +11,17 @@
 
 {#if $contactScreen === ''}
 	<div
-		class="h-[calc(100vh-12.5rem)] md:h-[calc(100vh-9rem)] bg-blue-500 w-full flex justify-center items-center"
+		class="h-full md:h-[calc(100vh-9rem)] bg-blue-500 w-full flex justify-center items-center"
 	>
 		<ContactMain />
 	</div>
 {:else}
-	<div class="h-[calc(100vh-12.5rem)] md:h-[calc(100vh-9rem)] flex items-center">
-		<div class="pl-32 flex-1 pb-28 ">
+	<div class="h-[calc(100%-12.5rem)] md:h-[calc(100vh-9rem)] flex flex-col md:flex-row items-center justify-evenly">
+		<div class="w-60 md:w-48">
 			<ContactNavigation />
 		</div>
-		<div class="pr-28 w-3/5 pl-16">
+		<div class="w-60">
+			<div class="container md:w-[36rem] md:px-16">
 			{#if $contactScreen === 'general'}
 				<ContactDefault />
 			{/if}
@@ -30,7 +31,9 @@
 			{#if $contactScreen === 'partner'}
 				<ContactPartner />
 			{/if}
+			</div>
 		</div>
+		<div class="w-48"></div>
 	</div>
 {/if}
 

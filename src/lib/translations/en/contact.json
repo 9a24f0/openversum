@@ -9,6 +9,7 @@
 	"organization": "Organization",
 	"country": "Country",
 	"writeUs": "Write us a message",
-	"cvUp": "Upload your CV",
+	"cvUp": "Upload your CV (PDF/DOCX)",
+	"btnCvUp": "Select file",
 	"placeholderCvUp": "No file selected"
 }
