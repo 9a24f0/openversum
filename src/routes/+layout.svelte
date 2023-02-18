@@ -60,9 +60,8 @@
 		<div
 			on:mouseenter={() => ($isHoverHeader = true)}
 			on:mouseleave={() => ($isHoverHeader = false)}
-			class:bg-blue={$isHoverHeader}
 			class:text-white={$isHoverHeader}
-			class="bg-white fixed w-full top-0 z-10"
+			class="{$isHoverHeader ? 'bg-blue-500' : 'bg-white'} fixed w-full top-0 z-10"
 		>
 			<Header />
 		</div>
@@ -71,5 +70,5 @@
 		</main>
 	{/if}
 
-	<Footer/>	
+	<Footer />
 </div>
