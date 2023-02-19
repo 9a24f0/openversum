@@ -11,29 +11,34 @@
 
 {#if $contactScreen === ''}
 	<div
-		class="h-full md:h-[calc(100vh-9rem)] bg-blue-500 w-full flex justify-center items-center"
+		class="min-h-[calc(100vh-9.5rem)] md:min-h-[calc(100vh-10rem)] bg-blue-500 w-full flex justify-center items-center"
 	>
 		<ContactMain />
 	</div>
 {:else}
-	<div class="h-[calc(100%-12.5rem)] md:h-[calc(100vh-9rem)] flex flex-col md:flex-row items-center justify-evenly">
-		<div class="w-60 md:w-48">
+	<div
+		class="min-h-[calc(100vh-9.5rem)] md:min-h-[calc(100vh-10rem)] grid grid-cols-2 md:grid-cols-5 mx-auto"
+	>
+		<!-- <div
+		class="min-h-[calc(100vh-9.5rem)] md:min-h-[calc(100vh-10rem)] flex flex-col md:flex-row items-center justify-evenly"
+	> -->
+		<div class="col-span-2 flex items-center justify-center">
 			<ContactNavigation />
 		</div>
-		<div class="w-60">
-			<div class="container md:w-[36rem] md:px-16">
-			{#if $contactScreen === 'general'}
-				<ContactDefault />
-			{/if}
-			{#if $contactScreen === 'entrepreneur'}
-				<ContactEntrepreneur />
-			{/if}
-			{#if $contactScreen === 'partner'}
-				<ContactPartner />
-			{/if}
+		<div class="w-full col-span-2 md:col-span-3 flex items-center justify-center  ">
+			<div class="w-full max-w-2xl mx-6 sm:mx-4">
+				{#if $contactScreen === 'general'}
+					<ContactDefault />
+				{/if}
+				{#if $contactScreen === 'entrepreneur'}
+					<ContactEntrepreneur />
+				{/if}
+				{#if $contactScreen === 'partner'}
+					<ContactPartner />
+				{/if}
 			</div>
 		</div>
-		<div class="w-48"></div>
+		<!-- <div class="w-48" /> -->
 	</div>
 {/if}
 

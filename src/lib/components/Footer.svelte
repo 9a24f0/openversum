@@ -19,10 +19,7 @@
 
 <footer class="w-full text-sm font-medium font-mukta">
 	<div
-		class="w-full py-4 
-			flex flex-col md:flex-row
-		 	items-center justify-evenly
-			h-32 md:h-16
+		class="w-full py-4 flex items-center justify-evenly h-20
 				{isBackgroundCyan
 			? 'bg-blue-500 text-white'
 			: isBackgroundDarkBlue
@@ -30,22 +27,23 @@
 			: 'bg-white text-darkblue'}
 			"
 	>
-		<div class="text-sm text-mukta my-auto underline underline-offset-auto flex justify-between w-48">
+		<!-- Ill hide this untill we have out policy and TC -->
+		<!-- <div class="text-sm text-mukta my-auto underline underline-offset-auto flex justify-between w-48">
 			<a href="#">Política de Privacidad</a>
 			<a href="#">T&C</a>
-		</div>
+		</div> -->
 		<p class="w-60 text-center">© 2022 Openversum, all rights reserved</p>
 		<div class="w-48 justify-evenly flex my-auto">
 			{#if isIconLight}
-					<a href="#"><FacebookLight/></a>
-					<a href="#"><InstagramLight/></a>
-					<a href="#"><LinkedInLight/></a>
-					<a href="#"><TwitterLight/></a>
+				<a href="#"><FacebookLight /></a>
+				<a href="#"><InstagramLight /></a>
+				<a href="#"><LinkedInLight /></a>
+				<a href="#"><TwitterLight /></a>
 			{:else}
-					<a href="#"><FacebookDark/></a>
-					<a href="#"><InstagramDark/></a>
-					<a href="#"><LinkedInDark/></a>
-					<a href="#"><TwitterDark/></a>
+				<a href="#"><FacebookDark /></a>
+				<a href="#"><InstagramDark /></a>
+				<a href="#"><LinkedInDark /></a>
+				<a href="#"><TwitterDark /></a>
 			{/if}
 		</div>
 	</div>

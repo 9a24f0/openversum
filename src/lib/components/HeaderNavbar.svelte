@@ -12,7 +12,7 @@
 	let showContact = false;
 </script>
 
-<nav class="hidden md:flex md:justify-around space-x-8">
+<nav class="hidden md:flex md:justify-around space-x-2 sm:space-x-4 md:space-x-8">
 	<!-- <a
 		href="https://app.openversum.com"
 		target="_blank"
