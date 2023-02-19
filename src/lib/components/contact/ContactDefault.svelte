@@ -19,9 +19,7 @@
 	$: disabled = !isEmailValid || email === '' || name === '' || message === '';
 
 	const submitContact = async () => {
-		const { data, error } = await supabase
-			.from<ContactIn>('contact')
-			.insert({ name, email, message });
+		const { data, error } = await supabase.from('contact').insert({ name, email, message });
 		if (error) {
 			alert('Oups an error happened please try again');
 			throw error;
@@ -47,7 +45,7 @@
 			placeholder="youremail@example.com"
 		/>
 	</div>
-	<TextAreaField bind:message={message}/>
+	<TextAreaField bind:message />
 
 	<PrimaryButton {disabled} on:click={submitContact}>{$t('common.contact')}</PrimaryButton>
 </form>

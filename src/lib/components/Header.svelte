@@ -33,7 +33,7 @@
 
 	<div class=" mx-auto w-full  ">
 		<div
-			class="flex justify-between pl-32 pr-32
+			class="flex justify-between px-2 sm:px-4 lg:px-24
 				flex-grow items-center border-gray-100 py-4"
 		>
 			<div class="w-48">
