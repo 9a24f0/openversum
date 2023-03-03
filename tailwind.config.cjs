@@ -1,13 +1,13 @@
 const config = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
+	mode: 'pjt',
 
 	theme: {
 		extend: {
 			fontFamily: {
 				poppins: ['Poppins'],
-				mukta: ['Mukta+Mahee']
+				mukta: ['Mukta Mahee']
 			},
-
 			colors: {
 				green: {
 					DEFAULT: '#9DC96B',

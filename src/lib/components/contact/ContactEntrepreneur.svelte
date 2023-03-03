@@ -7,7 +7,7 @@
 	import { createEventDispatcher } from 'svelte';
 	import { nanoid } from 'nanoid';
 	import { t } from '$lib/translations';
-
+	import TextAreaField from '../UI/TextAreaField.svelte';
 	const id = nanoid(8);
 	const dispatch = createEventDispatcher();
 	type ContactIn = Omit<Omit<definitions['contact'], 'id'>, 'created_at'>;
@@ -29,9 +29,7 @@
 		!isEmailValid ||
 		email === '' ||
 		name === '' ||
-		message === '' ||
-		organization === '' ||
-		country === '';
+		message === '' 
 
 	const submitContact = async () => {
 		if (inputCV) {
@@ -56,8 +54,9 @@
 </script>
 
 <form on:submit|preventDefault>
-	<div class="grid grid-cols-6 w-full gap-x-8 gap-y-2">
+	<div class="grid grid-cols-6 w-full gap-x-3 gap-y-5">
 		<InputField
+			isRequired={true}
 			bind:value={name}
 			label={$t('contact.name')}
 			placeholder={$t('contact.namePlaceholder')}
@@ -69,46 +68,43 @@
 			placeholder="youremail@example.com"
 		/>
 		<InputField
+			isRequired={false}
 			bind:value={organization}
 			label={$t('contact.organization')}
 			placeholder={$t('contact.organization')}
 		/>
 		<InputField
+			isRequired={false}
 			bind:value={country}
 			label={$t('contact.country')}
 			placeholder={$t('contact.country')}
 		/>
 	</div>
 
-	<div class="mt-2">
-		<label for="last-name" class="block text-sm font-medium text-gray-700"
+	<div class="mt-5">
+		<label for="last-name" class="block text-sm font-semibold text-darkblue mb-2"
 			>{$t('contact.cvUp')}</label
 		>
-		<input
-			bind:files={inputCV}
-			class="block p-2 w-full text-sm bg-gray-50 rounded-lg border border-gray-300 focus:outline-none"
-			id="file_input"
-			type="file"
-			accept="application/pdf, application/vnd.ms-word"
-		/>
-		<p class="mt-0.5 text-xs text-gray-500">PDF or Word</p>
-	</div>
-
-	<div class="my-2">
-		<label for="message" class="block text-sm font-medium text-gray-700"
-			>{$t('contact.writeUs')}</label
+		<div
+			class="box-border flex items-center w-full rounded-lg border border-darkblue"
 		>
-		<div class="mt-1">
-			<textarea
-				bind:value={message}
-				placeholder={$t('contact.contactPlaceholder')}
-				rows="4"
-				name="message"
-				id="message"
-				class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full border-gray-300 rounded-md"
+			<button
+				class="block bg-darkblue text-white text-mukta font-normal p-2.5 px-4 rounded-lg"
+				>{$t('contact.btnCvUp')}</button
+			>
+			<p class="ml-3 text-darkblue font-normal">
+				{$t('contact.placeholderCvUp')}
+			</p>
+			<input
+				bind:files={inputCV}
+				class="cursor-pointer opacity-0 w-36 h-9 pl-36 absolute z-10 rounded-lg border border-gray-300 focus:outline-none"
+				id="file_input"
+				type="file"
+				accept="application/pdf, application/vnd.ms-word"
 			/>
 		</div>
 	</div>
-
+	
+	<TextAreaField bind:message={message}/>
 	<PrimaryButton {disabled} on:click={submitContact}>{$t('common.contact')}</PrimaryButton>
 </form>

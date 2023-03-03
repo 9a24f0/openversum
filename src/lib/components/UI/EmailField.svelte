@@ -9,7 +9,7 @@
 </script>
 
 <div class="relative col-span-6 sm:col-span-3">
-	<label for="email" class="block text-sm font-medium text-gray-700">{label}</label>
+	<label for="email" class="block text-sm font-semibold text-darkblue ">{label} *</label>
 	<input
 		bind:this={inputEmail}
 		on:input={() => (isValid = inputEmail.checkValidity())}
@@ -19,7 +19,7 @@
 		type="email"
 		name="email"
 		id="email"
-		class="mt-1 block w-full shadow-sm rounded-md"
+		class="mt-1 focus:ring-cyan-500 focus:border-cyan-500 block w-full shadow-sm border-darkblue rounded-md"
 		class:not-valid-field={!isValid}
 		class:valid-field={isValid}
 	/>
@@ -35,6 +35,6 @@
 		@apply border-red-300 text-red-900 placeholder-red-300 focus:outline-none focus:ring-red-500 focus:border-red-500;
 	}
 	.valid-field {
-		@apply focus:ring-cyan-500 focus:border-cyan-500 border-gray-300;
+		@apply focus:ring-cyan-500 focus:border-cyan-500;
 	}
 </style>
