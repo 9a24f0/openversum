@@ -3,8 +3,8 @@ lockfileVersion: 5.4
 specifiers:
   '@playwright/test': ^1.31.2
   '@supabase/supabase-js': ^2.10.0
-  '@sveltejs/adapter-auto': next
-  '@sveltejs/kit': 1.2.1
+  '@sveltejs/adapter-auto': ^2.0.0
+  '@sveltejs/kit': ^1.9.3
   '@tailwindcss/forms': ^0.5.3
   '@types/d3-interpolate': ^3.0.1
   autoprefixer: ^10.4.13
@@ -27,7 +27,7 @@ specifiers:
 
 dependencies:
   '@supabase/supabase-js': 2.10.0
-  '@sveltejs/adapter-auto': 1.0.0-next.91_@sveltejs+kit@1.2.1
+  '@sveltejs/adapter-auto': 2.0.0_@sveltejs+kit@1.9.3
   '@tailwindcss/forms': 0.5.3_tailwindcss@3.2.7
   d3-interpolate: 3.0.1
   nanoid: 4.0.1
@@ -37,7 +37,7 @@ dependencies:
 
 devDependencies:
   '@playwright/test': 1.31.2
-  '@sveltejs/kit': 1.2.1_svelte@3.55.1+vite@4.0.4
+  '@sveltejs/kit': 1.9.3_svelte@3.55.1+vite@4.0.4
   '@types/d3-interpolate': 3.0.1
   autoprefixer: 10.4.13_postcss@8.4.21
   postcss: 8.4.21
@@ -332,17 +332,17 @@ packages:
       - supports-color
     dev: false
 
-  /@sveltejs/adapter-auto/1.0.0-next.91_@sveltejs+kit@1.2.1:
-    resolution: {integrity: sha512-U57tQdzTfFINim8tzZSARC9ztWPzwOoHwNOpGdb2o6XrD0mEQwU9DsII7dBblvzg+xCnmd0pw7PDtXz5c5t96w==}
+  /@sveltejs/adapter-auto/2.0.0_@sveltejs+kit@1.9.3:
+    resolution: {integrity: sha512-b+gkHFZgD771kgV3aO4avHFd7y1zhmMYy9i6xOK7m/rwmwaRO8gnF5zBc0Rgca80B2PMU1bKNxyBTHA14OzUAQ==}
     peerDependencies:
-      '@sveltejs/kit': ^1.0.0-next.587
+      '@sveltejs/kit': ^1.0.0
     dependencies:
-      '@sveltejs/kit': 1.2.1_svelte@3.55.1+vite@4.0.4
+      '@sveltejs/kit': 1.9.3_svelte@3.55.1+vite@4.0.4
       import-meta-resolve: 2.2.1
     dev: false
 
-  /@sveltejs/kit/1.2.1_svelte@3.55.1+vite@4.0.4:
-    resolution: {integrity: sha512-XSBgYm7GnL8lkVQtJlKkZ3yBRSagyE3tBWs7oOW3qzx6XYZx7n3atM/TiN8mBDJftT6OvmHUWSmYu1f35CEuTQ==}
+  /@sveltejs/kit/1.9.3_svelte@3.55.1+vite@4.0.4:
+    resolution: {integrity: sha512-rh9FbGfS8w328JZSZmG/ahabBbE50TisHvfz4sVNU3IM3AOhgUAv3EhAJ2dij9R8uARbDHRTY8jOQbIPjcKBZQ==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
     requiresBuild: true
@@ -356,14 +356,14 @@ packages:
       devalue: 4.3.0
       esm-env: 1.0.0
       kleur: 4.1.5
-      magic-string: 0.27.0
+      magic-string: 0.30.0
       mime: 3.0.0
       sade: 1.8.1
       set-cookie-parser: 2.5.1
       sirv: 2.0.2
       svelte: 3.55.1
       tiny-glob: 0.2.9
-      undici: 5.15.1
+      undici: 5.20.0
       vite: 4.0.4
     transitivePeerDependencies:
       - supports-color
@@ -898,9 +898,16 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.14
+    dev: true
 
   /magic-string/0.29.0:
     resolution: {integrity: sha512-WcfidHrDjMY+eLjlU+8OvwREqHwpgCeKVBUpQ3OhYYuvfaYCUgcbuBzappNzZvg/v8onU3oQj+BYpkOJe9Iw4Q==}
+    engines: {node: '>=12'}
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.4.14
+
+  /magic-string/0.30.0:
+    resolution: {integrity: sha512-LA+31JYDJLs82r2ScLrlz1GjSgu66ZV518eyWT+S8VhyQn/JL0u9MeBOvQMGYiPk1DBiSN9DDMOcXvigJZaViQ==}
     engines: {node: '>=12'}
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.14
@@ -1429,8 +1436,8 @@ packages:
     hasBin: true
     dev: true
 
-  /undici/5.15.1:
-    resolution: {integrity: sha512-XLk8g0WAngdvFqTI+VKfBtM4YWXgdxkf1WezC771Es0Dd+Pm1KmNx8t93WTC+Hh9tnghmVxkclU1HN+j+CvIUA==}
+  /undici/5.20.0:
+    resolution: {integrity: sha512-J3j60dYzuo6Eevbawwp1sdg16k5Tf768bxYK4TUJRH7cBM4kFCbf3mOnM/0E3vQYXvpxITbbWmBafaDbxLDz3g==}
     engines: {node: '>=12.18'}
     dependencies:
       busboy: 1.6.0

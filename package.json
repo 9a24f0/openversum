@@ -14,7 +14,7 @@
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.31.2",
-		"@sveltejs/kit": "1.2.1",
+		"@sveltejs/kit": "^1.9.3",
 		"@types/d3-interpolate": "^3.0.1",
 		"autoprefixer": "^10.4.13",
 		"postcss": "^8.4.21",
@@ -32,7 +32,7 @@
 	"type": "module",
 	"dependencies": {
 		"@supabase/supabase-js": "^2.10.0",
-		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/adapter-auto": "^2.0.0",
 		"@tailwindcss/forms": "^0.5.3",
 		"d3-interpolate": "^3.0.1",
 		"nanoid": "^4.0.1",
