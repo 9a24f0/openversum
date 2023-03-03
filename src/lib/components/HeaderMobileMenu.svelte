@@ -13,12 +13,14 @@
 	import SimpleSlotModal from './SimpleSlotModal.svelte';
 	import LangSelect from './UI/LangSelect.svelte';
 	import { t } from '$lib/translations';
+	import { fly } from 'svelte/transition';
 
 	let showContact = false;
 	const dispatch = createEventDispatcher();
 </script>
 
 <div
+	transition:fly
 	use:clickOutside={() => dispatch('closeMenu')}
 	class="absolute top-0 inset-x-0 p-2 z-10 transition transform origin-top-right md:hidden"
 >
@@ -27,9 +29,9 @@
 	>
 		<div class="py-2 px-5">
 			<div class="flex items-center justify-between">
-				<div>
-					<img class="h-8 w-auto" src="./openversum_logo.png" alt="openversum" />
-				</div>
+				<a on:click={() => dispatch('closeMenu')} href="/">
+					<img class="h-8 w-auto" src="./logo_openversum_blue.svg" alt="openversum" />
+				</a>
 				<div class="-mr-2">
 					<button
 						on:click={() => dispatch('closeMenu')}
@@ -42,63 +44,13 @@
 					</button>
 				</div>
 			</div>
-
-			{#if $user}
-				<div class="mt-6">
-					<nav on:click={() => dispatch('closeMenu')} class="grid gap-y-8">
-						<a
-							href="/solutions/newfilter"
-							class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
-						>
-							<!-- Heroicon name: outline/cursor-click -->
-							<div class="text-emerald-700">
-								<CursorClickSvg />
-							</div>
-							<span class="ml-3 text-base font-medium text-gray-900"> New Filter </span>
-						</a>
-
-						<a
-							href="/solutions/finance"
-							class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
-						>
-							<!-- Heroicon name: outline/chart-bar -->
-							<div class="text-emerald-700">
-								<ChartBarSvg />
-							</div>
-							<span class="ml-3 text-base font-medium text-gray-900"> Finance </span>
-						</a>
-
-						<a
-							href="/solutions/inventory"
-							class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
-						>
-							<!-- Heroicon name: outline/view-grid -->
-							<div class="text-emerald-700">
-								<ViewGridSvg />
-							</div>
-							<span class="ml-3 text-base font-medium text-gray-900"> Inventory </span>
-						</a>
-
-						<a
-							href="/solutions/shop"
-							class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
-						>
-							<!-- Heroicon name: outline/refresh -->
-							<div class="text-emerald-700">
-								<RefreshSvg />
-							</div>
-							<span class="ml-3 text-base font-medium text-gray-900"> Shop </span>
-						</a>
-					</nav>
-				</div>
-			{/if}
 		</div>
 		<div class="py-4 px-5 space-y-2">
 			<div class="pb-2 grid grid-cols-2 gap-y-4 gap-x-8">
 				<a
 					on:click={() => dispatch('closeMenu')}
 					href="/#what_we_do"
-					class="text-base font-medium text-emerald-700 hover:text-emerald-900"
+					class="text-base font-medium text-blue hover:text-blue-700"
 				>
 					{$t('common.whatWeDo')}
 				</a>
@@ -106,7 +58,7 @@
 				<a
 					on:click={() => dispatch('closeMenu')}
 					href="/#who_we_are"
-					class="text-base font-medium text-emerald-700 hover:text-emerald-900"
+					class="text-base font-medium text-blue hover:text-blue-700"
 				>
 					{$t('common.whoWeAre')}
 				</a>
@@ -114,21 +66,19 @@
 				<a
 					on:click={() => dispatch('closeMenu')}
 					href="/partners"
-					class="text-base font-medium text-emerald-700 hover:text-emerald-900"
+					class="text-base font-medium text-blue hover:text-blue-700"
 				>
 					{$t('common.mobilePartner')}
 				</a>
 				<a
 					on:click={() => dispatch('closeMenu')}
 					href="/entrepreneurs"
-					class="text-base font-medium text-emerald-700 hover:text-emerald-900"
+					class="text-base font-medium text-blue hover:text-blue-700"
 				>
 					{$t('common.mobileEntrep')}
 				</a>
 
-				<button
-					class="text-base text-left font-medium text-emerald-700 hover:text-emerald-900"
-				>
+				<button class="text-base text-left font-medium text-blue hover:text-blue-700">
 					<a href="/contact">{$t('common.contact')}</a>
 				</button>
 
@@ -136,46 +86,15 @@
 					on:click={() => dispatch('closeMenu')}
 					href="https://app.openversum.com"
 					target="_blank"
-					class="text-base font-medium text-emerald-700 hover:text-emerald-900"
+					class="text-base font-medium text-blue hover:text-blue-700"
 				>
 					Log in
 				</a> -->
 
 				<div class="flex my-auto">
-					<LangSelect />
+					<LangSelect color="blue" />
 				</div>
 			</div>
-			<!-- <div>
-          <a href="#" class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"> Sign up </a>
-          <p class="mt-6 text-center text-base font-medium text-gray-500">
-            Existing customer?
-            <a href="#" class="text-indigo-600 hover:text-indigo-500"> Sign in </a>
-          </p>
-        </div> -->
-
-			<!-- <div class="pt-2 border-t flex md:flex items-center justify-center md:flex-1 lg:w-0">
-				{#if $user}
-					<button
-						on:click|stopPropagation={() => {
-							dispatch('logOut');
-							dispatch('closeMenu');
-						}}
-						class="w-full whitespace-nowrap text-lg font-medium text-emerald-800 hover:text-emerald-900 hover:bg-emerald-100 rounded-xl px-2 py-1 border-emerald-800 border "
-					>
-						Log out
-					</button>
-				{:else}
-					<button
-						on:click|stopPropagation={() => {
-							dispatch('signIn');
-							dispatch('closeMenu');
-						}}
-						class="w-full whitespace-nowrap text-lg font-medium text-emerald-800 hover:text-emerald-900 hover:bg-emerald-100 rounded-xl px-2 py-1 border-emerald-800 border "
-					>
-						Sign in
-					</button>
-				{/if}
-			</div> -->
 		</div>
 	</div>
 </div>

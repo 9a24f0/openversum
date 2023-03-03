@@ -42,29 +42,11 @@
 	$: pathName = $page.url.pathname.slice(1);
 </script>
 
-<svelte:head>
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-240539759-1">
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
-
-		gtag('config', 'UA-240539759-1');
-	</script>
-</svelte:head>
+<svelte:head />
 
 <div class="relative overflow-x-hidden font-mukta overflow-y-scroll min-h-screen h-full">
 	{#if loaded}
-		<div
-			on:mouseenter={() => ($isHoverHeader = true)}
-			on:mouseleave={() => ($isHoverHeader = false)}
-			class:text-white={$isHoverHeader}
-			class="{$isHoverHeader ? 'bg-blue-500' : 'bg-white'} fixed w-full top-0 z-10"
-		>
-			<Header />
-		</div>
+		<Header />
 		<main class="mt-[4.5rem] md:mt-20">
 			<slot />
 		</main>

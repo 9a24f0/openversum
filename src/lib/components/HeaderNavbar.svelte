@@ -2,13 +2,12 @@
 	import SolutionsFlyoutMenu from './SolutionsFlyoutMenu.svelte';
 	import ChevronDownSVG from './SVG/ChevronDownSVG.svelte';
 	import { user } from '$lib/stores/sessionStore';
-	import WorkWithUseFlyoutMenu from './WorkWithUseFlyoutMenu.svelte';
 	import SimpleSlotModal from './SimpleSlotModal.svelte';
 	import ContactForm from '$lib/components/contact/ContactForm.svelte';
 	import { t } from '$lib/translations';
 	import { isHoverHeader, contactScreen } from '$lib/stores/generalState';
-	let showSolutionsMenu = false;
-	let showWorkWithUs = false;
+	export let showWorkWithUs = false;
+
 	let showContact = false;
 </script>
 
@@ -50,10 +49,6 @@
 			<span>{$t('common.workWithUs')}</span>
 			<ChevronDownSVG />
 		</button>
-
-		{#if showWorkWithUs}
-			<WorkWithUseFlyoutMenu on:closeMenu={() => (showWorkWithUs = false)} />
-		{/if}
 	</div>
 	<button
 		on:click={() => contactScreen.set('')}
