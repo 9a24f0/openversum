@@ -5,7 +5,6 @@
 	import ContactPartner from '$lib/components/contact/ContactPartner.svelte';
 	import ContactNavigation from '$lib/components/contact/ContactNavigation.svelte';
 	import { t } from '$lib/translations';
-
 	import { contactScreen } from '$lib/stores/generalState';
 </script>
 

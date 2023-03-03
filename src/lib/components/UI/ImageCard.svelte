@@ -1,14 +1,29 @@
 <script lang="ts">
-
+  export let name: string;
+  export let description: string;
+  export let title: string;
+	export let imgSrc: string;
 </script>
 
-<div class="w-64 h-[18.75rem] block">
-  <img src="https://blbosiccwkpntqobciwj.supabase.co/storage/v1/object/public/openversum-images/general/whatwedo_example.png"
-      alt=""
-      class="w-full h-full">
-  <div class=" top-0 left-0 z-30 h-full w-full bg-[#9F9F9F] opacity-0 hover:opacity-70">
-    <div class="">
 
-    </div>
-  </div>
+<div class="w-64 h-[18.75rem] cursor-pointer rounded-xl relative mx-3">
+	<div
+		class="transition duration-300 ease-in-out 
+			opacity-0 hover:opacity-95 bg-[#BEBEBE]
+			z-1 absolute rounded-lg h-full w-full flex"
+	>
+		<div
+			class="transform-gpu transform transition duration-300 ease-in-out hover:translate-y-0 translate-y-4
+				p-6 space-y-3 text-lg text-darkblue flex flex-col hover:opacity-100"
+		>
+			<div class="font-medium">{name}</div>
+			<div class="text-sm grow">{description}</div>
+			<div class="font-medium place-self-end">{title}</div>
+		</div>
+	</div>
+	<img
+		alt="Organizers"
+		class="object-cover w-full h-full rounded-lg"
+		src={imgSrc}
+	/>
 </div>
