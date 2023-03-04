@@ -5,14 +5,16 @@
 	import { isHoverHeader } from '$lib/stores/generalState';
 	import LangSelect from './UI/LangSelect.svelte';
 	import WorkWithUseFlyoutMenu from './WorkWithUseFlyoutMenu.svelte';
+	import { clickOutside } from '$lib/utilities/clickOutside';
 
 	let showMobileMenu = false;
-	let showWorkWithUs = true;
+	let showWorkWithUs = false;
 </script>
 
 <div
 	on:mouseenter={() => ($isHoverHeader = true)}
 	on:mouseleave={() => ($isHoverHeader = false)}
+	use:clickOutside={() => ($isHoverHeader = false)}
 	class:text-white={$isHoverHeader}
 	class="{$isHoverHeader ? 'bg-blue-500' : 'bg-white'} fixed w-full top-0 z-10"
 >

@@ -1,35 +1,12 @@
 <script lang="ts">
-	import AnimatedBlob from '$lib/components/AnimatedBlob.svelte';
 	import AnimatedWave from '$lib/components/AnimatedWave.svelte';
-	import SideSocialButtons from '$lib/components/SideSocialButtons.svelte';
 	import SimpleSlotModal from '$lib/components/SimpleSlotModal.svelte';
-	import BottomWaves from '$lib/components/SVG/BottomWaves.svelte';
-	import BottomWaves2 from '$lib/components/SVG/BottomWaves2.svelte';
-	import Elipse1Svg from '$lib/components/SVG/Elipse1SVG.svelte';
-	import OpenversumAppSvg from '$lib/components/SVG/OpenversumAppSVG.svelte';
-	import TopWaves from '$lib/components/SVG/TopWaves.svelte';
-	import TopWaves2 from '$lib/components/SVG/TopWaves2.svelte';
-	import WatchButton from '$lib/components/WatchButton.svelte';
 	import { t } from '$lib/translations';
-	import { onMount } from 'svelte';
 	export let data: any;
-	const imageList = data.imageList;
 	let innerHeight: number;
 	let innerWidth: number;
 	let scrollYIndex: number;
-	let gridWidth: number;
 	let showVideoModal = false;
-	let Carousel: any; // for saving Carousel component class
-	let carousel: any; // for calling methods of the carousel instance
-
-	onMount(async () => {
-		const module = await import('svelte-carousel');
-		Carousel = module.default;
-	});
-
-	/* const handleNextClick = () => {
-		carousel.goToNext();
-	}; */
 </script>
 
 <svelte:head>
@@ -176,29 +153,7 @@
 	</section>
 </div>
 
-<div id="who_we_are" class="w-full">
-	<h1 class="font-bold text-4xl md:text-5xl  sm:mb-8">{$t('home.visionTitle')}</h1>
-	<p class="text-lg sm:text-xl px-4 sm:px-8 md:px-16 pt-8 pb-4 text-justify sm:columns-2">
-		{@html $t('home.visionP')}
-	</p>
-
-	<h1 class="font-bold text-4xl md:text-5xl  mb-4 mt-4 sm:mb-8">{$t('home.teamTitle')}</h1>
-
-	<div class="grid grid-cols-5 gap-2 sm:px-8 md:px-20">
-		<p class="col-span-4 my-auto">
-			<span class="font-semibold">Olivier Gröninger</span>, {$t('home.oliP')}
-		</p>
-		<p class="col-span-4 my-auto text-right">
-			<span class="font-semibold">Laura Stocco</span>, {$t('home.lauraP')}
-		</p>
-		<p class="col-span-4 my-auto">
-			<span class="font-semibold">Lorenzo Donadio</span>, {$t('home.zozoP')}
-		</p>
-	</div>
-</div>
-
 <div class="container mx-auto px-2 sm:px-6 lg:px-16">
-	<h1 class="font-bold text-4xl md:text-5xl  mb-4 mt-4 sm:mb-8">{$t('home.partnersT')}</h1>
 	<h1 class="font-bold text-4xl md:text-5xl  mb-4 mt-4 sm:mb-8">{$t('home.awardsT')}</h1>
 </div>
 

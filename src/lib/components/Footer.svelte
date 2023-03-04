@@ -35,15 +35,30 @@
 		<p class="w-60 text-center">© 2022 Openversum, all rights reserved</p>
 		<div class="w-48 justify-evenly flex my-auto">
 			{#if isIconLight}
-				<a href="#"><FacebookLight /></a>
-				<a href="#"><InstagramLight /></a>
-				<a href="#"><LinkedInLight /></a>
-				<a href="#"><TwitterLight /></a>
+				<a href="https://www.facebook.com/openversum/" target="_blank" rel="noreferrer"
+					><FacebookLight /></a
+				>
+				<a href="https://www.instagram.com/openversum/" target="_blank" rel="noreferrer"
+					><InstagramLight /></a
+				>
+				<a href="https://www.linkedin.com/company/openversum/" target="_blank" rel="noreferrer"
+					><LinkedInLight /></a
+				>
+				<a href="https://twitter.com/openversum" target="_blank" rel="noreferrer"
+					><TwitterLight /></a
+				>
 			{:else}
-				<a href="#"><FacebookDark /></a>
-				<a href="#"><InstagramDark /></a>
-				<a href="#"><LinkedInDark /></a>
-				<a href="#"><TwitterDark /></a>
+				<a href="https://www.facebook.com/openversum/" target="_blank" rel="noreferrer"
+					><FacebookDark /></a
+				>
+				<a href="https://www.instagram.com/openversum/" target="_blank" rel="noreferrer"
+					><InstagramDark /></a
+				>
+				<a href="https://www.linkedin.com/company/openversum/" target="_blank" rel="noreferrer"
+					><LinkedInDark /></a
+				>
+				<a href="https://twitter.com/openversum" target="_blank" rel="noreferrer"><TwitterDark /></a
+				>
 			{/if}
 		</div>
 	</div>

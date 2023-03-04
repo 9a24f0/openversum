@@ -35,6 +35,11 @@ export const config = {
 			key: 'home',
 			loader: async () => (await import('./en/home.json')).default
 		},
+		{
+			locale: 'en',
+			key: 'aboutus',
+			loader: async () => (await import('./en/aboutus.json')).default
+		},
 		// SPANISH!!!!
 		{
 			locale: 'es',
@@ -61,6 +66,11 @@ export const config = {
 			locale: 'es',
 			key: 'home',
 			loader: async () => (await import('./es/home.json')).default
+		},
+		{
+			locale: 'es',
+			key: 'aboutus',
+			loader: async () => (await import('./es/aboutus.json')).default
 		}
 	]
 };

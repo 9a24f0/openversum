@@ -1,14 +1,8 @@
 <script lang="ts">
-	import SolutionsFlyoutMenu from './SolutionsFlyoutMenu.svelte';
 	import ChevronDownSVG from './SVG/ChevronDownSVG.svelte';
-	import { user } from '$lib/stores/sessionStore';
-	import SimpleSlotModal from './SimpleSlotModal.svelte';
-	import ContactForm from '$lib/components/contact/ContactForm.svelte';
 	import { t } from '$lib/translations';
 	import { isHoverHeader, contactScreen } from '$lib/stores/generalState';
 	export let showWorkWithUs = false;
-
-	let showContact = false;
 </script>
 
 <nav class="hidden md:flex md:justify-around space-x-2 sm:space-x-4 md:space-x-8">
@@ -29,12 +23,12 @@
 		{$t('common.whatWeDo')}
 	</a>
 	<a
-		href="/#who_we_are"
+		href="/about-us"
 		class=" text-md lg:text-lg font-medium {$isHoverHeader
 			? 'text-white hover:text-blue-100'
 			: 'text-blue'} focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-xl px-1 max-w-[100px] lg:max-w-xs "
 	>
-		{$t('common.whoWeAre')}
+		{$t('common.aboutUs')}
 	</a>
 	<div class="relative">
 		<!-- Item active: "text-gray-900", Item inactive: "text-emerald-700" -->
@@ -59,8 +53,3 @@
 		<a href="/contact">{$t('common.contact')}</a>
 	</button>
 </nav>
-{#if showContact}
-	<SimpleSlotModal on:closeModal={() => (showContact = false)}>
-		<ContactForm currentForm="general" on:submitedContact={() => (showContact = false)} />
-	</SimpleSlotModal>
-{/if}

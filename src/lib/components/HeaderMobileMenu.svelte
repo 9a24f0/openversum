@@ -57,10 +57,10 @@
 
 				<a
 					on:click={() => dispatch('closeMenu')}
-					href="/#who_we_are"
+					href="/about-us"
 					class="text-base font-medium text-blue hover:text-blue-700"
 				>
-					{$t('common.whoWeAre')}
+					{$t('common.aboutUs')}
 				</a>
 
 				<a
