@@ -6,7 +6,7 @@
 </script>
 
 
-<div class="w-64 h-[18.75rem] cursor-pointer rounded-xl relative mx-3">
+<div class="w-64 h-[18.75rem] cursor-pointer rounded-xl relative m-3">
 	<div
 		class="transition duration-300 ease-in-out 
 			opacity-0 hover:opacity-95 bg-[#BEBEBE]

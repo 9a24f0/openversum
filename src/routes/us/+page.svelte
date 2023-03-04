@@ -8,43 +8,42 @@
 
 <div class="flex flex-wrap justify-between px-8 sm:px-12 lg:px-24 items-center border-gray-100 py-8 md:py-12">
   <div class="lg:w-1/2 lg:pr-32">
-    <p class="font-poppins text-[2.125rem] text-darkblue font-medium">
+    <p class="font-poppins text-4xl text-darkblue font-medium pb-2 border-b-2 border-darkblue">
       Nosotros
     </p>
-    <hr class="bg-darkblue">
     <p class="py-4 text-darkblue">
       {@html $t('home.visionP')}
     </p>
   </div>
-  <div class="flex flex-grow justify-between px-4">
+  <div class="flex flex-grow flex-wrap justify-evenly pt-8">
     <div class="flex flex-col place-items-center">
-      <span class="flex justify-center w-32 h-28">
+      <span class="flex justify-center w-24 h-24">
         <Environmental />
       </span>
-      <p class="text-2xl pt-8 font-poppins text-blue-500">Ambiental</p>
+      <p class="text-md md:text-2xl pt-8 font-poppins text-blue-500">Ambiental</p>
     </div>
     <div class="flex flex-col place-items-center">
-      <span class="flex justify-center w-32 h-28">
+      <span class="flex justify-center w-24 h-24">
         <Social />
       </span>
-      <p class="text-2xl pt-8 font-poppins text-blue-500">Social</p>
+      <p class="text-md md:text-2xl pt-8 font-poppins text-blue-500">Social</p>
     </div>
     <div class="flex flex-col place-items-center">
-      <span class="flex justify-center w-32 h-28">
+      <span class="flex justify-center w-24 h-24">
         <Financial />
       </span>
-      <p class="text-2xl pt-8 font-poppins text-blue-500">Financiero</p>
+      <p class="text-md md:text-2xl pt-8 font-poppins text-blue-500">Financiero</p>
     </div>
   </div>
 </div>
-  
-<div class="w-full flex justify-center pt-8">
-  <p class="font-poppins text-[2.125rem] text-blue-500 font-medium">
+
+<div class="w-full flex justify-center pt-8 px-8 text-center">
+  <p class="font-poppins text-4xl text-blue-500 font-medium">
     Conoce nuestro equipo
   </p>
 </div>
 
-<div class="px-8 sm:px-12 lg:px-24 flex justify-center py-4">
+<div class="px-8 sm:px-12 lg:px-24 flex flex-wrap justify-center py-4">
   <ImageCard
     name={"Olivier Gröninger"}
     description={$t('home.oliP')}
