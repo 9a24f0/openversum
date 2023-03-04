@@ -62,3 +62,16 @@
     imgSrc={"https://blbosiccwkpntqobciwj.supabase.co/storage/v1/object/public/openversum-images/general/whatwedo_example.png"}/>
 </div>
 
+<div class="w-full flex justify-center pt-16">
+  <p class="font-poppins text-2xl text-darkblue font-medium">
+    {$t('home.partnersT')}
+  </p>
+</div>
+
+<div class="flex justify-center">
+  <div class="inline-grid grid-cols-3 gap-8 py-14">
+    <img class="max-h-14 place-self-center" src="/partner_logos/cruz_roja_sucre.png" alt="cruz roja sucre" />
+    <img class="max-h-14 place-self-center border-x-2 border-darkblue" src="partner_logos/ETH-logo.jpg" alt="ETH partner" />
+    <img class="max-h-14 place-self-center" src="/partner_logos/rios.png" alt="fundacion rios" />
+  </div>
+</div>
