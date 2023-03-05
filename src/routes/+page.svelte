@@ -6,8 +6,8 @@
 	import { t } from '$lib/translations';
 	import LandingImage from '$lib/images/landing_image.jpg?w=1600&webp';
 	import FilterImage from '$lib/images/filter_openversum.png?h=800&webp';
+	import GreenDropImage from '$lib/images/greenwaterdrop.png?h=400&webp';
 	import H2 from './H2.svelte';
-	import WaveIconSvg from '$lib/components/SVG/WaveIconSVG.svelte';
 	let innerHeight: number;
 	let innerWidth: number;
 	let scrollYIndex: number;
@@ -140,13 +140,13 @@
 
 		<div class="flex justify-evenly">
 			<div class="my-auto">
-				<img class="hidden sm:block max-h-[200px]" src="greenwaterdrop.svg" alt="greenwater drop" />
+				<img class="hidden sm:block max-h-[230px]" src="greenwaterdrop.svg" alt="greenwater drop" />
 			</div>
 			<p class="text-base max-w-md sm:text-lg p-4">
 				<span class="text-blue text-2xl sm:text-5xl">+2.000</span>
 				<img
-					class="block sm:hidden float-left max-h-[200px] pr-4 pb-4"
-					src="greenwaterdrop.svg"
+					class="block sm:hidden float-left max-h-[230px] pr-4 pb-4"
+					src={GreenDropImage}
 					alt="greenwater drop"
 				/>
 				<br />
@@ -162,13 +162,13 @@
 		<div class="flex justify-evenly">
 			<p class="text-base max-w-md sm:text-lg pr-2 pl-4 my-auto">
 				<img
-					class="block sm:hidden float-right max-h-[200px]"
+					class="block sm:hidden float-right max-h-[230px]"
 					src="waterproblem.png"
-					alt="greenwater drop"
+					alt="water problem"
 				/>
 				{$t('home.whyProblemP')}
 			</p>
-			<img class="hidden sm:block max-h-[200px]" src="waterproblem.png" alt="greenwater drop" />
+			<img class="hidden sm:block max-h-[230px]" src="waterproblem.png" alt="water problem" />
 		</div>
 		<H2>
 			{$t('home.overcomesTitle')}
@@ -176,15 +176,19 @@
 		<div class="flex justify-evenly">
 			<p class="my-auto max-w-md text-base sm:text-lg">
 				<img
-					class="block sm:hidden float-right max-h-[200px]"
+					class="block sm:hidden float-right max-h-[230px]"
 					src="overcomes.png"
-					alt="greenwater drop"
+					alt="Openversum overcomes barriers"
 				/>
 				{$t('home.overcomesP1')}
 				<br />
 				{$t('home.overcomesP2')}
 			</p>
-			<img class="hidden sm:block max-h-[200px]" src="overcomes.png" alt="greenwater drop" />
+			<img
+				class="hidden sm:block max-h-[230px]"
+				src="overcomes.png"
+				alt="Openversum overcomes barriers"
+			/>
 		</div>
 	</section>
 
