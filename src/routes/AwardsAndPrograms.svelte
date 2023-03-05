@@ -1,6 +1,9 @@
 <script lang="ts">
+	import H2 from './H2.svelte';
+
 	import { t } from '$lib/translations';
 	import { locale } from '$lib/translations';
+	import { fly, slide } from 'svelte/transition';
 
 	const awardsPrograms = [
 		{
@@ -18,9 +21,9 @@
 			alt: 'Hult_Prize',
 			imgSrc: './Logos/color/Hult_Prize.svg',
 			descriptionEs:
-				'Boston Global Accelerator <br/>Uno de los 6 finalistas que se presentaron en Nueva York en la Clinton Global Initiative <br/>Seleccionada entre más de 25.000 startups de todo el mundo',
+				'Boston Global Accelerator <br/>Openversum fue uno de los 6 finalistas que se presentaron en Nueva York en la Clinton Global Initiative <br/>Seleccionados entre más de 25.000 startups de todo el mundo',
 			descriptionEn:
-				"Boston Global Accelerator <br/> One of 6 Finalists pitching in New York at the Clinton Global Initiative <br/> Selected out of 25'000+ startups internationally",
+				"Boston Global Accelerator <br/> Openversum was one of 6 Finalists pitching in New York at the Clinton Global Initiative <br/> Selected out of 25'000+ startups internationally",
 			url: 'https://www.hultprize.org/2022-global-finals/'
 		},
 		{
@@ -28,7 +31,7 @@
 			alt: 'Microsoft_4startups',
 			imgSrc: './Logos/color/Microsoft_4startups.jpg',
 			descriptionEs:
-				'Microsoft para Startups eúne a personas, conocimientos y tecnología para ayudar a los fundadores en todas las etapas a resolver los retos de las startups. <br/> Seleccionados para el concurso Pitch for Impact en el evento Microsoft Envision de Zúrich',
+				'Microsoft para Startups reúne a personas, conocimientos y tecnología para ayudar a los fundadores en todas las etapas a resolver los retos de las startups. <br/> Seleccionados para el concurso Pitch for Impact en el evento Microsoft Envision de Zúrich',
 			descriptionEn:
 				'Microsoft for Startups Founders Hub brings people, knowledge, and technology together to help founders at every stage solve startup challenges. <br/> Selected for the Pitch for Impact competition at the Microsoft Envision event in Zürich',
 			url: null
@@ -98,8 +101,8 @@
 	let selectedAward = awardsPrograms[0];
 </script>
 
-<section class="w-full bg-blue">
-	<div class="container mx-auto px-2 sm:px-6 lg:px-16  py-4">
+<section class="w-full bg-blue snap-start">
+	<div class="container mx-auto px-2 sm:px-6 lg:px-16 py-4">
 		<div class="flex justify-center">
 			<h1 class="font-poppins font-semibold text-3xl md:text-4xl text-white mb-4 mt-4 sm:mb-8">
 				{$t('home.awardsT')}
@@ -107,9 +110,12 @@
 		</div>
 		<div class="w-full flex justify-center pb-12">
 			<div class="flex flex-wrap justify-center bg-white rounded-xl">
-				<div class="w-full px-x sm:px-8 flex justify-evenly space-x-4 py-8">
-					{#key selectedAward}
-						<h2 class="font-poppins text-2xl my-auto font-semibold">{selectedAward.name}</h2>
+				{#key selectedAward}
+					<div
+						in:fly={{ x: 100, duration: 500 }}
+						class="w-full px-2 sm:px-8 flex justify-evenly space-x-4 py-8"
+					>
+						<H2>{selectedAward.name}</H2>
 						<p class="max-w-md">
 							{@html $locale === 'es' ? selectedAward.descriptionEs : selectedAward.descriptionEn}
 
@@ -125,17 +131,26 @@
 								</a>
 							{/if}
 						</p>
-					{/key}
-				</div>
+					</div>
+				{/key}
 				{#each awardsPrograms as ap}
 					{@const isSelected = ap.name === selectedAward.name}
+					<!-- class="{isSelected
+							? 'opacity-100 border-t-4 border-green'
+							: 'opacity-70'} p-4 px-8 border-t hover:opacity-100 transition-all" -->
 					<button
 						on:click={() => (selectedAward = ap)}
 						class="{isSelected
-							? 'opacity-100 border-t-4 border-green'
-							: 'opacity-70'} p-4 px-8 border-t hover:opacity-100"
+							? 'opacity-100 '
+							: 'opacity-70'} relative p-4 px-8 border-t hover:opacity-100 transition-all"
 					>
-						<img class="h-24 aspect-video object-contain " alt={ap.name} src={ap.imgSrc} />
+						{#if isSelected}
+							<div
+								transition:fly={{ x: 100, duration: 500 }}
+								class="absolute h-1 bg-green inset-0"
+							/>
+						{/if}
+						<img class="h-12 sm:h-24 aspect-video object-contain " alt={ap.name} src={ap.imgSrc} />
 					</button>
 				{/each}
 			</div>

@@ -39,12 +39,10 @@
 
 <svelte:head />
 
-<div
-	class="relative overflow-x-hidden font-mukta overflow-y-scroll min-h-screen h-full text-darkblue"
->
+<div class="relative overflow-x-hidden font-mukta text-darkblue text-sm sm:text-base">
 	{#if loaded}
 		<Header />
-		<main class="mt-[4.5rem] md:mt-20">
+		<main class="mt-[4.5rem] md:mt-20 ">
 			<slot />
 		</main>
 

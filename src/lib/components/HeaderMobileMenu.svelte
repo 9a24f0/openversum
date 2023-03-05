@@ -2,14 +2,10 @@
 	import { createEventDispatcher } from 'svelte';
 	import { clickOutside } from '$lib/utilities/clickOutside';
 	import CloseSvg from './SVG/CloseSVG.svelte';
-	import CursorClickSvg from './SVG/CursorClickSVG.svelte';
-	import ContactForm from '$lib/components/contact/ContactForm.svelte';
-	import SimpleSlotModal from './SimpleSlotModal.svelte';
 	import LangSelect from './UI/LangSelect.svelte';
 	import { t } from '$lib/translations';
 	import { fly } from 'svelte/transition';
 
-	let showContact = false;
 	const dispatch = createEventDispatcher();
 </script>
 
@@ -71,19 +67,13 @@
 				>
 					{$t('common.mobileEntrep')}
 				</a>
-
-				<button class="text-base text-left font-medium text-blue hover:text-blue-700">
-					<a href="/contact">{$t('common.contact')}</a>
-				</button>
-
-				<!-- <a
+				<a
 					on:click={() => dispatch('closeMenu')}
-					href="https://app.openversum.com"
-					target="_blank"
+					href="/contact"
 					class="text-base font-medium text-blue hover:text-blue-700"
 				>
-					Log in
-				</a> -->
+					{$t('common.contact')}
+				</a>
 
 				<div class="flex my-auto">
 					<LangSelect color="blue" />
@@ -92,11 +82,3 @@
 		</div>
 	</div>
 </div>
-
-{#if showContact}
-	<div on:click|stopPropagation>
-		<SimpleSlotModal on:closeModal={() => (showContact = false)}>
-			<ContactForm currentForm="general" on:submitedContact={() => (showContact = false)} />
-		</SimpleSlotModal>
-	</div>
-{/if}

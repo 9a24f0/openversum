@@ -3,41 +3,38 @@
 	import { createEventDispatcher } from 'svelte';
 	import { t } from '$lib/translations';
 	import { isHoverHeader } from '$lib/stores/generalState';
+	import { fly, slide } from 'svelte/transition';
 
 	const dispatch = createEventDispatcher();
 </script>
 
-<div use:clickOutside={() => dispatch('closeMenu')} class="z-10 w-full">
+<div transition:slide use:clickOutside={() => dispatch('closeMenu')} class="z-10 w-full">
 	<div
 		class:text-white={$isHoverHeader}
-		class="{$isHoverHeader ? 'bg-blue-500' : 'bg-white'} bg-blue overflow-hidden pb-4"
+		class="{$isHoverHeader ? 'bg-blue-500' : 'bg-white'} bg-blue overflow-hidden pb-2"
 	>
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
-		<div class="flex justify-evenly">
+		<div class="hidden sm:flex justify-evenly">
 			<a
 				on:click={() => dispatch('closeMenu')}
 				href="/entrepreneurs"
-				class="p-3 flex items-start rounded-lg hover:bg-gray-50"
+				class="p-2 rounded-lg border-transparent border-2 hover:border-white"
 			>
-				<div class="ml-4">
-					<p class="text-base font-medium text-gray-900">{$t('common.mobileEntrep')}</p>
-					<p class="mt-1 text-sm text-gray-500">
-						{@html $t('common.entrepDescription')}
-					</p>
-				</div>
+				<p class="text-base font-medium text-darkblue">{$t('common.mobileEntrep')}</p>
+				<p class="mt-1 text-sm {$isHoverHeader ? 'text-white' : 'text-blue'}">
+					{@html $t('common.entrepDescription')}
+				</p>
 			</a>
 
 			<a
 				on:click={() => dispatch('closeMenu')}
 				href="/partners"
-				class="p-3 flex items-start rounded-lg hover:bg-gray-50"
+				class="p-2 rounded-lg border-transparent border-2 hover:border-white"
 			>
-				<div class="ml-4">
-					<p class="text-base font-medium text-gray-900">{$t('common.mobilePartner')}</p>
-					<p class="mt-1 text-sm text-gray-500">
-						{@html $t('common.partnerDescription')}
-					</p>
-				</div>
+				<p class="text-base font-medium text-darkblue">{$t('common.mobilePartner')}</p>
+				<p class="mt-1 text-sm {$isHoverHeader ? 'text-white' : 'text-blue'}">
+					{@html $t('common.partnerDescription')}
+				</p>
 			</a>
 		</div>
 	</div>

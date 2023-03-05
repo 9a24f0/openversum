@@ -11,6 +11,7 @@
 	let showWorkWithUs = false;
 </script>
 
+<!-- class="{$isHoverHeader ? 'bg-blue-500' : 'bg-white'} fixed w-full top-0 z-10" -->
 <div
 	on:mouseenter={() => ($isHoverHeader = true)}
 	on:mouseleave={() => ($isHoverHeader = false)}
