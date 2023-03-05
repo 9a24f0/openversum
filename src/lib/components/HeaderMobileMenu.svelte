@@ -1,15 +1,9 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
 	import { clickOutside } from '$lib/utilities/clickOutside';
-	import ChartBarSvg from './SVG/ChartBarSVG.svelte';
 	import CloseSvg from './SVG/CloseSVG.svelte';
 	import CursorClickSvg from './SVG/CursorClickSVG.svelte';
-	import RefreshSvg from './SVG/RefreshSVG.svelte';
-	import ViewGridSvg from './SVG/ViewGridSVG.svelte';
-
-	import { user } from '$lib/stores/sessionStore';
 	import ContactForm from '$lib/components/contact/ContactForm.svelte';
-
 	import SimpleSlotModal from './SimpleSlotModal.svelte';
 	import LangSelect from './UI/LangSelect.svelte';
 	import { t } from '$lib/translations';

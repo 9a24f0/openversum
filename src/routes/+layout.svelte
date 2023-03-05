@@ -1,19 +1,16 @@
 <script lang="ts">
 	import '../app.css';
+
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-	import { supabase } from '$lib/supabase';
-	import { user } from '$lib/stores/sessionStore';
 	import { onMount } from 'svelte/internal';
-	import BlobTopR from '$lib/components/SVG/BlobTopR.svelte';
 	import { locale, loadTranslations } from '$lib/translations';
 	import { page } from '$app/stores';
-	import LangSelect from '$lib/components/UI/LangSelect.svelte';
 	import lang from '$lib/translations/lang.json';
 	import { webVitals } from '$lib/vitals';
 	import { browser } from '$app/environment';
-	import { isHoverHeader } from '$lib/stores/generalState';
-	let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
+
+	const analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
 
 	const possibleLocales = Object.keys(lang);
 	let loaded = false;
@@ -38,8 +35,6 @@
 			analyticsId
 		});
 	}
-
-	$: pathName = $page.url.pathname.slice(1);
 </script>
 
 <svelte:head />
@@ -50,7 +45,7 @@
 		<main class="mt-[4.5rem] md:mt-20">
 			<slot />
 		</main>
-	{/if}
 
-	<Footer />
+		<Footer />
+	{/if}
 </div>

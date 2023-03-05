@@ -2,7 +2,7 @@
 	import AnimatedWave from '$lib/components/AnimatedWave.svelte';
 	import SimpleSlotModal from '$lib/components/SimpleSlotModal.svelte';
 	import { t } from '$lib/translations';
-	export let data: any;
+	import LandingImage from '$lib/images/landing_image.jpg?w=1600&webp';
 	let innerHeight: number;
 	let innerWidth: number;
 	let scrollYIndex: number;
@@ -16,7 +16,7 @@
 		content="Technology and educational platform to enable and empower local entrepreneurs to produce and distribute innovative drinking water filters. Entrepreneurs make a living by bringing clean water to their communities."
 	/>
 	<meta
-		name="description"
+		name="descripcion"
 		content="Plataforma tecnológica y educativa para capacitar y empoderar a los empresarios locales para que produzcan y distribuyan filtros de agua potable innovadores. Los empresarios se ganan la vida llevando agua limpia a sus comunidades."
 	/>
 	<meta
@@ -40,7 +40,7 @@
 		</div>
 		<img
 			class="max-h-[90vh] min-h-[500px] mx-auto w-full object-cover"
-			src="pexels-water.jpg"
+			src={LandingImage}
 			alt="kick foundation partner"
 		/>
 		<div style="width: {innerWidth}px;" class="absolute h-32 md:h-44 bottom-0">
