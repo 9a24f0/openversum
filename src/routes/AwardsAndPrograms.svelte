@@ -156,7 +156,12 @@
 								class="absolute h-1 bg-green inset-0"
 							/>
 						{/if}
-						<img class="h-12 sm:h-24 aspect-video object-contain " alt={ap.name} src={ap.imgSrc} />
+						<img
+							loading="lazy"
+							class="h-12 sm:h-24 aspect-video object-contain "
+							alt={ap.name}
+							src={ap.imgSrc}
+						/>
 					</button>
 				{/each}
 			</div>

@@ -37,7 +37,22 @@
 	}
 </script>
 
-<svelte:head />
+<svelte:head>
+	<title>Openversum - providing clean and safe drinking water where most needed</title>
+	<meta
+		name="description"
+		content="Technology and educational platform to enable and empower local entrepreneurs to produce and distribute innovative drinking water filters. Entrepreneurs make a living by bringing clean water to their communities."
+	/>
+	<meta
+		name="descripcion"
+		content="Plataforma tecnológica y educativa para capacitar y empoderar a los empresarios locales para que produzcan y distribuyan filtros de agua potable innovadores. Los empresarios se ganan la vida llevando agua limpia a sus comunidades."
+	/>
+	<meta
+		name="robots"
+		content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+	/>
+	<html lang="en" />
+</svelte:head>
 
 <div class="relative overflow-x-hidden font-mukta text-darkblue">
 	{#if loaded}

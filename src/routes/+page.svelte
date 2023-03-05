@@ -1,6 +1,5 @@
 <script lang="ts">
 	import AwardsAndPrograms from './AwardsAndPrograms.svelte';
-
 	import AnimatedWave from '$lib/components/AnimatedWave.svelte';
 	import SimpleSlotModal from '$lib/components/SimpleSlotModal.svelte';
 	import { t } from '$lib/translations';
@@ -15,23 +14,6 @@
 	let scrollYIndex: number;
 	let showVideoModal = false;
 </script>
-
-<svelte:head>
-	<title>Openversum - providing clean and safe drinking water where most needed</title>
-	<meta
-		name="description"
-		content="Technology and educational platform to enable and empower local entrepreneurs to produce and distribute innovative drinking water filters. Entrepreneurs make a living by bringing clean water to their communities."
-	/>
-	<meta
-		name="descripcion"
-		content="Plataforma tecnológica y educativa para capacitar y empoderar a los empresarios locales para que produzcan y distribuyan filtros de agua potable innovadores. Los empresarios se ganan la vida llevando agua limpia a sus comunidades."
-	/>
-	<meta
-		name="robots"
-		content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-	/>
-	<html lang="en" />
-</svelte:head>
 
 <svelte:window bind:scrollY={scrollYIndex} bind:innerHeight bind:innerWidth />
 <div class="w-full overflow-x-hidden space-y-4 md:space-y-8">
@@ -50,6 +32,7 @@
 			</p>
 		</div>
 		<img
+			loading="eager"
 			class="max-h-[90vh] min-h-[500px] mx-auto w-full object-cover"
 			src={LandingImage}
 			alt="kick foundation partner"
@@ -142,11 +125,17 @@
 
 		<div class="flex justify-evenly">
 			<div class="my-auto">
-				<img class="hidden sm:block max-h-[230px]" src={GreenDropImage} alt="greenwater drop" />
+				<img
+					loading="lazy"
+					class="hidden sm:block max-h-[230px]"
+					src={GreenDropImage}
+					alt="greenwater drop"
+				/>
 			</div>
 			<p class="text-base max-w-md sm:text-lg p-4">
 				<span class="text-blue text-2xl sm:text-5xl">+2.000</span>
 				<img
+					loading="lazy"
 					class="block sm:hidden float-left max-h-[230px] pr-4 pb-4"
 					src={GreenDropImage}
 					alt="greenwater drop"
@@ -156,7 +145,8 @@
 			</p>
 		</div>
 
-		<!-- <img class="float-right" src="grid_filter.svg" alt="filtergridchema" /> -->
+		<!-- <img
+			    loading="lazy" class="float-right" src="grid_filter.svg" alt="filtergridchema" /> -->
 		<H2>
 			{$t('home.whyProblemTitle')}
 		</H2>
@@ -164,13 +154,19 @@
 		<div class="flex justify-evenly">
 			<p class="text-base max-w-md sm:text-lg pr-2 pl-4 my-auto">
 				<img
+					loading="lazy"
 					class="block sm:hidden float-right max-h-[230px]"
 					src={WaterProblemImage}
 					alt="water problem"
 				/>
 				{$t('home.whyProblemP')}
 			</p>
-			<img class="hidden sm:block max-h-[230px]" src={WaterProblemImage} alt="water problem" />
+			<img
+				loading="lazy"
+				class="hidden sm:block max-h-[230px]"
+				src={WaterProblemImage}
+				alt="water problem"
+			/>
 		</div>
 		<H2>
 			{$t('home.overcomesTitle')}
@@ -178,6 +174,7 @@
 		<div class="flex justify-evenly">
 			<p class="my-auto max-w-md text-base sm:text-lg">
 				<img
+					loading="lazy"
 					class="block sm:hidden float-right max-h-[230px]"
 					src={OvercomesImage}
 					alt="Openversum overcomes barriers"
@@ -187,6 +184,7 @@
 				{$t('home.overcomesP2')}
 			</p>
 			<img
+				loading="lazy"
 				class="hidden sm:block max-h-[230px]"
 				src={OvercomesImage}
 				alt="Openversum overcomes barriers"
