@@ -1,10 +1,9 @@
 <script lang="ts">
-	import H2 from './H2.svelte';
-
 	import { t } from '$lib/translations';
 	import { locale } from '$lib/translations';
-	import { fly, slide } from 'svelte/transition';
+	import { fly } from 'svelte/transition';
 	import AnimatedWave from '$lib/components/AnimatedWave.svelte';
+	import H3 from './H3.svelte';
 
 	const awardsPrograms = [
 		{
@@ -122,7 +121,7 @@
 						in:fly={{ x: 100, duration: 500 }}
 						class="w-full px-2 sm:px-8 flex justify-evenly space-x-4 py-8"
 					>
-						<H2>{selectedAward.name}</H2>
+						<H3>{selectedAward.name}</H3>
 						<p class="max-w-md">
 							{@html $locale === 'es' ? selectedAward.descriptionEs : selectedAward.descriptionEn}
 
