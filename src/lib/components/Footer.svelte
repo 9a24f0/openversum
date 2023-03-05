@@ -11,7 +11,7 @@
 	import { contactScreen } from '$lib/stores/generalState';
 
 	$: route = $page.url.pathname.slice(1);
-	$: isIconLight = route === 'partners' || (route === 'contact' && $contactScreen === '');
+	$: isIconLight = route === 'partners' || route === 'entrepreneurs' || (route === 'contact' && $contactScreen === '');
 	$: isBackgroundCyan = route === 'contact' && $contactScreen === '';
 	$: isBackgroundDarkBlue =
 		(route !== 'contact' && route === 'entrepreneurs') || route === 'partners';

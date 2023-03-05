@@ -1,112 +1,47 @@
 <script lang="ts">
-	import ContactForm from '$lib/components/contact/ContactForm.svelte';
-	import SimpleSlotModal from '$lib/components/SimpleSlotModal.svelte';
-	import BlobProfile from '$lib/components/SVG/BlobProfile.svelte';
-	import Elipse2Svg from '$lib/components/SVG/Elipse2SVG.svelte';
 	import PrimaryButton from '$lib/components/UI/PrimaryButton.svelte';
+	import Paragraph from '$lib/components/UI/Paragraph.svelte';
+	import Video from '$lib/components/UI/EmbeddedVideo.svelte';
 	import WatchButton from '$lib/components/WatchButton.svelte';
-	import { t } from '$lib/translations';
+	import WaveIconSvg from '$lib/components/SVG/WaveIconSVG.svelte';
 
-	let blobW: any;
+	import { goto } from '$app/navigation';
+	import { t } from '$lib/translations';
+	import { contactScreen } from '$lib/stores/generalState';
+
 	let showVideoModal = false;
 
-	let showContact = false;
+	const navigateToContactEntrepreneur = () => {
+		contactScreen.set('entrepreneur');
+		goto('/contact');
+	}
 </script>
 
-<div class="container mx-auto px-2 sm:px-6 lg:px-16">
-	<div class="sm:grid sm:grid-cols-2 gap-8">
-		<div class="relative col-span-2 my-8">
-			<div bind:clientWidth={blobW} class="mx-auto w-full  sm:w-[80%]">
-				<Elipse2Svg />
-				<h2
-					style="width:{blobW}px;"
-					class="absolute text-white origin-top-left top-[30%] mx-auto text-center whitespace-nowrap text-4xl md:text-5xl font-semibold "
-				>
-					{$t('entrepreneurs.title')}
-				</h2>
-			</div>
-		</div>
-
-		<div class="col-span-2 mb-8 gap-8 sm:inline-flex">
-			<div class="sm:w-2/3">
-				<h1 class="font-bold text-4xl md:text-5xl mb-8">{$t('entrepreneurs.workTogetherTitle')}</h1>
-
-				<p class="text-justify text-lg">
-					{$t('entrepreneurs.workTogetherP')}
-				</p>
-			</div>
-			<div class="inline-flex w-1/3 my-auto">
-				<WatchButton on:click={() => (showVideoModal = !showVideoModal)} />
-				<span class="whitespace-nowrap mr-8 font-semibold text-lg my-auto"
-					>{$t('common.watchVideo')}</span
-				>
-			</div>
-		</div>
-
-		<div>
-			<img
-				class="rounded-lg max-w-xs sm:max-w-md object-contain w-full mx-auto"
-				src="https://blbosiccwkpntqobciwj.supabase.co/storage/v1/object/public/openversum-images/general/franchisee.png"
-				alt="becoming a franchisee"
-			/>
-		</div>
-
-		<div class="space-y-8 mt-8 sm:mt-0">
-			<h1 class="font-bold text-4xl md:text-5xl">{$t('entrepreneurs.franchiseeTitle')}</h1>
-
-			<p class="text-justify text-lg">
-				{$t('entrepreneurs.franchiseeP')}
-			</p>
-
-			<PrimaryButton on:click={() => (showContact = true)}>{$t('common.contact')}</PrimaryButton>
-		</div>
-
-		<div class="space-y-8 mt-8 sm:mt-0">
-			<h1 class="font-bold text-4xl md:text-5xl">{$t('entrepreneurs.profileTitle')}</h1>
-
-			<p class="text-justify text-lg">
-				{$t('entrepreneurs.profileP')}
-			</p>
-		</div>
-		<div class="mt-4 sm:mt-0">
-			<div class="relative flex mx-auto w-[85%] sm:w-full">
-				<BlobProfile />
-				<div
-					class="absolute text-white origin-top-left top-[30%] sm:top-1/3 right-[15%] text-center lg:text-2xl"
-				>
-					<span class="w-48">{$t('entrepreneurs.blob1')}</span>
-
-					<h2 class="whitespace-nowrap text-3xl sm:text-2xl lg:text-3xl font-semibold">
-						20+ {$t('common.entrepreneurs')}
-					</h2>
-					<!-- <h2 class="whitespace-nowrap text-3xl sm:text-lg md:text-3xl font-semibold">
-						100+ filters sold
-					</h2> -->
-				</div>
-			</div>
-		</div>
+<div class="min-h-[calc(100vh-9.5rem)] md:min-h-[calc(100vh-10rem)] bg-darkblue grid grid-cols-4 md:grid-cols-10 p-8 sm:p-12 lg:p-24">
+	<div class="col-span-4 w-4/5 place-self-center">
+		<img src="" alt="EntrepreneursCoverImage" class="rounded-t-full rounded-l-full aspect-square bg-blue-500">
+	</div>
+	<div class="md:col-start-7 col-span-4 text-white flex flex-col">
+		<Paragraph title={$t('entrepreneurs.title')} titleFontSize={'lg'} paragraph={$t('entrepreneurs.workTogetherP')}>
+			<WatchButton on:click={() => {showVideoModal = true}}/>
+		</Paragraph>
+		<span class="place-self-end">
+			<WaveIconSvg/>
+		</span>
+	</div>
+	<div class="col-span-4 md:w-3/5 place-self-center text-white py-8 md:py-12 lg:py-24">
+		<Paragraph title={$t('entrepreneurs.profileTitle')} titleFontSize={'sm'} paragraph={$t('entrepreneurs.profileP')}/>
+	</div>
+	<div class="md:col-start-6 col-span-4 text-white flex flex-col py-8 md:py-12 lg:py-24">
+		<Paragraph title={$t('entrepreneurs.franchiseeTitle')} titleFontSize={'sm'} paragraph={$t('entrepreneurs.franchiseeP')}>
+			<PrimaryButton on:click={navigateToContactEntrepreneur}>{$t('common.contact')}</PrimaryButton>
+		</Paragraph>
+	</div>
+	<div class="col-span-4 md:col-span-4 w-full md:w-3/5 place-self-center text-white py-8 pr-4">
+		<img src="" alt="EntrepreneursImage" class="rounded-2xl aspect-video bg-blue-500">
+	</div>
+	<div class="col-span-4 md:col-start-6 col-span-2 text-blue-500 flex flex-col place-self-end py-8 text-xl md:text-2xl w-full">
+		Forma parte <br/> de la familia Openversum <br/> con +20 emprendedores
 	</div>
 </div>
-
-{#if showVideoModal}
-	<SimpleSlotModal on:closeModal={() => (showVideoModal = false)}>
-		<iframe
-			class="rounded-md"
-			width="770"
-			height="420"
-			src="https://www.youtube.com/embed/ONzSx-UL1Bw?start=4"
-			title="YouTube video player"
-			frameborder="0"
-			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-			allowfullscreen
-		/>
-	</SimpleSlotModal>
-{/if}
-
-{#if showContact}
-	<div on:click|stopPropagation>
-		<SimpleSlotModal on:closeModal={() => (showContact = false)}>
-			<ContactForm currentForm="entrepreneur" on:submitedContact={() => (showContact = false)} />
-		</SimpleSlotModal>
-	</div>
-{/if}
+<Video showVideoModal={showVideoModal}></Video>
