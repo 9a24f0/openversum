@@ -37,10 +37,10 @@
 			<PrimaryButton on:click={navigateToContactEntrepreneur}>{$t('common.contact')}</PrimaryButton>
 		</Paragraph>
 	</div>
-	<div class="col-span-4 md:w-3/5 place-self-center text-white">
+	<div class="col-span-4 md:col-span-4 w-full md:w-3/5 place-self-center text-white py-8 pr-4">
 		<img src="" alt="EntrepreneursImage" class="rounded-2xl aspect-video bg-blue-500">
 	</div>
-	<div class="md:col-start-6 col-span-2 text-blue-500 flex flex-col place-self-end text-2xl w-full">
+	<div class="col-span-4 md:col-start-6 col-span-2 text-blue-500 flex flex-col place-self-end py-8 text-xl md:text-2xl w-full">
 		Forma parte <br/> de la familia Openversum <br/> con +20 emprendedores
 	</div>
 </div>
