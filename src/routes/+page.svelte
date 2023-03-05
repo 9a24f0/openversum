@@ -1,4 +1,6 @@
 <script lang="ts">
+	import AwardsAndPrograms from './AwardsAndPrograms.svelte';
+
 	import AnimatedWave from '$lib/components/AnimatedWave.svelte';
 	import SimpleSlotModal from '$lib/components/SimpleSlotModal.svelte';
 	import { t } from '$lib/translations';
@@ -153,9 +155,7 @@
 	</section>
 </div>
 
-<div class="container mx-auto px-2 sm:px-6 lg:px-16">
-	<h1 class="font-bold text-4xl md:text-5xl  mb-4 mt-4 sm:mb-8">{$t('home.awardsT')}</h1>
-</div>
+<AwardsAndPrograms />
 
 {#if showVideoModal}
 	<SimpleSlotModal on:closeModal={() => (showVideoModal = false)}>

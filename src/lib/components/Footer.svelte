@@ -11,7 +11,10 @@
 	import { contactScreen } from '$lib/stores/generalState';
 
 	$: route = $page.url.pathname.slice(1);
-	$: isIconLight = route === 'partners' || route === 'entrepreneurs' || (route === 'contact' && $contactScreen === '');
+	$: isIconLight =
+		route === 'partners' ||
+		route === 'entrepreneurs' ||
+		(route === 'contact' && $contactScreen === '');
 	$: isBackgroundCyan = route === 'contact' && $contactScreen === '';
 	$: isBackgroundDarkBlue =
 		(route !== 'contact' && route === 'entrepreneurs') || route === 'partners';
@@ -19,7 +22,7 @@
 
 <footer class="w-full text-sm font-medium font-mukta">
 	<div
-		class="w-full py-4 flex items-center justify-evenly h-20
+		class="w-full py-4 sm:py-8 flex items-center justify-evenly h-20 sm:h-28
 				{isBackgroundCyan
 			? 'bg-blue-500 text-white'
 			: isBackgroundDarkBlue

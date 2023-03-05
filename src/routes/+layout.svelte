@@ -39,7 +39,9 @@
 
 <svelte:head />
 
-<div class="relative overflow-x-hidden font-mukta overflow-y-scroll min-h-screen h-full">
+<div
+	class="relative overflow-x-hidden font-mukta overflow-y-scroll min-h-screen h-full text-darkblue"
+>
 	{#if loaded}
 		<Header />
 		<main class="mt-[4.5rem] md:mt-20">
