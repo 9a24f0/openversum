@@ -56,7 +56,7 @@
 			<AnimatedWave w={innerWidth} />
 		</div>
 	</div>
-	<div class="relative w-full h-20 md:h-24">
+	<div id="what_we_do" class="relative w-full h-20 md:h-24">
 		<div style="width: {innerWidth}px;" class="absolute h-20 md:h-24 bottom-0">
 			<AnimatedWave duration={5500} fill="#76d0cd" w={innerWidth} />
 		</div>
@@ -66,7 +66,7 @@
 	</div>
 
 	<section class="container mx-auto px-2 sm:px-10 lg:px-36">
-		<div id="what_we_do" class="w-full flex justify-between">
+		<div class="w-full flex justify-between">
 			<div class="space-y-4 max-w-xl relative">
 				<H2>
 					{$t('common.whatWeDo')}
@@ -162,7 +162,7 @@
 		<div class="flex justify-evenly">
 			<p class="text-base max-w-md sm:text-lg pr-2 pl-4 my-auto">
 				<img
-					class="block sm:hidded float-right max-h-[200px]"
+					class="block sm:hidden float-right max-h-[200px]"
 					src="waterproblem.png"
 					alt="greenwater drop"
 				/>
@@ -176,7 +176,7 @@
 		<div class="flex justify-evenly">
 			<p class="my-auto max-w-md text-base sm:text-lg">
 				<img
-					class="block sm:hidded float-right max-h-[200px]"
+					class="block sm:hidden float-right max-h-[200px]"
 					src="overcomes.png"
 					alt="greenwater drop"
 				/>
