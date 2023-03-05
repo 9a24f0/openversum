@@ -7,6 +7,7 @@
 	import LandingImage from '$lib/images/landing_image.jpg?w=1600&webp';
 	import FilterImage from '$lib/images/filter_openversum.png?h=800&webp';
 	import H2 from './H2.svelte';
+	import WaveIconSvg from '$lib/components/SVG/WaveIconSVG.svelte';
 	let innerHeight: number;
 	let innerWidth: number;
 	let scrollYIndex: number;
@@ -31,7 +32,7 @@
 </svelte:head>
 
 <svelte:window bind:scrollY={scrollYIndex} bind:innerHeight bind:innerWidth />
-<div class="w-full overflow-y-scroll space-x-1 sm:space-y-4 md:space-x-8">
+<div class="w-full overflow-y-scroll overflow-x-hidden space-y-4 md:space-y-8">
 	<div class="relative w-full">
 		<div
 			class="absolute w-80 sm:w-96 md:w-[530px] top-[14vh] left-[5vh] md:top-[16vh] md:left-[15vh]"
@@ -55,9 +56,17 @@
 			<AnimatedWave w={innerWidth} />
 		</div>
 	</div>
+	<div class="relative w-full h-20 md:h-24">
+		<div style="width: {innerWidth}px;" class="absolute h-20 md:h-24 bottom-0">
+			<AnimatedWave duration={5500} fill="#76d0cd" w={innerWidth} />
+		</div>
+		<div style="width: {innerWidth}px;" class="absolute h-20 md:h-24 -bottom-4">
+			<AnimatedWave duration={5500} w={innerWidth} />
+		</div>
+	</div>
 
-	<section class="container mx-auto px-2 sm:px-6 lg:px-16">
-		<div id="what_we_do" class="w-full flex justify-evenly">
+	<section class="container mx-auto px-2 sm:px-10 lg:px-36">
+		<div id="what_we_do" class="w-full flex justify-between">
 			<div class="space-y-4 max-w-xl relative">
 				<H2>
 					{$t('common.whatWeDo')}
@@ -73,11 +82,11 @@
 						alt="Filter schema"
 					/>
 					<ul class="pl-8 list-disc">
-						<li class="text-base">
+						<li class="text-base sm:text-lg">
 							{$t('home.filterLi1')}
 						</li>
-						<li class="text-base">{$t('home.filterLi2')}</li>
-						<li class="text-base">{$t('home.filterLi3')}</li>
+						<li class="text-base sm:text-lg">{$t('home.filterLi2')}</li>
+						<li class="text-base sm:text-lg">{$t('home.filterLi3')}</li>
 					</ul>
 				</div>
 
@@ -85,20 +94,20 @@
 					<h3 class="text-lg sm:text-xl mb-2 font-semibold ">{$t('home.manufactureSub')}</h3>
 
 					<ul class="pl-8 list-disc">
-						<li class="text-base">{$t('home.manufactureLi1')}</li>
-						<li class="text-base">{$t('home.manufactureLi2')}</li>
-						<li class="text-base">{$t('home.manufactureLi3')}</li>
+						<li class="text-base sm:text-lg">{$t('home.manufactureLi1')}</li>
+						<li class="text-base sm:text-lg">{$t('home.manufactureLi2')}</li>
+						<li class="text-base sm:text-lg">{$t('home.manufactureLi3')}</li>
 					</ul>
 				</div>
 				<div>
 					<h3 class="text-lg sm:text-xl font-semibold  mt-1">{$t('home.microfranchiseSub')}</h3>
 					<ul class="pl-8 list-disc my-auto">
-						<li class="text-base">{$t('home.microLi1')}</li>
-						<li class="text-base">{$t('home.microLi2')}</li>
-						<li class="text-base">{$t('home.microLi3')}</li>
-						<li class="text-base">{$t('home.microLi4')}</li>
-						<li class="text-base">{$t('home.microLi5')}</li>
-						<li class="text-base">{$t('home.microLi6')}</li>
+						<li class="text-base sm:text-lg">{$t('home.microLi1')}</li>
+						<li class="text-base sm:text-lg">{$t('home.microLi2')}</li>
+						<li class="text-base sm:text-lg">{$t('home.microLi3')}</li>
+						<li class="text-base sm:text-lg">{$t('home.microLi4')}</li>
+						<li class="text-base sm:text-lg">{$t('home.microLi5')}</li>
+						<li class="text-base sm:text-lg">{$t('home.microLi6')}</li>
 					</ul>
 				</div>
 
@@ -115,34 +124,67 @@
 		</div>
 	</section>
 
-	<section class="container mx-auto px-2 sm:px-6 lg:px-16">
-		<div class="w-full">
-			<H2>
-				{$t('home.globalWaterTitle')}
-			</H2>
+	<div class="relative w-full h-20 md:h-24">
+		<div style="width: {innerWidth}px;" class="absolute h-20 md:h-24 bottom-0">
+			<AnimatedWave duration={4800} fill="#76d0cd" w={innerWidth} />
+		</div>
+		<div style="width: {innerWidth}px;" class="absolute h-20 md:h-24 -bottom-4">
+			<AnimatedWave duration={4800} w={innerWidth} />
+		</div>
+	</div>
 
-			<p class="text-lg sm:text-xl text-justify pr-4 pl-2 mt-16">
+	<section class="container mx-auto px-2 sm:px-10 lg:px-36 space-y-4 pb-12">
+		<H2>
+			{$t('home.globalWaterTitle')}
+		</H2>
+
+		<div class="flex justify-evenly">
+			<div class="my-auto">
+				<img class="hidden sm:block max-h-[200px]" src="greenwaterdrop.svg" alt="greenwater drop" />
+			</div>
+			<p class="text-base max-w-md sm:text-lg p-4">
+				<span class="text-blue text-2xl sm:text-5xl">+2.000</span>
+				<img
+					class="block sm:hidden float-left max-h-[200px] pr-4 pb-4"
+					src="greenwaterdrop.svg"
+					alt="greenwater drop"
+				/>
+				<br />
 				{$t('home.globalWaterP')}
 			</p>
+		</div>
 
-			<H2>
-				{$t('home.whyProblemTitle')}
-			</H2>
+		<!-- <img class="float-right" src="grid_filter.svg" alt="filtergridchema" /> -->
+		<H2>
+			{$t('home.whyProblemTitle')}
+		</H2>
 
-			<p class="text-lg sm:text-xl text-justify pr-2 pl-4 my-auto">
+		<div class="flex justify-evenly">
+			<p class="text-base max-w-md sm:text-lg pr-2 pl-4 my-auto">
+				<img
+					class="block sm:hidded float-right max-h-[200px]"
+					src="waterproblem.png"
+					alt="greenwater drop"
+				/>
 				{$t('home.whyProblemP')}
 			</p>
-			<H2>
-				{$t('home.overcomesTitle')}
-			</H2>
-
-			<p class="my-auto max-w-[200px] text-justify text-lg sm:text-xl">
+			<img class="hidden sm:block max-h-[200px]" src="waterproblem.png" alt="greenwater drop" />
+		</div>
+		<H2>
+			{$t('home.overcomesTitle')}
+		</H2>
+		<div class="flex justify-evenly">
+			<p class="my-auto max-w-md text-base sm:text-lg">
+				<img
+					class="block sm:hidded float-right max-h-[200px]"
+					src="overcomes.png"
+					alt="greenwater drop"
+				/>
 				{$t('home.overcomesP1')}
-			</p>
-
-			<p class="my-auto max-w-[200px] text-justify text-lg sm:text-xl">
+				<br />
 				{$t('home.overcomesP2')}
 			</p>
+			<img class="hidden sm:block max-h-[200px]" src="overcomes.png" alt="greenwater drop" />
 		</div>
 	</section>
 

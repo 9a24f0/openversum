@@ -4,6 +4,7 @@
 	import { t } from '$lib/translations';
 	import { locale } from '$lib/translations';
 	import { fly, slide } from 'svelte/transition';
+	import AnimatedWave from '$lib/components/AnimatedWave.svelte';
 
 	const awardsPrograms = [
 		{
@@ -99,9 +100,15 @@
 	];
 
 	let selectedAward = awardsPrograms[0];
+	let innerWidth: number;
 </script>
 
-<section class="w-full bg-blue snap-start">
+<svelte:window bind:innerWidth />
+
+<section class="w-full bg-blue snap-start relative">
+	<div style="width: {innerWidth}px;" class="absolute h-12 -top-9">
+		<AnimatedWave duration={4000} fill="#76d0cd" w={innerWidth} />
+	</div>
 	<div class="container mx-auto px-2 sm:px-6 lg:px-16 py-4">
 		<div class="flex justify-center">
 			<h1 class="font-poppins font-semibold text-3xl md:text-4xl text-white mb-4 mt-4 sm:mb-8">

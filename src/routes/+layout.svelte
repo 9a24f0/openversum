@@ -39,7 +39,7 @@
 
 <svelte:head />
 
-<div class="relative overflow-x-hidden font-mukta text-darkblue text-sm sm:text-base">
+<div class="relative overflow-x-hidden font-mukta text-darkblue">
 	{#if loaded}
 		<Header />
 		<main class="mt-[4.5rem] md:mt-20 ">

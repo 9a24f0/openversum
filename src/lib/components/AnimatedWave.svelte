@@ -6,6 +6,8 @@
 	import { linear } from 'svelte/easing';
 
 	export let w: number = 960;
+	export let fill = '#FFFFFF';
+	export let duration = 5000;
 	const P1 =
 		'M0 116L34.5 110.8C69 105.7 138 95.3 206.8 85.5C275.7 75.7 344.3 66.3 413.2 67.5C482 68.7 551 80.3 620 99.2C689 118 758 144 826.8 148.8C895.7 153.7 964.3 137.3 1033.2 119C1102 100.7 1171 80.3 1205.5 70.2L1240 60L1240 241L1205.5 241C1171 241 1102 241 1033.2 241C964.3 241 895.7 241 826.8 241C758 241 689 241 620 241C551 241 482 241 413.2 241C344.3 241 275.7 241 206.8 241C138 241 69 241 34.5 241L0 241Z';
 
@@ -19,7 +21,6 @@
 
 	//'M0 331L26.7 344.3C53.3 357.7 106.7 384.3 160 405.8C213.3 427.3 266.7 443.7 320 441.3C373.3 439 426.7 418 480 421.5C533.3 425 586.7 453 640 460.2C693.3 467.3 746.7 453.7 800 442.2C853.3 430.7 906.7 421.3 933.3 416.7L960 412L960 541L933.3 541C906.7 541 853.3 541 800 541C746.7 541 693.3 541 640 541C586.7 541 533.3 541 480 541C426.7 541 373.3 541 320 541C266.7 541 213.3 541 160 541C106.7 541 53.3 541 26.7 541L0 541Z';
 
-	const duration = 5000;
 	const path = tweened(P1, {
 		duration: duration,
 		easing: linear,
@@ -59,5 +60,5 @@
 	xmlns="http://www.w3.org/2000/svg"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
 	version="1.1"
-	><path width={w} d={$path} fill="#FFFFFF" stroke-linecap="round" stroke-linejoin="miter" /></svg
+	><path width={w} d={$path} {fill} stroke-linecap="round" stroke-linejoin="miter" /></svg
 >
