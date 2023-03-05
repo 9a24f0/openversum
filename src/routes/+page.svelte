@@ -6,7 +6,9 @@
 	import { t } from '$lib/translations';
 	import LandingImage from '$lib/images/landing_image.jpg?w=1600&webp';
 	import FilterImage from '$lib/images/filter_openversum.png?h=800&webp';
-	import GreenDropImage from '$lib/images/greenwaterdrop.png?h=400&webp';
+	import GreenDropImage from '$lib/images/greenwaterdrop.svg?h=300&webp';
+	import OvercomesImage from '$lib/images/overcomes.png?h=300&webp';
+	import WaterProblemImage from '$lib/images/waterproblem.png?h=300&webp';
 	import H2 from './H2.svelte';
 	let innerHeight: number;
 	let innerWidth: number;
@@ -140,7 +142,7 @@
 
 		<div class="flex justify-evenly">
 			<div class="my-auto">
-				<img class="hidden sm:block max-h-[230px]" src="greenwaterdrop.svg" alt="greenwater drop" />
+				<img class="hidden sm:block max-h-[230px]" src={GreenDropImage} alt="greenwater drop" />
 			</div>
 			<p class="text-base max-w-md sm:text-lg p-4">
 				<span class="text-blue text-2xl sm:text-5xl">+2.000</span>
@@ -163,12 +165,12 @@
 			<p class="text-base max-w-md sm:text-lg pr-2 pl-4 my-auto">
 				<img
 					class="block sm:hidden float-right max-h-[230px]"
-					src="waterproblem.png"
+					src={WaterProblemImage}
 					alt="water problem"
 				/>
 				{$t('home.whyProblemP')}
 			</p>
-			<img class="hidden sm:block max-h-[230px]" src="waterproblem.png" alt="water problem" />
+			<img class="hidden sm:block max-h-[230px]" src={WaterProblemImage} alt="water problem" />
 		</div>
 		<H2>
 			{$t('home.overcomesTitle')}
@@ -177,7 +179,7 @@
 			<p class="my-auto max-w-md text-base sm:text-lg">
 				<img
 					class="block sm:hidden float-right max-h-[230px]"
-					src="overcomes.png"
+					src={OvercomesImage}
 					alt="Openversum overcomes barriers"
 				/>
 				{$t('home.overcomesP1')}
@@ -186,7 +188,7 @@
 			</p>
 			<img
 				class="hidden sm:block max-h-[230px]"
-				src="overcomes.png"
+				src={OvercomesImage}
 				alt="Openversum overcomes barriers"
 			/>
 		</div>
