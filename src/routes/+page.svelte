@@ -206,7 +206,7 @@
 				alt="Openversum overcomes barriers"
 				/> -->
 			</div>
-			<div class="hidden md:block my-auto">
+			<div class="hidden md:block my-auto xl:pr-48">
 				<img class="hidden md:block" src={ImgGrouped} alt="Openversum overcomes barriers" />
 			</div>
 		</div>
