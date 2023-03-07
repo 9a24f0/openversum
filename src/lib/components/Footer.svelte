@@ -33,7 +33,7 @@
 			<a href="#">T&C</a>
 		</div> -->
 		<p class="w-60 text-center">© 2023 Openversum, all rights reserved</p>
-		<div class="w-48 justify-between flex my-auto ">
+		<div class="w-32 sm:w-48 justify-between flex my-auto ">
 			<a href="https://www.facebook.com/openversum/" target="_blank" rel="noreferrer">
 				<FacebookSvg {fill} /></a
 			>

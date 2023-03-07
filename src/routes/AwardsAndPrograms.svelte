@@ -126,7 +126,7 @@
 	<div style="width: {innerWidth}px;" class="absolute h-12 -top-9">
 		<AnimatedWave duration={4000} fill="#76d0cd" w={innerWidth} />
 	</div>
-	<div class="container mx-auto px-2 sm:px-6 lg:px-16 py-4">
+	<div class="container mx-auto px-3 sm:px-12 lg:px-24 py-4">
 		<div class="flex justify-center">
 			<h1 class="font-poppins font-semibold text-3xl md:text-4xl text-white mb-4 mt-4 sm:mb-8">
 				{$t('home.awardsT')}
@@ -139,7 +139,9 @@
 						in:fly={{ x: 100, duration: 500 }}
 						class="w-full px-2 sm:px-8 flex justify-evenly space-x-4 py-4 sm:py-8"
 					>
-						<H3>{selectedAward.name}</H3>
+						<div class="max-w-xs mx-auto my-auto">
+							<H3>{selectedAward.name}</H3>
+						</div>
 						<p class="max-w-md">
 							{@html $locale === 'es' ? selectedAward.descriptionEs : selectedAward.descriptionEn}
 
