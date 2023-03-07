@@ -9,27 +9,30 @@
 	<!-- <a
 		href="https://app.openversum.com"
 		target="_blank"
-		class=" text-md lg:text-lg font-medium text-emerald-700 hover:text-emerald-900"
+		class=" text-md lg:text-lg text-center font-medium text-emerald-700 hover:text-emerald-900"
 	>
 		Log in
 	</a> -->
-
-	<a
-		href="/#what_we_do"
-		class="text-md lg:text-lg font-medium {$isHoverHeader
-			? 'text-white hover:text-blue-100'
-			: 'text-blue'} focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-xl px-1 max-w-[100px] lg:max-w-xs "
-	>
-		{$t('common.whatWeDo')}
-	</a>
-	<a
-		href="/about-us"
-		class=" text-md lg:text-lg font-medium {$isHoverHeader
-			? 'text-white hover:text-blue-100'
-			: 'text-blue'} focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-xl px-1 max-w-[100px] lg:max-w-xs "
-	>
-		{$t('common.aboutUs')}
-	</a>
+	<div class="my-auto">
+		<a
+			href="/#what_we_do"
+			class="text-md lg:text-lg font-medium {$isHoverHeader
+				? 'text-white hover:text-blue-100'
+				: 'text-blue'}  focus:underline  rounded-xl px-1 max-w-[100px] lg:max-w-xs "
+		>
+			{$t('common.whatWeDo')}
+		</a>
+	</div>
+	<div class="my-auto">
+		<a
+			href="/about-us"
+			class=" text-md lg:text-lg text-center font-medium {$isHoverHeader
+				? 'text-white hover:text-blue-100'
+				: 'text-blue'}  focus:underline  rounded-xl px-1 max-w-[100px] lg:max-w-xs "
+		>
+			{$t('common.aboutUs')}
+		</a>
+	</div>
 	<div class="relative">
 		<!-- Item active: "text-gray-900", Item inactive: "text-emerald-700" -->
 		<button
@@ -37,19 +40,22 @@
 			type="button"
 			class=" {$isHoverHeader
 				? 'text-white hover:text-blue-100'
-				: 'text-blue'} group inline-flex items-center text-md lg:text-lg font-medium  focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-xl px-1 max-w-[100px] lg:max-w-xs "
+				: 'text-blue'} group inline-flex items-center text-md lg:text-lg font-medium   focus:underline  rounded-xl px-1 max-w-[100px] lg:max-w-xs "
 			aria-expanded="false"
 		>
 			<span>{$t('common.workWithUs')}</span>
 			<ChevronDownSVG />
 		</button>
 	</div>
-	<button
-		on:click={() => contactScreen.set('')}
-		class=" text-md lg:text-lg font-medium {$isHoverHeader
-			? 'text-white hover:text-blue-100'
-			: 'text-blue'} focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-xl px-1 max-w-[100px] lg:max-w-xs "
-	>
-		<a href="/contact">{$t('common.contact')}</a>
-	</button>
+	<div class="my-auto">
+		<a
+			on:click={() => contactScreen.set('')}
+			href="/contact"
+			class="text-md lg:text-lg text-center font-medium {$isHoverHeader
+				? 'text-white hover:text-blue-100'
+				: 'text-blue'}  focus:underline  rounded-xl px-1 max-w-[100px] lg:max-w-xs "
+		>
+			{$t('common.contact')}
+		</a>
+	</div>
 </nav>
