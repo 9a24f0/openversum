@@ -7,7 +7,7 @@
 	import { t } from '$lib/translations';
 	import LandingImage from '$lib/images/landing_image.jpg?w=1600&webp';
 	import FilterImage from '$lib/images/filtro_openversum.png?h=800&webp';
-	import GreenDropImage from '$lib/images/greenwaterdrop.svg?h=300&webp';
+	import GreenDropImage from '$lib/images/greenwaterdrop.png?h=300&webp';
 	import OvercomesImage from '$lib/images/overcomes.png?h=300&webp';
 	import WaterProblemImage from '$lib/images/waterproblem.png?h=300&webp';
 	import ImgGrouped from '$lib/images/GroupedPhotos.png?h=550&webp';
