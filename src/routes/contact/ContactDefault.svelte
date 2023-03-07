@@ -20,10 +20,11 @@
 	const submitContact = async () => {
 		const { data, error } = await supabase.from('contact').insert({ name, email, message });
 		if (error) {
-			toast.error($t('common.errorMsg'));
+			toast.error($t('common.errorMsg'), { duration: 3000 });
 		} else {
 			toast.success(
-				`${$t('common.success')}! ${$t('common.thankyou')} ${name} ${$t('common.beintouch')}`
+				`${$t('common.success')}! ${$t('common.thankyou')} ${name} ${$t('common.beintouch')}`,
+				{ duration: 3000 }
 			);
 			$contactScreen = '';
 		}
