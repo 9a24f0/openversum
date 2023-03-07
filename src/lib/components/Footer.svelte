@@ -20,8 +20,7 @@
 
 <footer class="w-full text-sm font-medium font-mukta">
 	<div
-		class="w-full py-4 flex items-center justify-evenly h-20
-				{isBackgroundCyan
+		class="w-full py-4 flex items-center justify-between h-20 px-2 sm:px-4 lg:px-24 {isBackgroundCyan
 			? 'bg-blue-500 text-white'
 			: isBackgroundDarkBlue
 			? 'bg-darkblue text-white'
@@ -33,8 +32,8 @@
 			<a href="#">Política de Privacidad</a>
 			<a href="#">T&C</a>
 		</div> -->
-		<p class="w-60 text-center">© 2022 Openversum, all rights reserved</p>
-		<div class="w-48 justify-evenly flex my-auto">
+		<p class="w-60 text-center">© 2023 Openversum, all rights reserved</p>
+		<div class="w-48 justify-between flex my-auto ">
 			<a href="https://www.facebook.com/openversum/" target="_blank" rel="noreferrer">
 				<FacebookSvg {fill} /></a
 			>

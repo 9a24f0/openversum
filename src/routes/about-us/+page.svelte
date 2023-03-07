@@ -4,13 +4,16 @@
 	import Environmental from '$lib/components/SVG/Environmental.svelte';
 	import { t } from '$lib/translations';
 	import ImageCard from '$lib/components/UI/ImageCard.svelte';
+	import OliImg from '$lib/images/CEO_Olivier.png?w=416&webp';
+	import LauraImg from '$lib/images/CTO_Laura.png?w=416&webp';
+	import ZozoImg from '$lib/images/CIO_Lorenzo.png?w=416&webp';
 </script>
 
 <div
 	class="flex flex-wrap justify-between px-8 sm:px-12 lg:px-24 items-center border-gray-100 py-8 md:py-12"
 >
 	<div class="lg:w-1/2 lg:pr-32">
-		<h1 class="font-poppins text-4xl text-darkblue font-medium pb-2 border-b-2 border-darkblue">
+		<h1 class="font-poppins text-4xl text-darkblue font-medium pb-2 ">
 			{$t('aboutus.title')}
 		</h1>
 		<p class="py-4 text-darkblue">
@@ -54,19 +57,19 @@
 		name={'Olivier Gröninger'}
 		description={$t('aboutus.oliP')}
 		title={'CEO'}
-		imgSrc={'https://blbosiccwkpntqobciwj.supabase.co/storage/v1/object/public/openversum-images/general/whatwedo_example.png'}
+		imgSrc={OliImg}
 	/>
 	<ImageCard
 		name={'Laura Stocco'}
 		description={$t('aboutus.lauraP')}
 		title={'CTO'}
-		imgSrc={'https://blbosiccwkpntqobciwj.supabase.co/storage/v1/object/public/openversum-images/general/whatwedo_example.png'}
+		imgSrc={LauraImg}
 	/>
 	<ImageCard
 		name={'Lorenzo Donadio'}
 		description={$t('aboutus.zozoP')}
 		title={'CIO'}
-		imgSrc={'https://blbosiccwkpntqobciwj.supabase.co/storage/v1/object/public/openversum-images/general/whatwedo_example.png'}
+		imgSrc={ZozoImg}
 	/>
 </div>
 
@@ -76,18 +79,27 @@
 	</h3>
 </div>
 
-<div class="flex justify-center">
-	<div class="inline-grid grid-cols-3 gap-8 py-14">
+<div
+	class="flex flex-wrap justify-center py-14 gap-4 divide-transparent divide-x-2 md:divide-darkblue"
+>
+	<div class="flex justify-center w-44 md:w-56">
 		<img
-			class="max-h-14 place-self-center"
-			src="/partner_logos/cruz_roja_sucre.png"
+			class=" max-h-16 place-self-center"
+			src="/partner_logos/tierragrata.jpg"
+			alt="Tierra grata"
+		/>
+	</div>
+	<div class="flex justify-center w-44 md:w-56">
+		<img
+			class=" max-h-16 place-self-center"
+			src="/partner_logos/Cruz_roja_sucre.png"
 			alt="cruz roja sucre"
 		/>
-		<img
-			class="max-h-14 place-self-center border-x-2 border-darkblue"
-			src="partner_logos/ETH-logo.jpg"
-			alt="ETH partner"
-		/>
-		<img class="max-h-14 place-self-center" src="/partner_logos/rios.png" alt="fundacion rios" />
+	</div>
+	<div class="flex justify-center w-44 md:w-56">
+		<img class=" max-h-16 place-self-center " src="partner_logos/ETHz.png" alt="ETH partner" />
+	</div>
+	<div class="flex justify-center w-44 md:w-56">
+		<img class=" max-h-16 place-self-center" src="/partner_logos/Rios.png" alt="fundacion rios" />
 	</div>
 </div>

@@ -1,20 +1,40 @@
 <script lang="ts">
+	import H4 from './H4.svelte';
+
 	import AwardsAndPrograms from './AwardsAndPrograms.svelte';
 	import AnimatedWave from '$lib/components/AnimatedWave.svelte';
 	import SimpleSlotModal from '$lib/components/SimpleSlotModal.svelte';
 	import { t } from '$lib/translations';
 	import LandingImage from '$lib/images/landing_image.jpg?w=1600&webp';
-	import FilterImage from '$lib/images/filter_openversum.png?h=800&webp';
+	import FilterImage from '$lib/images/filtro_openversum.png?h=800&webp';
 	import GreenDropImage from '$lib/images/greenwaterdrop.svg?h=300&webp';
 	import OvercomesImage from '$lib/images/overcomes.png?h=300&webp';
 	import WaterProblemImage from '$lib/images/waterproblem.png?h=300&webp';
+	import ImgGrouped from '$lib/images/GroupedPhotos.png?h=550&webp';
 	import H2 from './H2.svelte';
+	import WaveIconSvg from '$lib/components/SVG/WaveIconSVG.svelte';
 	let innerHeight: number;
 	let innerWidth: number;
 	let scrollYIndex: number;
 	let showVideoModal = false;
 </script>
 
+<svelte:head>
+	<title>Openversum - providing clean and safe drinking water where most needed</title>
+	<meta
+		name="description"
+		content="Technology and educational platform to enable and empower local entrepreneurs to produce and distribute innovative drinking water filters. Entrepreneurs make a living by bringing clean water to their communities."
+	/>
+	<meta
+		name="descripcion"
+		content="Plataforma tecnológica y educativa para capacitar y empoderar a los empresarios locales para que produzcan y distribuyan filtros de agua potable innovadores. Los empresarios se ganan la vida llevando agua limpia a sus comunidades."
+	/>
+	<meta
+		name="robots"
+		content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+	/>
+	<html lang="en" />
+</svelte:head>
 <svelte:window bind:scrollY={scrollYIndex} bind:innerHeight bind:innerWidth />
 <div class="w-full overflow-x-hidden space-y-4 md:space-y-8">
 	<div class="relative w-full">
@@ -42,15 +62,15 @@
 		</div>
 	</div>
 	<div id="what_we_do" class="relative w-full h-20 md:h-24">
-		<div style="width: {innerWidth}px;" class="absolute h-20 md:h-24 bottom-0">
-			<AnimatedWave duration={5500} fill="#76d0cd" w={innerWidth} />
+		<div style="width: {innerWidth}px;" class="opacity-60 absolute h-20 md:h-24 bottom-0">
+			<AnimatedWave fill="#76d0cd" w={innerWidth} />
 		</div>
-		<div style="width: {innerWidth}px;" class="absolute h-20 md:h-24 -bottom-4">
-			<AnimatedWave duration={5500} w={innerWidth} />
+		<div style="width: {innerWidth}px;" class="absolute h-20 md:h-24 -bottom-2">
+			<AnimatedWave w={innerWidth} />
 		</div>
 	</div>
 
-	<section class="container mx-auto px-2 sm:px-10 lg:px-36">
+	<section class="container mx-auto px-3 sm:px-10 lg:px-24">
 		<div class="w-full flex justify-between">
 			<div class="space-y-4 max-w-xl relative">
 				<H2>
@@ -58,9 +78,9 @@
 				</H2>
 
 				<div>
-					<h3 class="text-lg sm:text-xl mb-2 font-semibold ">
+					<H4>
 						{$t('home.filterSub')}
-					</h3>
+					</H4>
 					<img
 						class="float-right sm:hidden -z-10 h-[300px] opacity-80"
 						src={FilterImage}
@@ -76,7 +96,9 @@
 				</div>
 
 				<div>
-					<h3 class="text-lg sm:text-xl mb-2 font-semibold ">{$t('home.manufactureSub')}</h3>
+					<H4>
+						{$t('home.manufactureSub')}
+					</H4>
 
 					<ul class="pl-8 list-disc">
 						<li class="text-base sm:text-lg">{$t('home.manufactureLi1')}</li>
@@ -85,7 +107,9 @@
 					</ul>
 				</div>
 				<div>
-					<h3 class="text-lg sm:text-xl font-semibold  mt-1">{$t('home.microfranchiseSub')}</h3>
+					<H4>
+						{$t('home.microfranchiseSub')}
+					</H4>
 					<ul class="pl-8 list-disc my-auto">
 						<li class="text-base sm:text-lg">{$t('home.microLi1')}</li>
 						<li class="text-base sm:text-lg">{$t('home.microLi2')}</li>
@@ -110,15 +134,15 @@
 	</section>
 
 	<div class="relative w-full h-20 md:h-24">
-		<div style="width: {innerWidth}px;" class="absolute h-20 md:h-24 bottom-0">
+		<div style="width: {innerWidth}px;" class="opacity-60 absolute h-20 md:h-24 bottom-0">
 			<AnimatedWave duration={4800} fill="#76d0cd" w={innerWidth} />
 		</div>
-		<div style="width: {innerWidth}px;" class="absolute h-20 md:h-24 -bottom-4">
+		<div style="width: {innerWidth}px;" class="absolute h-20 md:h-24 -bottom-2">
 			<AnimatedWave duration={4800} w={innerWidth} />
 		</div>
 	</div>
 
-	<section class="container mx-auto px-2 sm:px-10 lg:px-36 space-y-4 pb-12">
+	<section class="container mx-auto px-3 sm:px-10 lg:px-24 space-y-4 pb-12">
 		<H2>
 			{$t('home.globalWaterTitle')}
 		</H2>
@@ -126,17 +150,15 @@
 		<div class="flex justify-evenly">
 			<div class="my-auto">
 				<img
-					loading="lazy"
-					class="hidden sm:block max-h-[230px]"
+					class="hidden sm:block max-h-[230px] min-w-[130px]"
 					src={GreenDropImage}
 					alt="greenwater drop"
 				/>
 			</div>
-			<p class="text-base max-w-md sm:text-lg p-4">
+			<p class="text-base max-w-xl sm:text-lg sm:p-4">
 				<span class="text-blue text-2xl sm:text-5xl">+2.000</span>
 				<img
-					loading="lazy"
-					class="block sm:hidden float-left max-h-[230px] pr-4 pb-4"
+					class="block sm:hidden float-left max-h-[230px]  pr-4 pb-4"
 					src={GreenDropImage}
 					alt="greenwater drop"
 				/>
@@ -146,49 +168,47 @@
 		</div>
 
 		<!-- <img
-			    loading="lazy" class="float-right" src="grid_filter.svg" alt="filtergridchema" /> -->
-		<H2>
-			{$t('home.whyProblemTitle')}
-		</H2>
+			class="float-right" src="grid_filter.svg" alt="filtergridchema" /> -->
+		<div class="flex justify-between">
+			<div class="pr-4">
+				<H4>
+					{$t('home.whyProblemTitle')}
+				</H4>
 
-		<div class="flex justify-evenly">
-			<p class="text-base max-w-md sm:text-lg pr-2 pl-4 my-auto">
-				<img
-					loading="lazy"
-					class="block sm:hidden float-right max-h-[230px]"
-					src={WaterProblemImage}
-					alt="water problem"
-				/>
-				{$t('home.whyProblemP')}
-			</p>
-			<img
-				loading="lazy"
-				class="hidden sm:block max-h-[230px]"
-				src={WaterProblemImage}
-				alt="water problem"
-			/>
-		</div>
-		<H2>
-			{$t('home.overcomesTitle')}
-		</H2>
-		<div class="flex justify-evenly">
-			<p class="my-auto max-w-md text-base sm:text-lg">
-				<img
-					loading="lazy"
-					class="block sm:hidden float-right max-h-[230px]"
-					src={OvercomesImage}
-					alt="Openversum overcomes barriers"
-				/>
-				{$t('home.overcomesP1')}
-				<br />
-				{$t('home.overcomesP2')}
-			</p>
-			<img
-				loading="lazy"
-				class="hidden sm:block max-h-[230px]"
+				<p class="pb-4 text-base max-w-xl sm:text-lg ">
+					<img
+						class="block md:hidden float-right max-h-[200px] p-2 "
+						src={WaterProblemImage}
+						alt="water problem"
+					/>
+					{$t('home.whyProblemP')}
+				</p>
+				<!-- <img class="hidden sm:block max-h-[250px]" src={WaterProblemImage} alt="water problem" /> -->
+				<H4>
+					{$t('home.overcomesTitle')}
+				</H4>
+				<div class="space-y-8">
+					<p class="pb-4  max-w-xl text-base sm:text-lg">
+						<img
+							class="block md:hidden float-right max-h-[200px] p-2 "
+							src={OvercomesImage}
+							alt="Openversum overcomes barriers"
+						/>
+						{$t('home.overcomesP1')}
+						<br />
+						{$t('home.overcomesP2')}
+					</p>
+					<WaveIconSvg />
+				</div>
+				<!-- <img
+				class="hidden sm:block max-h-[250px]"
 				src={OvercomesImage}
 				alt="Openversum overcomes barriers"
-			/>
+				/> -->
+			</div>
+			<div class="hidden md:block my-auto">
+				<img class="hidden md:block" src={ImgGrouped} alt="Openversum overcomes barriers" />
+			</div>
 		</div>
 	</section>
 

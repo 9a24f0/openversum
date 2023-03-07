@@ -1,10 +1,9 @@
 <script lang="ts">
-	import ContactMain from '$lib/components/contact/ContactMain.svelte';
-	import ContactDefault from '$lib/components/contact/ContactDefault.svelte';
-	import ContactEntrepreneur from '$lib/components/contact/ContactEntrepreneur.svelte';
-	import ContactPartner from '$lib/components/contact/ContactPartner.svelte';
-	import ContactNavigation from '$lib/components/contact/ContactNavigation.svelte';
-	import { t } from '$lib/translations';
+	import ContactMain from './ContactMain.svelte';
+	import ContactDefault from './ContactDefault.svelte';
+	import ContactEntrepreneur from './ContactEntrepreneur.svelte';
+	import ContactPartner from './ContactPartner.svelte';
+	import ContactNavigation from './ContactNavigation.svelte';
 	import { contactScreen } from '$lib/stores/generalState';
 </script>
 
@@ -21,7 +20,7 @@
 		<!-- <div
 		class="min-h-[calc(100vh-9.5rem)] md:min-h-[calc(100vh-10rem)] flex flex-col md:flex-row items-center justify-evenly"
 	> -->
-		<div class="col-span-2 flex items-center justify-center">
+		<div class="col-span-2 flex items-center px-4 justify-start md:justify-center">
 			<ContactNavigation />
 		</div>
 		<div class="w-full col-span-2 md:col-span-3 flex items-center justify-center  ">

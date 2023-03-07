@@ -4,7 +4,7 @@
 	import MenuSvg from './SVG/MenuSVG.svelte';
 	import { isHoverHeader } from '$lib/stores/generalState';
 	import LangSelect from './UI/LangSelect.svelte';
-	import WorkWithUseFlyoutMenu from './WorkWithUseFlyoutMenu.svelte';
+	import WorkWithUsMenu from './WorkWithUsMenu.svelte';
 	import { clickOutside } from '$lib/utilities/clickOutside';
 
 	let showMobileMenu = false;
@@ -69,7 +69,7 @@
 			</div>
 		</div>
 		{#if showWorkWithUs}
-			<WorkWithUseFlyoutMenu on:closeMenu={() => (showWorkWithUs = false)} />
+			<WorkWithUsMenu on:closeMenu={() => (showWorkWithUs = false)} />
 		{/if}
 		{#if showMobileMenu}
 			<HeaderMobileMenu on:closeMenu={() => (showMobileMenu = false)} />
