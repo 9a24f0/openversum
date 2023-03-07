@@ -8,9 +8,12 @@
 	import { page } from '$app/stores';
 	import lang from '$lib/translations/lang.json';
 	import { Toaster } from 'svelte-french-toast';
-	// import { webVitals } from '$lib/vitals';
+	import { webVitals } from '$lib/vitals';
 	import { browser } from '$app/environment';
+	import { dev } from '$app/environment';
+	import { inject } from '@vercel/analytics';
 
+	inject({ mode: dev ? 'development' : 'production' });
 	const analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
 
 	const possibleLocales = Object.keys(lang);
@@ -29,13 +32,13 @@
 		loaded = true;
 	});
 
-	// $: if (browser && analyticsId) {
-	// 	webVitals({
-	// 		path: $page.url.pathname,
-	// 		params: $page.params,
-	// 		analyticsId
-	// 	});
-	// }
+	$: if (browser && analyticsId) {
+		webVitals({
+			path: $page.url.pathname,
+			params: $page.params,
+			analyticsId
+		});
+	}
 </script>
 
 <Toaster />

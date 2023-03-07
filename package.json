@@ -13,8 +13,8 @@
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.31.2",
-		"@sveltejs/kit": "^1.10.0",
 		"@sveltejs/adapter-auto": "^2.0.0",
+		"@sveltejs/kit": "^1.10.0",
 		"@types/d3-interpolate": "^3.0.1",
 		"autoprefixer": "^10.4.13",
 		"postcss": "^8.4.21",
@@ -34,6 +34,7 @@
 	"dependencies": {
 		"@supabase/supabase-js": "^2.10.0",
 		"@tailwindcss/forms": "^0.5.3",
+		"@vercel/analytics": "^0.1.11",
 		"d3-interpolate": "^3.0.1",
 		"nanoid": "^4.0.1",
 		"svelte-french-toast": "^1.0.3",

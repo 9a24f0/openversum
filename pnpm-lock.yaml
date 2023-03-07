@@ -7,6 +7,7 @@ specifiers:
   '@sveltejs/kit': ^1.10.0
   '@tailwindcss/forms': ^0.5.3
   '@types/d3-interpolate': ^3.0.1
+  '@vercel/analytics': ^0.1.11
   autoprefixer: ^10.4.13
   d3-interpolate: ^3.0.1
   nanoid: ^4.0.1
@@ -30,6 +31,7 @@ specifiers:
 dependencies:
   '@supabase/supabase-js': 2.10.0
   '@tailwindcss/forms': 0.5.3_tailwindcss@3.2.7
+  '@vercel/analytics': 0.1.11
   d3-interpolate: 3.0.1
   nanoid: 4.0.1
   svelte-french-toast: 1.0.3_svelte@3.55.1
@@ -489,6 +491,12 @@ packages:
     dependencies:
       sass: 1.58.3
     dev: true
+
+  /@vercel/analytics/0.1.11:
+    resolution: {integrity: sha512-mj5CPR02y0BRs1tN3oZcBNAX9a8NxsIUl9vElDPcqxnMfP0RbRc9fI9Ud7+QDg/1Izvt5uMumsr+6YsmVHcyuw==}
+    peerDependencies:
+      react: ^16.8||^17||^18
+    dev: false
 
   /acorn-node/1.8.2:
     resolution: {integrity: sha512-8mt+fslDufLYntIoPAaIMUe/lrbrehIiwmR3t2k9LljIzoigEPF27eLk2hy8zSGzmR/ogr7zbRKINMo1u0yh5A==}
