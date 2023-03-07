@@ -9,5 +9,9 @@
 	"mobileEntrep": "Become an entrepreneur",
 	"partnerDescription": "Are you an NGO or a government institution? <br /> We can help you bring water to people",
 	"entrepreneurs": "entrepreneurs",
-	"learnMore": "learn more"
+	"learnMore": "learn more",
+	"errorMsg": "Oups an error happened please try again",
+	"success": "Sucess",
+	"thankyou": "Thank you",
+	"beintouch": "we will be in touch soon!"
 }

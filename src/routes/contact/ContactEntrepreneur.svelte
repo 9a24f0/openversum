@@ -40,10 +40,11 @@
 			.from('contact')
 			.insert({ name, email, message, type, cv, organization, phone_number, country });
 		if (error) {
-			toast.error('Oups an error happened please try again');
-			throw error;
-		} else if (data) {
-			toast.success(`Sucess! Thank you ${name} we will be in touch soon!`);
+			toast.error($t('common.errorMsg'));
+		} else {
+			toast.success(
+				`${$t('common.success')}! ${$t('common.thankyou')} ${name} ${$t('common.beintouch')}`
+			);
 			$contactScreen = '';
 		}
 		dispatch('submitedContact');

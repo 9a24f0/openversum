@@ -9,5 +9,9 @@
 	"mobileEntrep": "Volverse emprendedor",
 	"partnerDescription": "¿Es una ONG o una institución gubernamental? <br /> Podemos ayudarle a llevar agua a la gente",
 	"entrepreneurs": "emprendedores",
-	"learnMore": "saber más"
+	"learnMore": "saber más",
+	"errorMsg": "Oups se ha producido un error por favor inténtelo de nuevo",
+	"success": "Exito",
+	"thankyou": "gracias",
+	"beintouch": "pronto estaremos en contacto!"
 }
