@@ -35,7 +35,7 @@
 </svelte:head>
 
 <div
-	class="min-h-[calc(100vh-9.5rem)] md:min-h-[calc(100vh-10rem)] bg-darkblue grid grid-cols-2 md:grid-cols-5 p-8 sm:p-12 lg:p-24 lg:py-20"
+	class="min-h-[calc(100vh-9.5rem)] md:min-h-[calc(100vh-10rem)] bg-darkblue grid grid-cols-2 md:grid-cols-5 p-8 sm:p-12 lg:py-20 px-3 sm:px-10 md:px-20 lg:px-28 xl:px-40"
 >
 	<div class="col-span-2 h-64 w-64  sm:h-80 sm:w-80 md:h-[400px] md:w-[400px] place-self-center">
 		<img

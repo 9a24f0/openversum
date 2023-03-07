@@ -87,9 +87,9 @@
 		</div>
 	</div>
 
-	<section class="container mx-auto px-3 sm:px-10 lg:px-24">
+	<section class="container mx-auto px-3 sm:px-10 md:px-20 lg:px-28 xl:px-40">
 		<div class="w-full flex justify-between">
-			<div class="space-y-4 max-w-xl relative">
+			<div class="space-y-4 max-w-lg md:max-w-xl relative">
 				<H2>
 					{$t('common.whatWeDo')}
 				</H2>
@@ -145,7 +145,7 @@
 			</div>
 
 			<div class="hidden sm:block my-auto max-h-[550px]">
-				<img class="min-h-[350px] max-h-[550px]" src={FilterImage} alt="Filter schema" />
+				<img class="max-h-[550px]" src={FilterImage} alt="Filter schema" />
 			</div>
 		</div>
 	</section>
@@ -159,7 +159,7 @@
 		</div>
 	</div>
 
-	<section class="container mx-auto px-3 sm:px-10 lg:px-24 space-y-4 pb-12">
+	<section class="container mx-auto px-3 sm:px-10 md:px-20 lg:px-28 xl:px-40 space-y-4 pb-12">
 		<H2>
 			{$t('home.globalWaterTitle')}
 		</H2>
@@ -172,7 +172,7 @@
 					alt="greenwater drop"
 				/>
 			</div>
-			<p class="text-base max-w-xl sm:text-lg sm:p-4">
+			<p class="text-base max-w-lg md:max-w-xl sm:text-lg sm:p-4">
 				<span class="text-blue text-2xl sm:text-5xl">+2.000</span>
 				<img
 					class="block sm:hidden float-left max-h-[230px]  pr-4 pb-4"
@@ -192,7 +192,7 @@
 					{$t('home.whyProblemTitle')}
 				</H4>
 
-				<p class="pb-4 text-base max-w-xl sm:text-lg ">
+				<p class="pb-4 text-base max-w-lg md:max-w-xl sm:text-lg ">
 					<img
 						class="block md:hidden float-right max-h-[200px] p-2 "
 						src={WaterProblemImage}
@@ -205,7 +205,7 @@
 					{$t('home.overcomesTitle')}
 				</H4>
 				<div class="space-y-8">
-					<p class="pb-4  max-w-xl text-base sm:text-lg">
+					<p class="pb-4  max-w-lg md:max-w-xl text-base sm:text-lg">
 						<img
 							class="block md:hidden float-right max-h-[200px] p-2 "
 							src={OvercomesImage}
@@ -223,7 +223,7 @@
 				alt="Openversum overcomes barriers"
 				/> -->
 			</div>
-			<div class="hidden md:block my-auto xl:pr-48">
+			<div class="hidden md:block my-auto">
 				<img class="hidden md:block" src={ImgGrouped} alt="Openversum overcomes barriers" />
 			</div>
 		</div>

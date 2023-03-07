@@ -32,7 +32,7 @@
 	</div>
 {:else}
 	<div
-		class="min-h-[calc(100vh-9.5rem)] md:min-h-[calc(100vh-10rem)] grid grid-cols-2 md:grid-cols-5 mx-auto"
+		class="min-h-[calc(100vh-9.5rem)] md:min-h-[calc(100vh-10rem)] grid grid-cols-2 md:grid-cols-5 mx-auto px-1 sm:px-8 md:px-10 lg:px-12 xl:px-24"
 	>
 		<!-- <div
 		class="min-h-[calc(100vh-9.5rem)] md:min-h-[calc(100vh-10rem)] flex flex-col md:flex-row items-center justify-evenly"

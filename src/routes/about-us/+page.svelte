@@ -27,7 +27,7 @@
 </svelte:head>
 
 <div
-	class="flex flex-wrap justify-between px-8 sm:px-12 lg:px-24 items-center border-gray-100 py-8 md:py-12"
+	class="flex flex-wrap justify-between px-3 sm:px-10 md:px-20 lg:px-28 xl:px-40 items-center border-gray-100 py-8 md:py-12"
 >
 	<div class="lg:w-1/2 lg:pr-32">
 		<h1 class="font-poppins text-4xl text-darkblue font-medium pb-2 ">

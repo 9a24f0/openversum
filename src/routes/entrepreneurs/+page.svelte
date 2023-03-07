@@ -38,7 +38,7 @@
 	<html lang="en" />
 </svelte:head>
 <div
-	class="min-h-[calc(100vh-9.5rem)] md:min-h-[calc(100vh-10rem)] bg-darkblue grid grid-cols-4 md:grid-cols-10 p-8 sm:p-12 lg:p-24"
+	class="min-h-[calc(100vh-9.5rem)] md:min-h-[calc(100vh-10rem)] bg-darkblue grid grid-cols-4 md:grid-cols-10 p-8 sm:p-12 lg:py-24 px-3 sm:px-10 md:px-20 lg:px-28 xl:px-40"
 >
 	<div class="col-span-4 h-64 w-64  sm:h-80 sm:w-80 md:h-[400px] md:w-[400px] place-self-center">
 		<img
@@ -63,7 +63,7 @@
 			<WaveIconSvg />
 		</span>
 	</div>
-	<div class="col-span-4 md:w-3/5 place-self-center text-white py-8 md:py-12 lg:py-20">
+	<div class="col-span-4 md:w-4/5 place-self-center text-white py-8 md:py-12 lg:py-20">
 		<Paragraph
 			title={$t('entrepreneurs.profileTitle')}
 			titleFontSize={'sm'}
@@ -79,7 +79,7 @@
 			<PrimaryButton on:click={navigateToContactEntrepreneur}>{$t('common.contact')}</PrimaryButton>
 		</Paragraph>
 	</div>
-	<div class="col-span-4 w-full md:w-3/5 place-self-center text-white py-8 pr-4">
+	<div class="col-span-4 w-full md:w-4/5 place-self-center text-white py-8 pr-4">
 		<img
 			src={EntrepreneurImage2}
 			alt="EntrepreneursImage"
