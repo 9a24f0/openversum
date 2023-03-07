@@ -7,6 +7,23 @@
 	import { contactScreen } from '$lib/stores/generalState';
 </script>
 
+<svelte:head>
+	<title>Openversum - Contact us - providing clean and safe drinking water where most needed</title>
+	<meta
+		name="description"
+		content="Technology and educational platform to enable and empower local entrepreneurs to produce and distribute innovative drinking water filters. Entrepreneurs make a living by bringing clean water to their communities."
+	/>
+	<meta
+		name="descripcion"
+		content="Plataforma tecnológica y educativa para capacitar y empoderar a los empresarios locales para que produzcan y distribuyan filtros de agua potable innovadores. Los empresarios se ganan la vida llevando agua limpia a sus comunidades."
+	/>
+	<meta
+		name="robots"
+		content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+	/>
+	<html lang="en" />
+</svelte:head>
+
 {#if $contactScreen === ''}
 	<div
 		class="min-h-[calc(100vh-9.5rem)] md:min-h-[calc(100vh-10rem)] bg-blue-500 w-full flex justify-center items-center"

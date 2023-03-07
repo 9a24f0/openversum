@@ -9,6 +9,23 @@
 	import ZozoImg from '$lib/images/CIO_Lorenzo.png?w=416&webp';
 </script>
 
+<svelte:head>
+	<title>Openversum - About us - providing clean and safe drinking water where most needed</title>
+	<meta
+		name="description"
+		content="Technology and educational platform to enable and empower local entrepreneurs to produce and distribute innovative drinking water filters. Entrepreneurs make a living by bringing clean water to their communities."
+	/>
+	<meta
+		name="descripcion"
+		content="Plataforma tecnológica y educativa para capacitar y empoderar a los empresarios locales para que produzcan y distribuyan filtros de agua potable innovadores. Los empresarios se ganan la vida llevando agua limpia a sus comunidades."
+	/>
+	<meta
+		name="robots"
+		content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+	/>
+	<html lang="en" />
+</svelte:head>
+
 <div
 	class="flex flex-wrap justify-between px-8 sm:px-12 lg:px-24 items-center border-gray-100 py-8 md:py-12"
 >

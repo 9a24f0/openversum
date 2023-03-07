@@ -17,8 +17,25 @@
 	};
 </script>
 
+<svelte:head>
+	<title>Openversum - Partners - providing clean and safe drinking water where most needed</title>
+	<meta
+		name="description"
+		content="Technology and educational platform to enable and empower local entrepreneurs to produce and distribute innovative drinking water filters. Entrepreneurs make a living by bringing clean water to their communities."
+	/>
+	<meta
+		name="descripcion"
+		content="Plataforma tecnológica y educativa para capacitar y empoderar a los empresarios locales para que produzcan y distribuyan filtros de agua potable innovadores. Los empresarios se ganan la vida llevando agua limpia a sus comunidades."
+	/>
+	<meta
+		name="robots"
+		content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+	/>
+	<html lang="en" />
+</svelte:head>
+
 <div
-	class="min-h-[calc(100vh-9.5rem)] md:min-h-[calc(100vh-10rem)] bg-darkblue grid grid-cols-2 md:grid-cols-5 p-8 sm:p-12 lg:p-24"
+	class="min-h-[calc(100vh-9.5rem)] md:min-h-[calc(100vh-10rem)] bg-darkblue grid grid-cols-2 md:grid-cols-5 p-8 sm:p-12 lg:p-24 lg:py-20"
 >
 	<div class="col-span-2 h-64 w-64  sm:h-80 sm:w-80 md:h-[400px] md:w-[400px] place-self-center">
 		<img
@@ -44,5 +61,6 @@
 		>
 	</div>
 </div>
-
-<Video {showVideoModal} />
+{#if showVideoModal}
+	<Video on:closeModal={() => (showVideoModal = false)} />
+{/if}

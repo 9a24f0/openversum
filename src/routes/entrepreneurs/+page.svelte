@@ -19,6 +19,24 @@
 	};
 </script>
 
+<svelte:head>
+	<title
+		>Openversum - Entrepreneurs - providing clean and safe drinking water where most needed</title
+	>
+	<meta
+		name="description"
+		content="Technology and educational platform to enable and empower local entrepreneurs to produce and distribute innovative drinking water filters. Entrepreneurs make a living by bringing clean water to their communities."
+	/>
+	<meta
+		name="descripcion"
+		content="Plataforma tecnológica y educativa para capacitar y empoderar a los empresarios locales para que produzcan y distribuyan filtros de agua potable innovadores. Los empresarios se ganan la vida llevando agua limpia a sus comunidades."
+	/>
+	<meta
+		name="robots"
+		content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+	/>
+	<html lang="en" />
+</svelte:head>
 <div
 	class="min-h-[calc(100vh-9.5rem)] md:min-h-[calc(100vh-10rem)] bg-darkblue grid grid-cols-4 md:grid-cols-10 p-8 sm:p-12 lg:p-24"
 >
@@ -45,14 +63,14 @@
 			<WaveIconSvg />
 		</span>
 	</div>
-	<div class="col-span-4 md:w-3/5 place-self-center text-white py-8 md:py-12 lg:py-24">
+	<div class="col-span-4 md:w-3/5 place-self-center text-white py-8 md:py-12 lg:py-20">
 		<Paragraph
 			title={$t('entrepreneurs.profileTitle')}
 			titleFontSize={'sm'}
 			paragraph={$t('entrepreneurs.profileP')}
 		/>
 	</div>
-	<div class="md:col-start-6 col-span-4 text-white flex flex-col py-8 md:py-12 lg:py-24">
+	<div class="md:col-start-6 col-span-4 text-white flex flex-col py-8 md:py-12 lg:py-20">
 		<Paragraph
 			title={$t('entrepreneurs.franchiseeTitle')}
 			titleFontSize={'sm'}
@@ -74,4 +92,7 @@
 		Forma parte <br /> de la familia Openversum <br /> con +20 emprendedores
 	</div>
 </div>
-<Video {showVideoModal} />
+
+{#if showVideoModal}
+	<Video on:closeModal={() => (showVideoModal = false)} />
+{/if}

@@ -13,6 +13,8 @@
 	import ImgGrouped from '$lib/images/GroupedPhotos.png?h=550&webp';
 	import H2 from './H2.svelte';
 	import WaveIconSvg from '$lib/components/SVG/WaveIconSVG.svelte';
+	import WatchButton from '$lib/components/UI/WatchButton.svelte';
+	import EmbeddedVideo from '$lib/components/UI/EmbeddedVideo.svelte';
 	let innerHeight: number;
 	let innerWidth: number;
 	let scrollYIndex: number;
@@ -36,6 +38,13 @@
 	<html lang="en" />
 </svelte:head>
 <svelte:window bind:scrollY={scrollYIndex} bind:innerHeight bind:innerWidth />
+
+{#if showVideoModal}
+	<EmbeddedVideo
+		on:closeModal={() => (showVideoModal = false)}
+		src="https://www.youtube.com/embed/EsGui64xO78?start=18"
+	/>
+{/if}
 <div class="w-full overflow-x-hidden space-y-4 md:space-y-8">
 	<div class="relative w-full">
 		<div
@@ -49,6 +58,14 @@
 			</h1>
 			<p class="text-white text-md sm:text-lg md:text-xl">
 				{$t('home.subtitle')}
+			</p>
+			<p class="text-white pt-2 hover:text-blue-100">
+				<WatchButton
+					color="#FFFFFF"
+					on:click={() => {
+						showVideoModal = true;
+					}}
+				/>
 			</p>
 		</div>
 		<img
@@ -214,18 +231,3 @@
 
 	<AwardsAndPrograms />
 </div>
-
-{#if showVideoModal}
-	<SimpleSlotModal on:closeModal={() => (showVideoModal = false)}>
-		<iframe
-			class="rounded-md"
-			width="770"
-			height="420"
-			src="https://www.youtube.com/embed/EsGui64xO78?start=18"
-			title="YouTube video player"
-			frameborder="0"
-			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-			allowfullscreen
-		/>
-	</SimpleSlotModal>
-{/if}
