@@ -78,7 +78,7 @@
 			<AnimatedWave w={innerWidth} />
 		</div>
 	</div>
-	<div id="what_we_do" class="relative w-full h-20 md:h-24">
+	<div id="what_we_do" class="relative w-full h-10 md:h-12">
 		<div style="width: {innerWidth}px;" class="opacity-60 absolute h-20 md:h-24 bottom-0">
 			<AnimatedWave fill="#76d0cd" w={innerWidth} />
 		</div>

@@ -37,7 +37,7 @@
 		<!-- <div
 		class="min-h-[calc(100vh-9.5rem)] md:min-h-[calc(100vh-10rem)] flex flex-col md:flex-row items-center justify-evenly"
 	> -->
-		<div class="col-span-2 flex items-center px-4 justify-start md:justify-center">
+		<div class="col-span-2 flex items-center pb-4 sm:pb-0 px-4 justify-start md:justify-center">
 			<ContactNavigation />
 		</div>
 		<div class="w-full col-span-2 md:col-span-3 flex items-center justify-center  ">

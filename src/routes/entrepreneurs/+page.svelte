@@ -5,7 +5,7 @@
 	import WatchButton from '$lib/components/UI/WatchButton.svelte';
 	import WaveIconSvg from '$lib/components/SVG/WaveIconSVG.svelte';
 	import EntrepreneurImage1 from '$lib/images/Emprendedor1.png?w=400&h=400&webp';
-	import EntrepreneurImage2 from '$lib/images/Emprendedor2.png?w=400&h=400&webp';
+	import EntrepreneurImage2 from '$lib/images/Emprendedor2.png?w=400&h=285&webp';
 
 	import { goto } from '$app/navigation';
 	import { t } from '$lib/translations';
@@ -63,7 +63,7 @@
 			<WaveIconSvg />
 		</span>
 	</div>
-	<div class="col-span-4 md:w-4/5 place-self-center text-white py-8 md:py-12 lg:py-20">
+	<div class="col-span-4 md:w-4/5 text-white py-8 md:py-12 lg:py-20">
 		<Paragraph
 			title={$t('entrepreneurs.profileTitle')}
 			titleFontSize={'sm'}

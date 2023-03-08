@@ -29,7 +29,7 @@
 					: 'text-blue'} 
 				hover:transition-colors hover:ease-in"
 			>
-				<p class="align-middle -mt-1">
+				<p class="align-middle">
 					{opt}
 				</p>
 			</button>
@@ -54,7 +54,7 @@
 					? 'text-white'
 					: `text-${color}`} hover:transition-colors hover:ease-in"
 			>
-				<p class="align-middle -mt-1">
+				<p class="align-middle">
 					{opt}
 				</p>
 			</button>
