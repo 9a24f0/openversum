@@ -5,6 +5,22 @@
 	import ContactPartner from './ContactPartner.svelte';
 	import ContactNavigation from './ContactNavigation.svelte';
 	import { contactScreen } from '$lib/stores/generalState';
+	import type { Snapshot } from './$types';
+	import type { FormData } from '$lib/types/definitions';
+
+
+	let formData = {
+		name: '',
+		email: '',
+		message: '',
+		organization: '',
+		country: '',
+	} as FormData;
+
+  export const snapshot: Snapshot = {
+    capture: () => formData,
+    restore: (value) => formData = value
+  };
 </script>
 
 <svelte:head>
@@ -43,13 +59,13 @@
 		<div class="w-full col-span-2 md:col-span-3 flex items-center justify-center  ">
 			<div class="w-full max-w-2xl mx-6 sm:mx-4">
 				{#if $contactScreen === 'general'}
-					<ContactDefault />
+					<ContactDefault formData={formData}/>
 				{/if}
 				{#if $contactScreen === 'entrepreneur'}
-					<ContactEntrepreneur />
+					<ContactEntrepreneur formData={formData}/>
 				{/if}
 				{#if $contactScreen === 'partner'}
-					<ContactPartner />
+					<ContactPartner formData={formData}/>
 				{/if}
 			</div>
 		</div>

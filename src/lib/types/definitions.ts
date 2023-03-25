@@ -6,6 +6,15 @@ export type Json =
   | { [key: string]: Json }
   | Json[]
 
+
+export interface FormData {
+	name: string,
+	email: string,
+	message: string,
+	organization: string,
+	country: string,
+}
+
 export interface Database {
   public: {
     Tables: {
