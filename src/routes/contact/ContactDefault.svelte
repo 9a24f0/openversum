@@ -9,8 +9,10 @@
 	import toast from 'svelte-french-toast';
 	import { contactScreen } from '$lib/stores/generalState';
 	import type { FormData } from '$lib/types/definitions';
+	import { sendEmail } from '$lib/utilities/sendMail';
 	const dispatch = createEventDispatcher();
 
+	const type = 'general';
 	let isEmailValid: boolean;
 	export let formData: FormData;
 	$: disabled = !isEmailValid || formData.email === '' || formData.name === '' || formData.message === '';
@@ -26,6 +28,10 @@
 			);
 			$contactScreen = '';
 		}
+
+		const { name, email, organization, country, message } = formData
+		sendEmail(name, email, organization, country, message, type);
+
 		dispatch('submitedContact');
 	};
 </script>

@@ -10,6 +10,7 @@
 	import toast from 'svelte-french-toast';
 	import { contactScreen } from '$lib/stores/generalState';
 	import type { FormData } from '$lib/types/definitions';
+	import { sendEmail } from '$lib/utilities/sendMail';
 	const id = nanoid(8);
 	const dispatch = createEventDispatcher();
 
@@ -44,6 +45,10 @@
 			);
 			$contactScreen = '';
 		}
+
+		const { name, email, organization, country, message } = formData
+		sendEmail(name, email, organization, country, message, type);
+
 		dispatch('submitedContact');
 	};
 </script>

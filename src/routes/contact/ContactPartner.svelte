@@ -8,6 +8,7 @@
 	import TextAreaField from '$lib/components/UI/TextAreaField.svelte';
 	import toast from 'svelte-french-toast';
 	import { contactScreen } from '$lib/stores/generalState';
+	import { sendEmail } from '$lib/utilities/sendMail';
 	import type { FormData } from '$lib/types/definitions';
 
 	const dispatch = createEventDispatcher();
@@ -33,6 +34,10 @@
 			);
 			$contactScreen = '';
 		}
+
+		const { name, email, organization, country, message } = formData
+		sendEmail(name, email, organization, country, message, type);
+
 		dispatch('submitedContact');
 	};
 </script>
